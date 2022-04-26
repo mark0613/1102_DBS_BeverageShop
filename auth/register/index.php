@@ -10,6 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- register page -->
+    <form action="" method="post">
+        <input type="email" name="email" id="email">
+        <input type="text" name="username" id="username">
+        <input type="password" name="password" id="password">
+        <input type="submit" value="註冊">
+    </form>
 </body>
 </html>

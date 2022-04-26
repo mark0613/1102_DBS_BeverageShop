@@ -10,6 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- login page -->
+    <form action="" method="post">
+        <input type="text" name="account" id="account">
+        <input type="password" name="password" id="password">
+        <input type="submit" value="登入">
+    </form>
 </body>
 </html>
