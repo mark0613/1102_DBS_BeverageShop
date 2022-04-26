@@ -15,3 +15,9 @@
   - static/css
 - php
   - php
+
+## 建立資料庫
+1. 進到 phpMyAdmin
+2. 輸入 createDatabase.txt 的內容
+3. 執行
+4. 左側可看到資料庫
