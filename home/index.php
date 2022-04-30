@@ -37,7 +37,7 @@
                         <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
                     </div>
                 </div>
-                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5 cover" src="static/img/baseball.webp" alt="..." /></div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5 cover" src="../static/img/baseball.webp" alt="..." /></div>
             </div>
         </div>
     </header>
@@ -71,7 +71,7 @@
 
                             
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/pingleo.jpg" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -110,7 +110,7 @@
 
                             
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/pingleo.jpg" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -149,7 +149,7 @@
 
                             
                         <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/pingleo.jpg" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -193,7 +193,7 @@
 
                             
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/pingleo.jpg" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -232,7 +232,7 @@
 
                             
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/pingleo.jpg" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -271,7 +271,7 @@
 
                             
                         <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/cat.webp" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/cat.webp" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -316,7 +316,7 @@
 
                             
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/pingleo.jpg" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -355,7 +355,7 @@
 
                             
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/pingleo.jpg" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -400,7 +400,7 @@
 
                             
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/pingleo.jpg" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -439,7 +439,7 @@
 
                             
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="static/img/pingleo.jpg" alt="..."  />
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -520,7 +520,7 @@
 
                 <form class="form-signin">
                     <div class="text-center">
-                        <img class="mb-4" src="../../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
+                        <img class="mb-4" src="../../../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
                         <h1 class="topic">！！！熱銷！！！</h1>
                         
                     </div>
@@ -635,7 +635,7 @@
 
                 <form class="form-signin">
                     <div class="text-center">
-                        <img class="mb-4" src="../../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
+                        <img class="mb-4" src="../../../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
                         <h1 class="topic">！！！優惠 限時下殺！！！</h1>
                         
                     </div>
