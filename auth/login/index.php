@@ -1,3 +1,9 @@
+<?php
+
+require("../../php/User.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,53 +14,50 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="../../static/css/auth.css" rel="stylesheet">
+    <script src="../../static/js/app.js"></script>
     
 </head>
 <body>
-   <!-- <form action="" method="post">
-        <input type="text" name="account" id="account">
-        <input type="password" name="password" id="password">
-        
-    </form>-->
-      
-  
   <div class="container-fluid " >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="../../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
+        <a class="navbar-brand" href="#">everageShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">會員專區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">商家後臺</a>
+                </li>
+            </ul>
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <img src="../../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
-      <a class="navbar-brand" href="#">everageShop</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <form action="" method="get" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">會員專區</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">商家後臺</a>
-          </li>
-        </ul>
-
-        <form class="form-inline my-2 my-lg-0">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Logout</a>
-            </li>
-          </ul>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
+            <ul class="navbar-nav mr-auto">
+                <?php if(User::check()): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
     </nav> 
 
 
@@ -63,21 +66,20 @@
       <div class="col-sm-4">
 
         <form class="form-signin">
-          <div class="text-center">
-            <img class="mb-4" src="../../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
-            <h1 class="topic">Login</h1>
-            <br>
-          </div>
-          <div>
-            <input type="text" id="account" name="account" class="form-control" placeholder="Account" required autofocus>
-                
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-            <br>
-          </div>
-              
-          <div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-          </div>
+            <div class="text-center">
+                <img class="mb-4" src="../../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
+                <h1 class="topic">Login</h1>
+                <br>
+            </div>
+            <div>
+                <input type="text" id="account" name="account" class="form-control" placeholder="Account" required autofocus>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                <br>
+            </div>
+            <div id="warning" role="alert"></div>
+            <div>
+                <button id="submit" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+            </div>
         </form>
 
       </div>
