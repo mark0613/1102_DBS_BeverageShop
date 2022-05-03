@@ -18,12 +18,11 @@ function register() {
                     window.location.href = "../login/";
                 }
                 else {
-                    $("#warning").text(response["error"]);
-                    $("#warning").addClass("alert alert-danger")
+                    showAlertOnPage(response["error"]);
                 }
             }
             else {
-                $("#warning").text("無法註冊");
+                showAlertOnPage("無法註冊");
             }
         }
     )

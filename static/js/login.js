@@ -16,12 +16,11 @@ function login() {
                     window.location.href = "../home/";
                 }
                 else {
-                    $("#warning").text(response["error"]);
-                    $("#warning").addClass("alert alert-danger")
+                    showAlertOnPage(response["error"]);
                 }
             }
             else {
-                $("#warning").text("無法登入");
+                showAlertOnPage("無法登入");
             }
         }
     )
