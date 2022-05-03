@@ -20,6 +20,8 @@
 ## 建立資料庫
 1. 進到 phpMyAdmin
 2. 先建立資料庫 **beverage_shop**
-3. 輸入 create_tables.txt 的內容
-4. 執行
-5. 左側可看到資料庫
+3. 進入資料庫 **beverage_shop**
+4. 選擇上方 **SQL**
+5. 輸入 create_tables.txt 的內容
+6. 執行
+7. 左側可看到資料庫
