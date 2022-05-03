@@ -47,29 +47,14 @@
 
 
 
-
-
-
-
-
-
-
-
     <div class="container-fluid " >
         <div class="row top">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
-                    
                 <div class="center"><h1>TOP6  HOT🔥🔥</h1></div>
                 <div class="container-fluid " >
                     <div class="row top">
                         <div class="col-sm-4">
-
-
-
-
-
-                            
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
@@ -78,7 +63,6 @@
                                     <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
                                     <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
                                 </div>
-                                
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -89,26 +73,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
+                                </div>    
                             </div>
-
-
-
-
-
-
-                            
                         </div>
 
-
                         <div class="col-sm-4">
-
-
-
-
-
-                            
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
@@ -116,8 +85,7 @@
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
                                     <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
                                     <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
-                                </div>
-                                
+                                </div>    
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -128,16 +96,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
+                                </div>    
                             </div>
-
-
-
-
-
-
-                            
                         </div>
 
 
@@ -145,9 +105,6 @@
 
 
 
-
-
-                            
                         <div class="card h-100 shadow border-0">
                                 <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
@@ -172,26 +129,17 @@
                             </div>
 
 
-
-
-
-
-                            
                         </div>
 
                     </div>
-                </div>
 
 
-                <div class="container-fluid " >
+
                     <div class="row top">
                         <div class="col-sm-4">
 
 
-
-
-
-                            
+ 
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
@@ -215,22 +163,11 @@
                                 
                             </div>
 
-
-
-
-
-
-                            
+  
                         </div>
 
 
                         <div class="col-sm-4">
-
-
-
-
-
-                            
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
@@ -238,8 +175,7 @@
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
                                     <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
                                     <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
-                                </div>
-                                
+                                </div>    
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -250,35 +186,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
+                                </div>    
                             </div>
-
-
-
-
-
-
-                            
                         </div>
 
 
                         <div class="col-sm-4">
-
-
-
-
-
-                            
-                        <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/cat.webp" alt="..."  />
+                            <div class="card h-100 shadow border-0">
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
                                     <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
                                     <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
-                                </div>
-                                
+                                </div>    
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -289,32 +210,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
+                                </div>    
                             </div>
-
-
-
-
-
-
-                            
                         </div>
-
                     </div>
                 </div>
                 <br>
                 <br>
+
                 <div class="center"><h1>DISCOUNT💥💥</h1></div>
                 <div class="container-fluid " >
                     <div class="row top">
-                        <div class="col-sm-6">
-
-
-
-
-
-                            
+                        <div class="col-sm-4">    
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
@@ -322,8 +229,7 @@
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
                                     <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
                                     <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
-                                </div>
-                                
+                                </div>                               
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -334,26 +240,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
-                            </div>
-
-
-
-
-
-
-                            
+                                </div>    
+                            </div>   
                         </div>
 
 
-                        <div class="col-sm-6">
-
-
-
-
-
-                            
+                        <div class="col-sm-4">    
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
@@ -361,8 +253,7 @@
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
                                     <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
                                     <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
-                                </div>
-                                
+                                </div>                               
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -373,32 +264,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
-                            </div>
-
-
-
-
-
-
-                            
+                                </div>    
+                            </div>   
                         </div>
 
 
-                        
-
+                        <div class="col-sm-4">    
+                            <div class="card h-100 shadow border-0">
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
+                                <div class="card-body p-4">
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
+                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
+                                    <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
+                                    <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
+                                </div>                               
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <p>評論：</p>
+                                            <div class="small">
+                                                <p class="card-text mb-0">竣任喝過都說好</p>
+                                                <p class="card-text mb-0">一定是大拇指的啦</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>   
+                        </div>
                     </div>
 
 
                     <div class="row top">
-                        <div class="col-sm-6">
-
-
-
-
-
-                            
+                        <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
@@ -406,8 +303,7 @@
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
                                     <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
                                     <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
-                                </div>
-                                
+                                </div>                              
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -418,26 +314,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
+                                </div>       
                             </div>
-
-
-
-
-
-
-                            
                         </div>
 
 
-                        <div class="col-sm-6">
-
-
-
-
-
-                            
+                        <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
                                 <div class="card-body p-4">
@@ -445,8 +327,7 @@
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
                                     <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
                                     <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
-                                </div>
-                                
+                                </div>                              
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -457,22 +338,37 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
+                                </div>       
                             </div>
-
-
-
-
-
-
-                            
                         </div>
 
 
-                        
+                        <div class="col-sm-4">
+                            <div class="card h-100 shadow border-0">
+                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
+                                <div class="card-body p-4">
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
+                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
+                                    <p class="card-text mb-0">高雄市鳳山區勳哥路87號</p>
+                                    <p class="card-text mb-0">熱銷->一定是原萃啦</p>     
+                                </div>                              
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <p>評論：</p>
+                                            <div class="small">
+                                                <p class="card-text mb-0">竣任喝過都說好</p>
+                                                <p class="card-text mb-0">一定是大拇指的啦</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>       
+                            </div>
+                        </div>
 
                     </div>
+
+
                 </div>
 
 
