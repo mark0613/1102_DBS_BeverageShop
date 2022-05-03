@@ -74,12 +74,12 @@ class User {
             $u_id = $row["u_id"];
         }
         if ($type === "customer") {
-            $insert = "INSERT INTO CUSTOMER(u_id) VALUES($u_id)";
+            $insert = "INSERT INTO customer(u_id) VALUES($u_id)";
             Database::$connect->query($insert);
             return;
         }
         if ($type === "merchant") {
-            $insert = "INSERT INTO MERCHANT(u_id) VALUES($u_id)";
+            $insert = "INSERT INTO merchant(u_id) VALUES($u_id)";
             Database::$connect->query($insert);
             return;
         }
