@@ -4,6 +4,7 @@
 - 頁面
   - auth/register
   - auth/login
+  - home
   - member
   - merchant
   - order
@@ -16,7 +17,7 @@
 - php
   - php
 
-## 建立資料庫 (未確定)
+## 建立資料庫
 1. 進到 phpMyAdmin
 2. 輸入 createDatabase.txt 的內容
 3. 執行
