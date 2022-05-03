@@ -2,6 +2,7 @@
 
 require("Database.php");
 class User {
+    public static $error = NULL;
     static function isValid($account, $password) {
         $hashPassword = hash("sha256", $password);
         $select = "SELECT Password FROM users WHERE email='$account' OR u_name='$account'";
@@ -64,10 +65,13 @@ class User {
         return false;
     }
 
-    static function register($email, $username, $password, $type) {
+    static function register($email, $username, $password, $phone, $type) {
         $hashPassword = hash("sha256", $password);
         $insert = "INSERT INTO users(email, u_name, password, type) VALUES('$email', '$username', '$hashPassword', '$type')";
-        Database::$connect->query($insert);
+        if (!Database::$connect->query($insert)) {
+            self::$error = Database::$connect->error;
+            return False;
+        }
         $getId = "SELECT u_id FROM users WHERE email='$email'";
         $result = Database::$connect->query($getId);
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -75,14 +79,19 @@ class User {
         }
         if ($type === "customer") {
             $insert = "INSERT INTO customer(u_id) VALUES($u_id)";
-            Database::$connect->query($insert);
-            return;
         }
-        if ($type === "merchant") {
+        else if ($type === "customer") {
             $insert = "INSERT INTO merchant(u_id) VALUES($u_id)";
-            Database::$connect->query($insert);
-            return;
         }
+        else {
+            self::$error = "請選擇註冊身分";
+            return False;
+        }
+        if (Database::$connect->query($insert)) {
+            return True;
+        }
+        self::$error = Database::$connect->error;
+        return False;
     }
 }
 
