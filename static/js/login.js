@@ -3,7 +3,7 @@ function login() {
         account : $("#account").val(),
         password : $("#password").val(),
     };
-    let url = "../../php/login.php";
+    let url = "../php/login.php";
 
     $.post(
         url,
@@ -12,7 +12,7 @@ function login() {
             if (status == "success") {
                 response = JSON.parse(response);
                 if (response["status"] == "success") {
-                    window.location.href = "../../home/";
+                    window.location.href = "../home/";
                 }
                 else {
                     $("#warning").text(response["error"]);
