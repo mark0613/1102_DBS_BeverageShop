@@ -23,78 +23,71 @@ if (User::check()) {
     <script src="../static/js/login.js"></script>
 </head>
 <body>
-  <div class="container-fluid " >
+    <div class="container-fluid " >
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
-        <a class="navbar-brand" href="#">everageShop</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
+            <a class="navbar-brand" href="#">everageShop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../member">會員專區</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../merchant">商家後臺</a>
-                </li>
-            </ul>
-
-            <form action="" method="get" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-
-            <ul class="navbar-nav mr-auto">
-                <?php if(User::check()): ?>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../php/logout.php">Logout</a>
-                    </li>
-                <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../register">Register</a>
+                        <a class="nav-link" href="../member">會員專區</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../login">Login</a>
+                        <a class="nav-link" href="../merchant">商家後臺</a>
                     </li>
-                <?php endif; ?>
-            </ul>
-        </div>
-    </nav> 
+                </ul>
 
+                <form action="" method="get" class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
 
-    <div class="row top">
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4">
-
-        <form class="form-signin" method="post" action="">
-            <div class="text-center">
-                <img class="mb-4" src="../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
-                <h1 class="topic">Login</h1>
-                <br>
+                <ul class="navbar-nav mr-auto">
+                    <?php if(User::check()): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../php/logout.php">Logout</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../login">Login</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
             </div>
-            <div>
-                <input type="text" id="account" name="account" class="form-control" placeholder="Account" required autofocus>
-                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                <br>
-            </div>
-            <div id="warning" role="alert"></div>
-            <div>
-                <button id="submit" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
-            </div>
-        </form>
+        </nav> 
 
-      </div>
-      <div class="col-sm-4"></div>
+        <div class="row top">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+
+                <form class="form-signin" method="post" action="">
+                    <div class="text-center">
+                        <img class="mb-4" src="../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
+                        <h1 class="topic">Login</h1>
+                        <br>
+                    </div>
+                    <div>
+                        <input type="text" id="account" name="account" class="form-control" placeholder="Account" required autofocus>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                        <br>
+                    </div>
+                    <div id="warning" role="alert"></div>
+                    <div>
+                        <button id="submit" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-sm-4"></div>
+        </div>     
     </div>
-      
-      
-      
-
-    
-        
-  </div>
 
 <!--
 <body class="text-center">
