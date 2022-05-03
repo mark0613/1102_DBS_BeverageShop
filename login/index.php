@@ -17,7 +17,7 @@ require("../php/User.php");
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="../static/css/auth.css" rel="stylesheet">
     <script src="../static/js/app.js"></script>
-    
+    <script src="../static/js/login.js"></script>
 </head>
 <body>
   <div class="container-fluid " >
@@ -65,7 +65,7 @@ require("../php/User.php");
       <div class="col-sm-4"></div>
       <div class="col-sm-4">
 
-        <form class="form-signin">
+        <form class="form-signin" method="post" action="../php/login.php">
             <div class="text-center">
                 <img class="mb-4" src="../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
                 <h1 class="topic">Login</h1>
