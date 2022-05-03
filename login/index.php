@@ -1,6 +1,6 @@
 <?php
 
-require("../../php/User.php");
+require("../php/User.php");
 
 ?>
 
@@ -15,14 +15,14 @@ require("../../php/User.php");
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link href="../../static/css/auth.css" rel="stylesheet">
-    <script src="../../static/js/app.js"></script>
+    <link href="../static/css/auth.css" rel="stylesheet">
+    <script src="../static/js/app.js"></script>
     
 </head>
 <body>
   <div class="container-fluid " >
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="../../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
+        <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
         <a class="navbar-brand" href="#">everageShop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -67,7 +67,7 @@ require("../../php/User.php");
 
         <form class="form-signin">
             <div class="text-center">
-                <img class="mb-4" src="../../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
+                <img class="mb-4" src="../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
                 <h1 class="topic">Login</h1>
                 <br>
             </div>
