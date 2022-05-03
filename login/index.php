@@ -31,10 +31,10 @@ require("../php/User.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">會員專區</a>
+                    <a class="nav-link" href="../member">會員專區</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">商家後臺</a>
+                    <a class="nav-link" href="../merchant">商家後臺</a>
                 </li>
             </ul>
 
@@ -46,14 +46,14 @@ require("../php/User.php");
             <ul class="navbar-nav mr-auto">
                 <?php if(User::check()): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="">Logout</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="../register">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="../login">Login</a>
                     </li>
                 <?php endif; ?>
             </ul>
