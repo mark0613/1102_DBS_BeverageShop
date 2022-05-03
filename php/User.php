@@ -28,7 +28,7 @@ class User {
     }
     static function login($account, $password) {
         if (self::isValid($account, $password)) {
-            $select = "SELECT (u_id, type) FROM users WHERE email='$account' OR u_name='$account'";
+            $select = "SELECT u_id, type FROM users WHERE email='$account' OR u_name='$account'";
             $result = Database::$connect->query($select);
             $data = [];
             $token = bin2hex(random_bytes(16));  # 32 bits

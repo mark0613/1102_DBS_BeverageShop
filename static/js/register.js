@@ -14,7 +14,6 @@ function register() {
         (response, status) => {
             if (status == "success") {
                 response = JSON.parse(response);
-                console.log(response);
                 if (response["status"] == "success") {
                     window.location.href = "../login/";
                 }
