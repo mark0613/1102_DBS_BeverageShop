@@ -2,8 +2,8 @@
 
 ## 資料夾結構
 - 頁面
-  - auth/register
-  - auth/login
+  - register
+  - login
   - home
   - member
   - merchant

@@ -46,7 +46,7 @@ require("../php/User.php");
             <ul class="navbar-nav mr-auto">
                 <?php if(User::check()): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Logout</a>
+                        <a class="nav-link" href="../php/logout.php">Logout</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
