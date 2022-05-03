@@ -31,7 +31,7 @@ $(document).ready(() => {
     $("#submit").click(() => {
         login();
     })
-    $('#password').keypress(function (e) {
+    $('#account, #password').keypress(function (e) {
         if (e.which == 13) {
             login();
             return false;

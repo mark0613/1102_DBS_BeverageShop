@@ -65,7 +65,7 @@ require("../php/User.php");
       <div class="col-sm-4"></div>
       <div class="col-sm-4">
 
-        <form class="form-signin" method="post" action="../php/login.php">
+        <form class="form-signin" method="post" action="">
             <div class="text-center">
                 <img class="mb-4" src="../static/img/bootstrap-solid.svg" alt="" width="auto" height="60px">
                 <h1 class="topic">Login</h1>
