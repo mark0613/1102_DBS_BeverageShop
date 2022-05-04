@@ -249,7 +249,7 @@
                         <div class="col-sm-2"></div>
                     </div>
                     
-                    <div class="center">
+                    <div>
                         <nav aria-label="Page navigation">
                             <ul class="pagination">
                                 <li class="page-item">
