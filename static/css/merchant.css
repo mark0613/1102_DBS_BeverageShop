@@ -1,0 +1,11 @@
+.right{
+    text-align: right;
+    
+}
+
+.down{
+    position:absolute;
+    bottom: 0px;
+    right: 0px;
+}
+

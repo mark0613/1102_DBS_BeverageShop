@@ -33,7 +33,7 @@ if (User::check()) {
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-0">
                     <li class="nav-item">
                         <a class="nav-link" href="../member">會員專區</a>
                     </li>
@@ -42,12 +42,12 @@ if (User::check()) {
                     </li>
                 </ul>
 
-                <form action="" method="get" class="form-inline my-2 my-lg-0">
+                <form action="" method="get" class="form-inline navbar-nav pl-0 mr-auto">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
-
-                <ul class="navbar-nav mr-auto">
+                
+                <ul class="navbar-nav ml-auto">
                     <?php if(User::check()): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="../php/logout.php">Logout</a>

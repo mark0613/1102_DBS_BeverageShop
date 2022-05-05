@@ -40,23 +40,267 @@
                             <div class="col-sm-8">
                                 <div class="card h-100 shadow border-0">
                                     <div class="card-body p-4"> 
-                                        <h5 class="center bold">未被接受的訂單</h5> 
-                                        <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                        </ul>
+                                        <h5 class="center bold">待確認的訂單</h5> 
+                                        <div class="card">
+                                            <div class="card-header">
+                                                訂單編號:gg123
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+
+                                                        <label>奶茶</label>
+                                                        *
+                                                        <label>10</label>
+                                                        <label>$500</label>
+                                                        <br>
+                                                        <label>紅茶</label>
+                                                        *
+                                                        <label>10</label>
+                                                        <label>$200</label>
+                                                        <br>
+                                                        <label>紅茶</label>
+                                                        *
+                                                        <label>10</label>
+                                                        <label>$200</label>
+                                                        <br>
+                                                        <label>紅茶</label>
+                                                        *
+                                                        <label>10</label>
+                                                        <label>$200</label>
+                                                        
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <p class="right">2022/05/05 16:50</p>
+                                                        <div class="down">
+                                                            <label>總花費</label>
+                                                            <label>$700</label>
+                                                            <button type="submit" class="btn btn-primary">接受</button>
+                                                            <button type="submit" class="btn btn-danger">拒絕</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>  
                                 </div>  
                             </div>
                             <div class="col-sm-2"></div>
                         </div>
                     </div>
-                </div>   
+                </div>
                 
+                <!--優惠-->
+                <div>
+                    <h3 class="center title">💥優惠</h3>
+                    <div class="container-fluid">
+                        <div class="row">  
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4"> 
+                                
+                                        
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                    </div>
+                </div>
 
+                <!--資料-->
+                <div class="form-group top">  
+                    <p class="title center">🏪商家資料</p>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                                    
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">
+                                        <br>
+                                        <label>店名:</label>
+                                        <input name="shop" id="shop" value="秉霖鮮果屋">
+                                        <br>
+                                        <label>住址:</label>
+                                        <input name="address" id="address" value="台中市">
+                                        <br>
+                                        <label>電話:</label>
+                                        <input name="tel" id="tel" value="0412341234">
+                                        <br>
+                                        <label>管理人:</label>
+                                        <input name="manager" id="manager" value="pingleo桑">
+                                        <br>
+                                        <label>管理人手機:</label>
+                                        <input name="phone" id="phone" value="0912123123">
+                                        <br>
+                                        <label>營業時間:</label>
+                                        <input name="time" id="time" value="24hr">
+                                        <br>
+                                        <label>外送與否:</label>
+                                        <input name="waimai" id="waimai" value="是">
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">變更</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--評價-->
+
+                <div>
+                    <div class="container-fluid">
+                        <p class="title center">📝被給予的評價</p>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">                       
+                                        <label>超讚的啦</label>
+                                    </div>  
+                                </div>  
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        
+
+                        
+                        
+                        <div>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>

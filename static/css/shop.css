@@ -9,3 +9,17 @@
     width: 100%;
     height: 300px;
 }
+
+.in{
+    width: 30px;
+}
+
+.left{
+    position:absolute;
+    left: 50px;
+}
+
+.right{
+    position:absolute;
+    right: 50px;
+}

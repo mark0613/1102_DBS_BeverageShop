@@ -41,7 +41,7 @@
 
     <div class="center top"><h1>💥現正優惠中</h1></div>
 
-    <div class="container-fluid " >
+    <div class="container-fluid">
         <div class="row top">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
@@ -78,98 +78,53 @@
             <div class="col-sm-3"></div>
         </div>
 
-        <div class="row top">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <div class="card h-100 shadow border-0">
-                    <div class="card-body p-4">                       
-                         
-                    </div>  
-                </div>  
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-
-        <div class="row top">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <div class="card h-100 shadow border-0">
-                    <div class="card-body p-4">                       
-                           
-                    </div>  
-                </div>  
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-
-        <div class="row top">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <div class="card h-100 shadow border-0">
-                    <div class="card-body p-4">                       
-                           
-                    </div>  
-                </div>  
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-
         <div class="center top"><h1>🧋Menu</h1></div>
-
         <div class="row top">
             <div class="col-sm-2"></div>
-            <div class="col-sm-2">
-                <div class="card h-100 shadow border-0">
-                    <img class="card-img-top menu" src="../static/img/pingleo.jpg" alt="..."  />
-                    <div class="card-body p-4">
-                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">特調類</div>                        
-                        <div class="h3 card-title mb-3">勳哥特調</div>
-                        <p class="card-text mb-0">濃香醇，農場直送</p>
-                        <br>
-                        <button class="btn btn-lg btn-primary btn-block">放入購物車</button> 
+            <div class="col-sm-8">
+                <div class="card-deck">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body p-4">
+                            <div class="center">
+                                <label>奶茶</label>
+                                <label>25元</label>
+                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                <input type='text' name='quantity' value='0' class="in">
+            <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                            </div>
+                        </div>
                     </div>
+
+
+
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body p-4">
+                            <div class="center">
+                                <label>奶茶</label>
+                                <label>25元</label>
+                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                <input type='text' name='quantity' value='0' class="in">
+                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body p-4">
+                            <div class="center">
+                                <label>奶茶</label>
+                                <label>25元</label>
+                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                <input type='text' name='quantity' value='0' class="in">
+                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-
-            <div class="col-sm-2">
-                <div class="card h-100 shadow border-0">
-                    <img class="card-img-top menu" src="../static/img/pingleo.jpg" alt="..."  />
-                    <div class="card-body p-4">
-                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
-                        <div class="h3 card-title mb-3">勳哥特調</div>
-                        <p class="card-text mb-0">濃香醇，農場直送</p>
-                        <br>
-                        <button class="btn btn-lg btn-primary btn-block">放入購物車</button>       
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-2">
-                <div class="card h-100 shadow border-0">
-                    <img class="card-img-top menu" src="../static/img/pingleo.jpg" alt="..."  />
-                    <div class="card-body p-4">
-                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
-                        <div class="h3 card-title mb-3">勳哥特調</div>
-                        <p class="card-text mb-0">濃香醇，農場直送</p>
-                        <br>
-                        <button class="btn btn-lg btn-primary btn-block">放入購物車</button>   
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-2">
-                <div class="card h-100 shadow border-0">
-                    <img class="card-img-top menu" src="../static/img/pingleo.jpg" alt="..."  />
-                    <div class="card-body p-4">
-                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
-                        <div class="h3 card-title mb-3">勳哥特調</div>
-                        <p class="card-text mb-0">濃香醇，農場直送</p>
-                        <br>
-                        <button class="btn btn-lg btn-primary btn-block">放入購物車</button>    
-                    </div>
-                </div>
-            </div>
-
             <div class="col-sm-2"></div>
         </div>
 
@@ -182,9 +137,9 @@
                         <div class="container-fluid " >
                             <div class="row top">
                                 <div class="col-sm-10">
-                                    <input type="text" id="" name="" class="form-control" placeholder="填寫評價" required autofocus>
+                                    <input type="text" id="" name="" class="form-control" placeholder="填寫評價" required>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-2"> 
                                     <button id="submit" class="btn btn-md btn-primary btn-block" type="button">提交</button>
                                 </div>
                             </div>
