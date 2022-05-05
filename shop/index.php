@@ -78,7 +78,7 @@
             <div class="col-sm-3"></div>
         </div>
 
-        <div class="center top"><h1>🧋Menu</h1></div>
+        <div class="center top"><h1>🧋菜單</h1></div>
         <div class="row top">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
@@ -90,7 +90,7 @@
                                 <label>25元</label>
                                 <input type='button' value='-' class="btn btn-outline-danger btn-sm">
                                 <input type='text' name='quantity' value='0' class="in">
-            <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
                             </div>
                         </div>
                     </div>

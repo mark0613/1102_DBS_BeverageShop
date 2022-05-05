@@ -40,7 +40,7 @@
                             <div class="col-sm-8">
                                 <div class="card h-100 shadow border-0">
                                     <div class="card-body p-4"> 
-                                        <h5 class="center bold">待確認的訂單</h5> 
+                                        <h5 class="center bold">❗待確認的訂單</h5> 
                                         <div class="card">
                                             <div class="card-header">
                                                 訂單編號:gg123
@@ -83,12 +83,71 @@
                                             </div>
                                         </div>
                                     </div>  
-                                </div>  
+                                </div> 
+                                
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <br>
+                        <div class="row">  
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4"> 
+                                        <h5 class="center bold">🔎搜尋訂單</h5> 
+                                        <div class="card">
+                                            <div>
+                                                <form class="form-inline">
+                                                    <label>🔎透過日期搜尋訂單:</label>
+                                                    <div class="form-group">
+                                                        <select class="custom-select mx-sm-2">
+                                                            <option selected>2022</option>
+                                                            <option value="1">2023</option>
+                                                            <option value="2">2024</option>
+                                                            <option value="3">2025</option>
+                                                        </select>
+                                                        年
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select class="custom-select mx-sm-2">
+                                                            <option selected>1</option>
+                                                            <option value="1">2</option>
+                                                            <option value="2">3</option>
+                                                            <option value="3">4</option>
+                                                        </select>
+                                                        月
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select class="custom-select mx-sm-2">
+                                                            <option selected>1</option>
+                                                            <option value="1">2</option>
+                                                            <option value="2">3</option>
+                                                            <option value="3">4</option>
+                                                        </select>
+                                                        日
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">搜尋</button>
+                                                </form>
+                                            </div>
+
+                                            <div>
+                                                <form class="form-inline top">
+                                                    <label>🔎透過編號搜尋訂單:</label>
+                                                    <input name="token" id="token" type="text" placeholder="請輸入編號" class="form-control mx-sm-2">
+                                                    <button type="submit" class="btn btn-primary">搜尋</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div> 
+                                
                             </div>
                             <div class="col-sm-2"></div>
                         </div>
                     </div>
                 </div>
+
+                
                 
                 <!--優惠-->
                 <div>
@@ -97,12 +156,24 @@
                         <div class="row">  
                             <div class="col-sm-2"></div>
                             <div class="col-sm-8">
-                                <div class="card h-100 shadow border-0">
-                                    <div class="card-body p-4"> 
-                                
-                                        
-                                    </div>  
-                                </div>  
+                                <form>
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-body p-4"> 
+                                            <div class="right">
+                                                <button type="submit" class="btn btn-primary">新增</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                            <br>
+                                            <div class="card border-dark">
+                                                <div class="card-body p-4">  
+                                                    <input type="checkbox">                
+                                                    <a class="text-decoration-none link-dark" href="#!" target="_blank"><label>買十送十，打折到你骨折</label></a>
+                                                </div>  
+                                            </div>
+
+                                        </div>  
+                                    </div>
+                                </form>  
                             </div>
                             <div class="col-sm-2"></div>
                         </div>
@@ -150,12 +221,68 @@
                     </div>
                 </div>
 
+
+                <!--菜單-->
+                <div class="container">
+                <p class="title center">🧋菜單</p>
+                
+                    <div class="row top">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10">
+                            <div class="card-deck">
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">
+                                        <div class="center">
+                                            <label>奶茶</label>
+                                            <label>25元</label>
+                                            <button type="submit" class="btn btn-primary">編輯</button>
+                                            <button type="submit" class="btn btn-danger">刪除</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">
+                                        <div class="center">
+                                            <label>奶茶</label>
+                                            <label>25元</label>
+                                            <button type="submit" class="btn btn-primary">編輯</button>
+                                            <button type="submit" class="btn btn-danger">刪除</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="card h-100 shadow border-0">
+                                    <div class="card-body p-4">
+                                        <div class="center">
+                                            <label>奶茶</label>
+                                            <label>25元</label>
+                                            <button type="submit" class="btn btn-primary">編輯</button>
+                                            <button type="submit" class="btn btn-danger">刪除</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <br>
+                    <div class="center">
+                        <button type="submit" class="btn btn-primary">新增</button>
+                    </div>
+                </div>
+
                 <!--評價-->
 
                 <div>
                     <div class="container-fluid">
                         <p class="title center">📝被給予的評價</p>
-                        <div class="row">
+                        <div class="row top">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-8">
                                 <div class="card h-100 shadow border-0">
