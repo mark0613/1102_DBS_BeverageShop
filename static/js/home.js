@@ -1,6 +1,6 @@
 hot = [
     {
-      "name" : "IGEN0",
+      "name" : "IGEN00",
       "img" : "../static/img/pingleo.jpg",
       "address" : "road0",
       "bestseller" : "Good0",
@@ -8,7 +8,7 @@ hot = [
       "comment1" : "good1"
     },
     {
-        "name" : "IGEN1",
+        "name" : "IGEN01",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road1",
         "bestseller" : "Good1",
@@ -16,7 +16,7 @@ hot = [
         "comment1" : "good1"
     },
     {
-        "name" : "IGEN2",
+        "name" : "IGEN02",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road2",
         "bestseller" : "Good2",
@@ -24,7 +24,7 @@ hot = [
         "comment1" : "good1"
     },
     {
-        "name" : "IGEN3",
+        "name" : "IGEN03",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road3",
         "bestseller" : "Good3",
@@ -32,7 +32,7 @@ hot = [
         "comment1" : "good1"
     },
     {
-        "name" : "IGEN4",
+        "name" : "IGEN04",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road4",
         "bestseller" : "Good4",
@@ -40,7 +40,7 @@ hot = [
         "comment1" : "good1"
     },
     {
-        "name" : "IGEN5",
+        "name" : "IGEN05",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road5",
         "bestseller" : "Good5",
@@ -51,7 +51,7 @@ hot = [
 
 discount = [
     {
-      "name" : "IGEN0",
+      "name" : "IGEN10",
       "img" : "../static/img/pingleo.jpg",
       "address" : "road0",
       "bestseller" : "Good0",
@@ -59,7 +59,7 @@ discount = [
       "comment1" : "good1"
     },
     {
-        "name" : "IGEN1",
+        "name" : "IGEN11",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road1",
         "bestseller" : "Good1",
@@ -67,7 +67,7 @@ discount = [
         "comment1" : "good1"
     },
     {
-        "name" : "IGEN2",
+        "name" : "IGEN12",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road2",
         "bestseller" : "Good2",
@@ -75,7 +75,7 @@ discount = [
         "comment1" : "good1"
     },
     {
-        "name" : "IGEN3",
+        "name" : "IGEN13",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road3",
         "bestseller" : "Good3",
@@ -83,7 +83,7 @@ discount = [
         "comment1" : "good1"
     },
     {
-        "name" : "IGEN4",
+        "name" : "IGEN14",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road4",
         "bestseller" : "Good4",
@@ -91,7 +91,7 @@ discount = [
         "comment1" : "good1"
     },
     {
-        "name" : "IGEN5",
+        "name" : "IGEN15",
         "img" : "../static/img/pingleo.jpg",
         "address" : "road5",
         "bestseller" : "Good5",
