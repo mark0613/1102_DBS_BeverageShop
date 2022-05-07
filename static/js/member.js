@@ -169,11 +169,3 @@ $(document).ready(function(){
         }
     }
 })
-
-
-// namearr[i].textContent = hot[i]["name"]
-// imgarr[i].src = hot[i]["img"]
-// bodyarr[4*i].textContent = hot[i]["address"]
-// bodyarr[4*i+1].textContent = hot[i]["bestseller"]
-// bodyarr[4*i+2].textContent = hot[i]["comment0"]
-// bodyarr[4*i+3].textContent = hot[i]["comment1"]  
