@@ -90,12 +90,23 @@ comment =
     }
 ]
 
+userinfo = {
+    "name": "mark",
+    "email": "mark@gmail.com",
+    "phone": "0912345678",
+    "password":""
+}
+
 
 function sortdate(a, b){
     return new Date(a.comtime).getTime() - new Date(b.comtime).getTime();
 }
 
 $(document).ready(function(){
+
+    //here to show user information
+    ($("input[id][name$='username']"))
+
     //here to start show love shop
     var shoplen = loveshop.length
     if (shoplen == 0){
