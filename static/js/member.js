@@ -91,8 +91,9 @@ comment =
 ]
 
 userinfo = {
-    "name": "mark",
+    "name": "Mark",
     "email": "mark@gmail.com",
+    "id":"mark",
     "phone": "0912345678",
     "password":""
 }
@@ -105,7 +106,10 @@ function sortdate(a, b){
 $(document).ready(function(){
 
     //here to show user information
-    ($("input[id][name$='username']"))
+    ($("input[id][name$='username']")).val(`${userinfo["name"]}`);
+    ($("input[id][name$='id']")).val(`${userinfo["id"]}`);
+    ($("input[id][name$='email']")).val(`${userinfo["email"]}`);
+    ($("input[id][name$='phone']")).val(`${userinfo["phone"]}`);
 
     //here to start show love shop
     var shoplen = loveshop.length
@@ -160,8 +164,8 @@ $(document).ready(function(){
     }
     else{
         for (let i=0; i<10; i++){
-            ($(`.container-fluid:nth(1)`).find('h3')[i]).textContent    = `${comment[i]["comname"]}`
-            ($(`.container-fluid:nth(1)`).find('label')[i]).textContent = `${comment[i]["comcom"]}`
+            ($(`.container-fluid:nth(1)`).find('h3')[i]).textContent    = `${comment[i]["comname"]}`;
+            ($(`.container-fluid:nth(1)`).find('label')[i]).textContent = `${comment[i]["comcom"]}`;
         }
     }
 })
