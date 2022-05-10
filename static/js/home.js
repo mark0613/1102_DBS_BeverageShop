@@ -1,7 +1,7 @@
 hot = [
     {
       "name" : "IGEN00",
-      "img" : "../static/img/pingleo.jpg",
+      "img" : "../static/img/default.jpg",
       "address" : "road0",
       "bestseller" : "Good0",
       "comment0" : "good0",
@@ -9,7 +9,7 @@ hot = [
     },
     {
         "name" : "IGEN01",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road1",
         "bestseller" : "Good1",
         "comment0" : "good0",
@@ -17,7 +17,7 @@ hot = [
     },
     {
         "name" : "IGEN02",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road2",
         "bestseller" : "Good2",
         "comment0" : "good0",
@@ -25,7 +25,7 @@ hot = [
     },
     {
         "name" : "IGEN03",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road3",
         "bestseller" : "Good3",
         "comment0" : "good0",
@@ -33,7 +33,7 @@ hot = [
     },
     {
         "name" : "IGEN04",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road4",
         "bestseller" : "Good4",
         "comment0" : "good0",
@@ -41,7 +41,7 @@ hot = [
     },
     {
         "name" : "IGEN05",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road5",
         "bestseller" : "Good5",
         "comment0" : "good0",
@@ -52,7 +52,7 @@ hot = [
 discount = [
     {
       "name" : "IGEN10",
-      "img" : "../static/img/pingleo.jpg",
+      "img" : "../static/img/default.jpg",
       "address" : "road0",
       "bestseller" : "Good0",
       "comment0" : "good0",
@@ -60,7 +60,7 @@ discount = [
     },
     {
         "name" : "IGEN11",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road1",
         "bestseller" : "Good1",
         "comment0" : "good0",
@@ -68,7 +68,7 @@ discount = [
     },
     {
         "name" : "IGEN12",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road2",
         "bestseller" : "Good2",
         "comment0" : "good0",
@@ -76,7 +76,7 @@ discount = [
     },
     {
         "name" : "IGEN13",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road3",
         "bestseller" : "Good3",
         "comment0" : "good0",
@@ -84,7 +84,7 @@ discount = [
     },
     {
         "name" : "IGEN14",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road4",
         "bestseller" : "Good4",
         "comment0" : "good0",
@@ -92,7 +92,7 @@ discount = [
     },
     {
         "name" : "IGEN15",
-        "img" : "../static/img/pingleo.jpg",
+        "img" : "../static/img/default.jpg",
         "address" : "road5",
         "bestseller" : "Good5",
         "comment0" : "good0",

@@ -9,7 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="../static/js/merchant.js"></script>
-    <link href="../static/css/w3.css" rel="stylesheet">
     <link href="../static/css/merchant.css" rel="stylesheet">
     <link href="../static/css/base.css" rel="stylesheet">
 </head>
@@ -18,15 +17,15 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-2">
-                <div class="w3-sidebar w3-light-grey w3-bar-block">
-                    <h2 class="w3-bar-item">選單</h2>
-                    <a href="#" class="w3-bar-item w3-button"><label>訂單</label></a>
-                    <a href="#" class="w3-bar-item w3-button"><label>優惠</label></a>
-                    <a href="#" class="w3-bar-item w3-button"><label>資料</label></a>
-                    <a href="#" class="w3-bar-item w3-button"><label>菜單</label></a>
-                    <a href="#" class="w3-bar-item w3-button"><label>評價</label></a>
-                    <a href="#" class="w3-bar-item w3-button"><label>頁面</label></a>
+            <div class="col-sm-2 bg-light">
+                <div class="nav flex-column nav-pills nav-fill" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <h3 class="nav_title">選單</h3>
+                    <a class="nav-link sidebar_font center" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">訂單</a>
+                    <a class="nav-link sidebar_font center" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">優惠</a>
+                    <a class="nav-link sidebar_font center" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">資料</a>
+                    <a class="nav-link sidebar_font center" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">菜單</a>
+                    <a class="nav-link sidebar_font center" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">評價</a>
+                    <a class="nav-link sidebar_font center" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">頁面</a>
                 </div>
             </div>
 
@@ -98,6 +97,38 @@
                                         <h5 class="center bold">🔎搜尋訂單</h5> 
                                         <div class="card">
                                             <div>
+                                                <form class="title ">   
+                                                    <label>🔎透過日期搜尋訂單</label>
+                                                        
+                                                    <div class="row">
+                                                        <div class="col-5">
+                                                            <div class="row">
+                                                                <div class="col-1">
+                                                                    <label>起</label>
+                                                                </div>
+                                                                <div class="col-11">
+                                                                    <input type="date" class="form-control" stytle="" id="" name="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-5">
+                                                            <div class="row">
+                                                                <div class="col-1">
+                                                                    <label>迄</label>
+                                                                </div>
+                                                                <div class="col-11">
+                                                                    <input type="date" class="form-control" id="" name="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <button type="submit" class="btn btn-primary">搜尋</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <!--<div>
                                                 <form class="form-inline">
                                                     <label>🔎透過日期搜尋訂單:</label>
                                                     <div class="form-group">
@@ -129,15 +160,29 @@
                                                     </div>
                                                     <button type="submit" class="btn btn-primary">搜尋</button>
                                                 </form>
-                                            </div>
+                                            </div>-->
 
                                             <div>
+                                                <form class="top title">
+                                                    <label>🔎透過編號搜尋訂單</label>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <input name="token" id="token" type="text" placeholder="請輸入編號" class="form-control mx-sm-2">
+                                                        </div>
+                                                        
+                                                        <div class="col">
+                                                            <button type="submit" class="btn btn-primary">搜尋</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!--<div>
                                                 <form class="form-inline top">
                                                     <label>🔎透過編號搜尋訂單:</label>
                                                     <input name="token" id="token" type="text" placeholder="請輸入編號" class="form-control mx-sm-2">
                                                     <button type="submit" class="btn btn-primary">搜尋</button>
                                                 </form>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>  
                                 </div> 
@@ -192,28 +237,44 @@
                                 <div class="card h-100 shadow border-0">
                                     <div class="card-body p-4">
                                         <br>
-                                        <label>店名:</label>
-                                        <input name="shop" id="shop" value="秉霖鮮果屋">
+                                        <div class="form-group">
+                                            <label>店名</label>
+                                            <input class="form-control" name="shop" id="shop" value="秉霖鮮果屋">
+                                        </div>
                                         <br>
-                                        <label>住址:</label>
-                                        <input name="address" id="address" value="台中市">
+                                        <div class="form-group">
+                                            <label>住址</label>
+                                            <input class="form-control" name="address" id="address" value="台中市">
+                                        </div>
                                         <br>
-                                        <label>電話:</label>
-                                        <input name="tel" id="tel" value="0412341234">
+                                        <div class="form-group">
+                                            <label>電話</label>
+                                            <input class="form-control" name="tel" id="tel" value="0412341234">
+                                        </div>
                                         <br>
-                                        <label>管理人:</label>
-                                        <input name="manager" id="manager" value="pingleo桑">
+                                        <div class="form-group">
+                                            <label>管理人</label>
+                                            <input class="form-control" name="manager" id="manager" value="pingleo桑">
+                                        </div>
                                         <br>
-                                        <label>管理人手機:</label>
-                                        <input name="phone" id="phone" value="0912123123">
+                                        <div class="form-group">
+                                            <label>管理人手機</label>
+                                            <input class="form-control" name="phone" id="phone" value="0912123123">
+                                        </div>
                                         <br>
-                                        <label>營業時間:</label>
-                                        <input name="time" id="time" value="24hr">
+                                        <div class="form-group">
+                                            <label>營業時間</label>
+                                            <input class="form-control" name="time" id="time" value="24hr">
+                                        </div>
                                         <br>
-                                        <label>外送與否:</label>
-                                        <input name="waimai" id="waimai" value="是">
+                                        <div class="form-group">
+                                            <label>外送與否</label>
+                                            <input class="form-control" name="waimai" id="waimai" value="是">
+                                        </div>
                                         <br>
+                                        <div class="center">
                                         <button type="submit" class="btn btn-primary">變更</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
