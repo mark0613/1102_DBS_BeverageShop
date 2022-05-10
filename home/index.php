@@ -96,7 +96,7 @@ require("../php/User.php");
                     <div class="my-5 text-center text-xl-start">
                         <h1 class="display-5 fw-bolder text-white mb-2">Welcome to IGEN</h1>
                         <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive
-                            mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!
+                            mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit!
                         </p>
                     </div>
                 </div>
