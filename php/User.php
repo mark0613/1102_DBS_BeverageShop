@@ -28,7 +28,7 @@ class User {
     }
     static function login($account, $password) {
         if (self::isValid($account, $password)) {
-            $select = "SELECT u_id, type FROM users WHERE email='$account' OR u_name='$account'";
+            $select = "SELECT * FROM users WHERE email='$account' OR u_name='$account'";
             $result = Database::$connect->query($select);
             $data = [];
             $token = bin2hex(random_bytes(16));  # 32 bits
@@ -82,13 +82,10 @@ class User {
         if ($type === "customer") {
             $insert = "INSERT INTO customer(u_id) VALUES($u_id)";
         }
-        else if ($type === "customer") {
+        else{
             $insert = "INSERT INTO merchant(u_id) VALUES($u_id)";
         }
-        else {
-            self::$error = "請選擇註冊身分";
-            return False;
-        }
+
         if (Database::$connect->query($insert)) {
             return True;
         }
