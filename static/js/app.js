@@ -8,3 +8,8 @@ $(document).ready(() => {
         format: 'yyyy-mm-dd',
     });
 });
+
+
+$('.datepicker').datepicker({
+    format: 'yyyy-mm-dd',
+});

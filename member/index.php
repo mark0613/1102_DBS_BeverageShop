@@ -24,10 +24,14 @@ require("../php/User.php");
     <script src="../static/js/member.js"></script>
     <link href="../static/css/member.css" rel="stylesheet">
     <link href="../static/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="../static/js/app.js"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
         <a class="navbar-brand" href="#">everageShop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -36,19 +40,7 @@ require("../php/User.php");
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <?php if(!empty($_COOKIE) && !empty($_COOKIE["type"])): ?>
-            <ul class="navbar-nav mr-auto">
-                <?php if($_COOKIE["type"] == "customer"): ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="../member">會員專區</a>
-                </li>
-                <?php elseif($_COOKIE["type"] == "merchant"): ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="../merchant">商家後臺</a>
-                </li>
-                <?php endif; ?>
-            </ul>
-            <?php endif; ?>
+            
 
             <form action="" method="get" class="form-inline navbar-nav pl-0 mr-auto">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -56,6 +48,21 @@ require("../php/User.php");
             </form>
 
             <ul class="navbar-nav ml-auto">
+
+                <?php if(!empty($_COOKIE) && !empty($_COOKIE["type"])): ?>
+                <ul class="navbar-nav mr-auto">
+                    <?php if($_COOKIE["type"] == "customer"): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../member">會員專區</a>
+                    </li>
+                    <?php elseif($_COOKIE["type"] == "merchant"): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../merchant">商家後臺</a>
+                    </li>
+                    <?php endif; ?>
+                </ul>
+                <?php endif; ?>
+
                 <?php if(User::check()): ?>
                 <li class="nav-item">
                     <a class="nav-link" href="../php/logout.php">Logout</a>
@@ -75,9 +82,10 @@ require("../php/User.php");
     <!-- 會員專區 -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 bg-light">
+            <div class="col-2 bg-light sidebar">
                 <div class="nav flex-column nav-pills nav-fill" id="v-pills-tab" role="tablist"
                     aria-orientation="vertical">
+                    <h3 class="nav_title">選單</h3>
                     <a class="nav-link sidebar_font center active" id="v-pills-profile-tab" data-toggle="pill"
                         href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="True">個人資料</a>
                     <a class="nav-link sidebar_font center" id="v-pills-love-tab" data-toggle="pill"
@@ -91,7 +99,7 @@ require("../php/User.php");
                 </div>
             </div>
 
-            <div class="col-sm-10">
+            <div class="col-sm-10 pre-scrollable high">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!--個人資料-->
                     <div class="form-group tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -141,7 +149,12 @@ require("../php/User.php");
                                                     <label>起</label>
                                                 </div>
                                                 <div class="col-11">
-                                                    <input type="date" class="form-control" stytle="" id="" name="">
+                                                    <div class="input-group date" id='datepicker'>
+                                                        <input type="date" class="form-control" />
+                                                        <span class="input-group-addon">
+                                                            <i class="glyphicon glyphicon-calendar"></i>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,7 +164,12 @@ require("../php/User.php");
                                                     <label>迄</label>
                                                 </div>
                                                 <div class="col-11">
-                                                    <input type="date" class="form-control" id="" name="">
+                                                    <div class="input-group date" id='datepicker'>
+                                                        <input type="date" class="form-control" />
+                                                        <span class="input-group-addon">
+                                                            <i class="glyphicon glyphicon-calendar"></i>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

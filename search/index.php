@@ -13,19 +13,46 @@
 </head>
 <body>
     <!-- 搜尋結果 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
+        <a class="navbar-brand" href="#">everageShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form action="" method="get" class="form-inline navbar-nav pl-0 mr-auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../member">會員專區</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../merchant">商家後臺</a>
+                    </li>
+                </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="../php/logout.php">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container-fluid " >
         <div class="row top">
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
-
-
-
-
-
-                
                 <div class="card h-100 shadow border-0">
-                    <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
+                    <img class="card-img-top cover" src="../static/img/default.jpg" alt="..."  />
                     <div class="card-body p-4">
                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                         <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -45,25 +72,13 @@
                         </div>
                     </div>
                     
-                </div>
-
-
-
-
-
-
-                
+                </div>  
             </div>
 
             <div class="col-sm-4">
-
-
-
-
-
-                
+   
             <div class="card h-100 shadow border-0">
-                    <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..."  />
+                    <img class="card-img-top cover" src="../static/img/default.jpg" alt="..."  />
                     <div class="card-body p-4">
                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>                        
                         <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h3 card-title mb-3">IGEN 咖啡屋</div></a>
@@ -84,15 +99,7 @@
                     </div>
                     
                 </div>
-
-
-
-
-
-
-                
             </div>
-
             <div class="col-sm-2"></div>
         </div>
     </div>

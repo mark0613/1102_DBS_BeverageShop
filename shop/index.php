@@ -13,7 +13,39 @@
 </head>
 <body>
     <!-- 飲料店頁面 -->
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
+        <a class="navbar-brand" href="#">everageShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form action="" method="get" class="form-inline navbar-nav pl-0 mr-auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../member">會員專區</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../merchant">商家後臺</a>
+                    </li>
+                </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="../php/logout.php">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <header class="bg-dark py-3">
         <div class="container px-5">
@@ -32,7 +64,7 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                    <img class="img-fluid rounded-3 my-5 cover" src="../static/img/baseball.webp" alt="..." />
+                    <img class="img-fluid rounded-3 my-5 cover" src="../static/img/default.jpg" alt="..." />
                 </div>
             </div>
         </div>

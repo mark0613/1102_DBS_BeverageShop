@@ -32,7 +32,47 @@ if (User::check()) {
 </head>
 
 <body>
+    
     <div class="container-fluid ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
+            <a class="navbar-brand" href="#">everageShop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <?php if(!empty($_SESSION) && !empty($_SESSION["type"])): ?>
+                <ul class="navbar-nav mr-auto">
+                    <?php if($_SESSION["type"] == "customer"): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../member">會員專區</a>
+                    </li>
+                    <?php elseif($_SESSION["type"] == "merchant"): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../merchant">商家後臺</a>
+                    </li>
+                    <?php endif; ?>
+                </ul>
+                <?php endif; ?>
+
+
+
+                <ul class="navbar-nav ml-auto">
+                    <?php if(User::check()): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../php/logout.php">Logout</a>
+                    </li>
+                    <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../register">Register</a>
+                    </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </nav>
+
         <div class="row top">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">

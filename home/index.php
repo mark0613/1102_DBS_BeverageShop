@@ -38,19 +38,7 @@ require("../php/User.php");
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <?php if(!empty($_COOKIE) && !empty($_COOKIE["type"])): ?>
-            <ul class="navbar-nav mr-auto">
-                <?php if($_COOKIE["type"] == "customer"): ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="../member">會員專區</a>
-                </li>
-                <?php elseif($_COOKIE["type"] == "merchant"): ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="../merchant">商家後臺</a>
-                </li>
-                <?php endif; ?>
-            </ul>
-            <?php endif; ?>
+            
 
             <form action="" method="get" class="form-inline navbar-nav pl-0 mr-auto">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -58,6 +46,21 @@ require("../php/User.php");
             </form>
 
             <ul class="navbar-nav ml-auto">
+
+                <?php if(!empty($_COOKIE) && !empty($_COOKIE["type"])): ?>
+                <ul class="navbar-nav mr-auto">
+                    <?php if($_COOKIE["type"] == "customer"): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../member">會員專區</a>
+                    </li>
+                    <?php elseif($_COOKIE["type"] == "merchant"): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../merchant">商家後臺</a>
+                    </li>
+                    <?php endif; ?>
+                </ul>
+                <?php endif; ?>
+
                 <?php if(User::check()): ?>
                 <li class="nav-item">
                     <a class="nav-link" href="../php/logout.php">Logout</a>
