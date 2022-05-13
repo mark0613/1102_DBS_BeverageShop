@@ -1,107 +1,173 @@
 // merchant 優惠、商家資料、菜單、評價(前10筆)
 
 mdiscount = [
-    
+    {
+        "disid"   : "001",
+        "disimg"  : "001.img",
+        "disname" : "買一送一"
+    },
+    {
+        "disid"   : "002",
+        "disimg"  : "001.img",
+        "disname" : "買十送十，打折到你骨折"
+    },
+    {
+        "disid"   : "003",
+        "disimg"  : "001.img",
+        "discount": "買一送一"
+    },
+    {
+        "disid"   : "004",
+        "disimg"  : "001.img",
+        "discount": "滿100打八折"
+    }
 ]
 
 minfor = {
-    "msname"     :"好喝飲料店",
-    "msadd"      :"西屯區100號",
-    "msphone"    :"0412345678",
-    "mmname"     :"pingleo",
-    "mmphone"    :"0912345678",
-    "mstime"     :"8am-8pm",
-    "mdeliver"   :"是"
+    "msname": "好喝飲料店",
+    "msadd": "西屯區100號",
+    "msphone": "0412345678",
+    "mmname": "pingleo",
+    "mmphone": "0912345678",
+    "mstime": "8am-8pm",
+    "mdeliver": "是"
 }
 
 mmenu = [
     {
-
+        "menuname": "奶茶",
+        "menuprice": "20元"
     },
     {
-
+        "menuname": "紅茶",
+        "menuprice": "25元"
+    },
+    {
+        "menuname": "綠茶",
+        "menuprice": "30元"
+    },
+    {
+        "menuname": "烏龍茶",
+        "menuprice": "35元"
+    },
+    {
+        "menuname": "紅茶拿鐵",
+        "menuprice": "35元"
+    },
+    {
+        "menuname": "綠茶拿鐵",
+        "menuprice": "40元"
+    },
+    {
+        "menuname": "好喝的茶",
+        "menuprice": "45元"
+    },
+    {
+        "menuname": "看似好喝的茶",
+        "menuprice": "50元"
     }
 ]
 
 mcomment = [
     {
-        "comname":"shop1",
-        "comherf":"../home/",
-        "comcom" :"good1",
-        "comtime":"2001/12/21 00:00:00"
+        "comname": "shop1",
+        "comherf": "../home/",
+        "comcom": "good1",
+        "comtime": "2001/12/21 00:00:00"
     },
     {
-        "comname":"shop2",
-        "comherf":"../home/",
-        "comcom" :"good2",
-        "comtime":"2001/12/22 00:00:00"
+        "comname": "shop2",
+        "comherf": "../home/",
+        "comcom": "good2",
+        "comtime": "2001/12/22 00:00:00"
     },
     {
-        "comname":"shop3",
-        "comherf":"../home/",
-        "comcom" :"good3",
-        "comtime":"2001/12/24 00:00:00"
+        "comname": "shop3",
+        "comherf": "../home/",
+        "comcom": "good3",
+        "comtime": "2001/12/24 00:00:00"
     },
     {
-        "comname":"shop4",
-        "comherf":"../home/",
-        "comcom" :"good4",
-        "comtime":"2001/12/23 00:00:00"
+        "comname": "shop4",
+        "comherf": "../home/",
+        "comcom": "good4",
+        "comtime": "2001/12/23 00:00:00"
     },
     {
-        "comname":"shop5",
-        "comherf":"../home/",
-        "comcom" :"good5",
-        "comtime":"2001/12/26 00:00:00"
+        "comname": "shop5",
+        "comherf": "../home/",
+        "comcom": "good5",
+        "comtime": "2001/12/26 00:00:00"
     },
     {
-        "comname":"shop6",
-        "comherf":"../home/",
-        "comcom" :"good6",
-        "comtime":"2001/12/25 00:00:00"
+        "comname": "shop6",
+        "comherf": "../home/",
+        "comcom": "good6",
+        "comtime": "2001/12/25 00:00:00"
     },
     {
-        "comname":"shop7",
-        "comherf":"../home/",
-        "comcom" :"good7",
-        "comtime":"2001/12/27 01:20:00"
+        "comname": "shop7",
+        "comherf": "../home/",
+        "comcom": "good7",
+        "comtime": "2001/12/27 01:20:00"
     },
     {
-        "comname":"shop8",
-        "comherf":"../home/",
-        "comcom" :"good8",
-        "comtime":"2001/12/27 01:00:00"
+        "comname": "shop8",
+        "comherf": "../home/",
+        "comcom": "good8",
+        "comtime": "2001/12/27 01:00:00"
     },
     {
-        "comname":"shop9",
-        "comherf":"../home/",
-        "comcom" :"good9",
-        "comtime":"2001/12/1 00:00:00"
+        "comname": "shop9",
+        "comherf": "../home/",
+        "comcom": "good9",
+        "comtime": "2001/12/1 00:00:00"
     },
     {
-        "comname":"shop10",
-        "comherf":"../home/",
-        "comcom" :"good10",
-        "comtime":"2001/12/2 00:00:00"
+        "comname": "shop10",
+        "comherf": "../home/",
+        "comcom": "good10",
+        "comtime": "2001/12/2 00:00:00"
     },
     {
-        "comname":"shop11",
-        "comherf":"../home/",
-        "comcom" :"good11",
-        "comtime":"2001/12/5 00:00:00"
+        "comname": "shop11",
+        "comherf": "../home/",
+        "comcom": "good11",
+        "comtime": "2001/12/5 00:00:00"
     },
     {
-        "comname":"shop12",
-        "comherf":"../home/",
-        "comcom" :"good12",
-        "comtime":"2001/12/4 00:00:00"
+        "comname": "shop12",
+        "comherf": "../home/",
+        "comcom": "good12",
+        "comtime": "2001/12/4 00:00:00"
     }
 ]
 
 
-$(document).ready(function(){
+function sortdate(a, b) {
+    return new Date(a.comtime).getTime() - new Date(b.comtime).getTime();
+}
 
-    //change member information
+
+$(document).ready(function () {
+
+    //change merchant discount
+    for (let i=0;i<mdiscount.length;i++){
+        // ($('#v-pills-rate').find('label')[0]).textContent = "尚無評價喔~";
+        ($('#v-pills-discount > div.container-fluid > div.row > div.col-sm-8 > form > div.h-100 > div.card-body')).append(`
+            <div class="card border-dark">
+                <div class="card-body p-4">
+                    <input type="checkbox">
+                    <a class="text-decoration-none link-dark" href="#!" target="_blank"><label>${mdiscount[i]["disname"]}</label></a>
+                </div>
+            </div>
+            <br>
+        `)
+    }
+
+
+
+    //change merchant information
     ($("input[id][name$='shop']")).val(`${minfor["msname"]}`);
     ($("input[id][name$='address']")).val(`${minfor["msadd"]}`);
     ($("input[id][name$='tel']")).val(`${minfor["msphone"]}`);
@@ -109,5 +175,78 @@ $(document).ready(function(){
     ($("input[id][name$='phone']")).val(`${minfor["mmphone"]}`);
     ($("input[id][name$='time']")).val(`${minfor["mstime"]}`);
     ($("input[id][name$='waimai']")).val(`${minfor["mdeliver"]}`);
-   
-})
+
+    //change merchant menu
+    var menuarr = $(".center > label");
+    $('.card-deck').html("");
+    if (mmenu.length == 0) {
+        $('.card-deck').html("<div><p>尚無菜單</p></div>");
+    }
+    else {
+        for (let i = 0; i < mmenu.length; i++) {
+            $('.card-deck').append(`
+                <div class="card h-100 shadow border-0">
+                    <div class="card-body p-4">
+                        <div class="center">
+                            <label>${mmenu[i]["menuname"]}</label>
+                            <label>${mmenu[i]["menuprice"]}</label>
+                            <button type="submit" class="btn btn-primary">編輯</button>
+                            <button type="submit" class="btn btn-danger">刪除</button>
+                        </div>
+                    </div>
+                </div>
+            `)
+        }
+    }
+
+    //here to show mcomment record
+    mcomment.sort(sortdate).reverse()    //comment sort by datetime
+
+    if (mcomment.length == 0) {
+        ($('#v-pills-rate').find('label')[0]).textContent = "尚無評價喔~";
+    }
+    else {
+        ($('#v-pills-rate').find('label')[0]).textContent = mcomment[0]["comcom"];
+        for (let i = 1; i < 10; i++) {
+            $('#v-pills-rate > div.container-fluid').append(`
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-body p-4">
+                                <label>${mcomment[i]["comcom"]}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            `)
+            if (i == 9){
+                $('#v-pills-rate > div.container-fluid').append(`
+                    <div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                `)
+            }
+        }
+    }
+
+});
+
+                    
