@@ -126,12 +126,11 @@ $(document).ready(function(){
     comment.sort(sortdate)    //comment sort by datetime
 
     if (comment.length == 0){
-        $('.container-fluid:nth(1)').html("");
-        $('.container-fluid:nth(1)').html(
-            `
-            <div class="container-fluid ">
-                <div class="row top">
-                    <div class="col-sm-2"></div>
+
+
+        $(`.container-fluid:nth(1)`).prepend(`
+            <div class="row top">
+                <div class="col-sm-2"></div>
                     <div class="col-sm-8">
                         <div class="card h-100 shadow border-0">
                             <div class="card-body p-4">                       
@@ -142,25 +141,9 @@ $(document).ready(function(){
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
-                <div>
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">«</span>
-                        </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">»</span>
-                        </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            </div>
-            `
-        );
+            <div>
+        `)
+
     }
     else{
         for (let i=0; i<10 && i<comment.length; i++){
