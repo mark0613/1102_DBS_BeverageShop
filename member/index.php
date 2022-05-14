@@ -213,7 +213,8 @@ require("../php/User.php");
                     <div class="tab-pane fade" id="v-pills-comment" role="tabpanel" aria-labelledby="v-pills-comment-tab">
                         <label class="title">📝評價紀錄</label>
                         <div class="container-fluid ">
-                            <div class="row top">
+                            
+                            <!-- <div class="row top">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-8">
                                     <div class="card h-100 shadow border-0">
@@ -351,7 +352,7 @@ require("../php/User.php");
                                     </div>
                                 </div>
                                 <div class="col-sm-2"></div>
-                            </div>
+                            </div> -->
     
                             <div>
                                 <nav aria-label="Page navigation">

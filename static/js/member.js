@@ -123,7 +123,7 @@ $(document).ready(function(){
         }
     }
     //here to show comment record
-    comment.sort(sortdate).reverse()    //comment sort by datetime
+    comment.sort(sortdate)    //comment sort by datetime
 
     if (comment.length == 0){
         $('.container-fluid:nth(1)').html("");
@@ -163,9 +163,22 @@ $(document).ready(function(){
         );
     }
     else{
-        for (let i=0; i<10; i++){
-            ($(`.container-fluid:nth(1)`).find('h3')[i]).textContent    = `${comment[i]["comname"]}`;
-            ($(`.container-fluid:nth(1)`).find('label')[i]).textContent = `${comment[i]["comcom"]}`;
+        for (let i=0; i<10 && i<comment.length; i++){
+            $(`.container-fluid:nth(1)`).prepend(`
+                <div class="row top">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-body p-4">
+                                <h3>${comment[i]["comname"]}</h3>
+
+                                <label>${comment[i]["comcom"]}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            `)
         }
     }
 })
