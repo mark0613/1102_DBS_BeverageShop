@@ -137,6 +137,7 @@ function sortdate(a, b) {
 }
 
 
+
 $(document).ready(function () {
 
     //change shop discount
@@ -172,31 +173,39 @@ $(document).ready(function () {
     }
 
     else{
-        for (let i = 0; i < smenu.length; i++) {
-            // if (i%3==0){
-            //     ($('.container-fluid:first > div.row.top > .col-sm-8:first')).append(`
-            //         <div class="card-deck">
-            //     `);
-            // }
-            ($('.container-fluid:first > div.row.top > .col-sm-8:first > .card-deck')).append(`
-                <div class="card h-100 shadow border-0">
-                    <div class="card-body p-4">
-                        <div class="center">
-                            <label>${smenu[i]["menuname"]}</label>
-                            <label>${smenu[i]["menuprice"]}</label>
-                            <input type='button' value='-' class="btn btn-outline-danger btn-sm">
-                            <input type='text' name='quantity' value='0' class="in">
-                            <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+
+        var html = "";
+        if (smenu.length%3 == 0)    var slen = smenu.length/3;
+        else                        var slen = smenu.length/3+1;
+
+        for (let i = 0; i<slen; i++){
+
+            html += `<div class="card-deck">`;
+
+            for (let j = i*3 ; j < i*3+3 && j < smenu.length ; j++){
+                html +=  `
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body p-4">
+                            <div class="center">
+                                <label>${smenu[j]["menuname"]}</label>
+                                <label>${smenu[j]["menuprice"]}</label>
+                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                <input type='text' name='quantity' value='0' class="in">
+                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                            </div>
                         </div>
                     </div>
-                </div>
-            `);
-            // if (i%3==2 || i==smenu.length-1){
-            //     ($('.container-fluid:first > div.row.top > .col-sm-8:first')).append(`
-            //             </div>
-            //     `);
-            // }
+                `;
+            }
+            
+            html += `</div>`;
+
+            ($('.container-fluid:first > div.row.top > .col-sm-8:first')).append(`${html}`);
+
+            html = "";
         }
+
+            
     }
 
 

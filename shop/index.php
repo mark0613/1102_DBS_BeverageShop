@@ -106,21 +106,8 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 
-                <div class="card-deck">
-                    <!-- <div class="card h-100 shadow border-0">
-                        <div class="card-body p-4">
-                            <div class="center">
-                                <label>奶茶</label>
-                                <label>25元</label>
-                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
-                                <input type='text' name='quantity' value='0' class="in">
-                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
-                            </div>
-                        </div>
-                    </div>
 
-
-
+                <!-- <div class="card-deck">
                     <div class="card h-100 shadow border-0">
                         <div class="card-body p-4">
                             <div class="center">
@@ -145,9 +132,24 @@
                                 <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
                             </div>
                         </div>
-                    </div> -->
-                    
-                </div>
+                    </div>
+
+
+
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body p-4">
+                            <div class="center">
+                                <label>奶茶</label>
+                                <label>25元</label>
+                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                <input type='text' name='quantity' value='0' class="in">
+                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
             </div>
             <div class="col-sm-2"></div>
         </div>
