@@ -207,9 +207,6 @@ require("../php/User.php");
                         <label class="title">❤️最愛店家</label>
 
                         <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action">秉霖鮮果站</a>
-                            <a href="#" class="list-group-item list-group-item-action">秉霖鮮果站</a>
-                            <a href="#" class="list-group-item list-group-item-action">秉霖鮮果站</a>
                         </div>
                     </div>
 
@@ -218,147 +215,6 @@ require("../php/User.php");
                         aria-labelledby="v-pills-comment-tab">
                         <label class="title">📝評價紀錄</label>
                         <div class="container-fluid ">
-
-                            <!-- <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-    
-                            <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-    
-                            <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-    
-                            <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-    
-                            <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-    
-                            <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-    
-                            <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-    
-                            <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-    
-                            <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-    
-                            <div class="row top">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h3>勳哥飲料店</h3>
-    
-                                            <label>竣任喝過都說讚</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div> -->
-
                             <div>
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-center">
@@ -385,11 +241,6 @@ require("../php/User.php");
             </div>
         </div>
     </div>
-
-
-
-
-
 </body>
 
 </html>
