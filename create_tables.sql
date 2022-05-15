@@ -61,14 +61,13 @@ CREATE TABLE order_beverage(
 );
 
 CREATE TABLE comments(
-    c_id INT,
-    m_id INT,
-    id INT,
+    c_id INT NOT NULL,
+    m_id INT NOT NULL,
     stars INT,
     content TEXT,
     time DATETIME,
     
-    PRIMARY KEY(c_id, m_id, id),
+    PRIMARY KEY(c_id, m_id),
     FOREIGN KEY(m_id) REFERENCES merchant(u_id),
     FOREIGN KEY(c_id) REFERENCES customer(u_id)
 );
@@ -108,3 +107,13 @@ CREATE TABLE announcement(
     PRIMARY KEY(a_id, m_id),
     FOREIGN KEY(m_id) REFERENCES merchant(u_id)
 );
+
+CREATE TABLE loveshop(
+    l_id INT AUTO_INCREMENT,
+    c_id INT,
+    m_id INT,
+
+    PRIMARY KEY(l_id, c_id, m_id),
+    FOREIGN KEY(c_id) REFERENCES customer(u_id),
+    FOREIGN KEY(m_id) REFERENCES merchant(u_id)
+)

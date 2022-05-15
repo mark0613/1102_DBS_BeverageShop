@@ -21,17 +21,25 @@ require("../php/User.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
+    </script>
+
     <script src="../static/js/member.js"></script>
     <link href="../static/css/member.css" rel="stylesheet">
     <link href="../static/css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="../static/js/app.js"></script>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
         <a class="navbar-brand" href="#">everageShop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -40,7 +48,7 @@ require("../php/User.php");
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
+
 
             <form action="" method="get" class="form-inline navbar-nav pl-0 mr-auto">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -91,8 +99,7 @@ require("../php/User.php");
                     <a class="nav-link sidebar_font center" id="v-pills-love-tab" data-toggle="pill"
                         href="#v-pills-love" role="tab" aria-controls="v-pills-love" aria-selected="false">最愛店家</a>
                     <a class="nav-link sidebar_font center" id="v-pills-record-tab" data-toggle="pill"
-                        href="#v-pills-record" role="tab" aria-controls="v-pills-record"
-                        aria-selected="false">訂單紀錄</a>
+                        href="#v-pills-record" role="tab" aria-controls="v-pills-record" aria-selected="false">訂單紀錄</a>
                     <a class="nav-link sidebar_font center" id="v-pills-comment-tab" data-toggle="pill"
                         href="#v-pills-comment" role="tab" aria-controls="v-pills-comment"
                         aria-selected="false">評價紀錄</a>
@@ -102,41 +109,38 @@ require("../php/User.php");
             <div class="col-sm-10 pre-scrollable high">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!--個人資料-->
-                    <div class="form-group tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="form-group tab-pane fade show active" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
                         <label class="title">😀個人資料</label>
                         <br>
                         <div class="form-group">
                             <label>Username</label>
-                            <input class="form-control" name="username" id="username" value="廖一勳">
+                            <input class="form-control" name="username" id="username">
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Email</label>
-                            <input class="form-control" name="email" id="email" value="ggininder606@gmail.com">
+                            <input class="form-control" name="email" id="email">
                         </div>
                         <br>
                         <div class="form-group">
-                            <label>ID</label>
-                            <input class="form-control" name="id" id="id" value="IGEN">
+                            <label>Name</label>
+                            <input class="form-control" name="name" id="name">
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Phone</label>
-                            <input class="form-control" name="phone" id="phone" value="0912123123">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>ChangePassword</label>
-                            <input class="form-control" name="password" id="password" placeholder="輸入新密碼">
+                            <input class="form-control" name="phone" id="phone">
                         </div>
                         <br>
                         <div class="center">
-                            <button type="submit" class="btn btn-primary">變更</button>
+                            <button type="submit" class="btn btn-primary">儲存變更</button>
                         </div>
                     </div>
 
                     <!--訂單記錄-->
-                    <div class="tab-pane fade show active" id="v-pills-record" role="tabpanel" aria-labelledby="v-pills-record-tab">
+                    <div class="tab-pane fade" id="v-pills-record" role="tabpanel"
+                        aria-labelledby="v-pills-record-tab">
                         <div>
                             <label class="title">📋訂單紀錄</label>
                             <div>
@@ -177,7 +181,7 @@ require("../php/User.php");
                                             <button type="submit" class="btn btn-primary">搜尋</button>
                                         </div>
                                     </div>
-    
+
                                 </form>
                             </div>
                         </div>
@@ -189,7 +193,7 @@ require("../php/User.php");
                                         <input name="token" id="token" type="text" placeholder="請輸入編號"
                                             class="form-control mx-sm-2">
                                     </div>
-    
+
                                     <div class="col">
                                         <button type="submit" class="btn btn-primary">搜尋</button>
                                     </div>
@@ -197,23 +201,24 @@ require("../php/User.php");
                             </form>
                         </div>
                     </div>
-    
+
                     <!--最愛店家-->
                     <div class="tab-pane fade" id="v-pills-love" role="tabpanel" aria-labelledby="v-pills-love-tab">
                         <label class="title">❤️最愛店家</label>
-    
+
                         <div class="list-group">
                             <a href="#" class="list-group-item list-group-item-action">秉霖鮮果站</a>
                             <a href="#" class="list-group-item list-group-item-action">秉霖鮮果站</a>
                             <a href="#" class="list-group-item list-group-item-action">秉霖鮮果站</a>
                         </div>
                     </div>
-    
+
                     <!--評價-->
-                    <div class="tab-pane fade" id="v-pills-comment" role="tabpanel" aria-labelledby="v-pills-comment-tab">
+                    <div class="tab-pane fade" id="v-pills-comment" role="tabpanel"
+                        aria-labelledby="v-pills-comment-tab">
                         <label class="title">📝評價紀錄</label>
                         <div class="container-fluid ">
-                            
+
                             <!-- <div class="row top">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-8">
@@ -353,7 +358,7 @@ require("../php/User.php");
                                 </div>
                                 <div class="col-sm-2"></div>
                             </div> -->
-    
+
                             <div>
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-center">
@@ -373,7 +378,7 @@ require("../php/User.php");
                                     </ul>
                                 </nav>
                             </div>
-    
+
                         </div>
                     </div>
                 </div>
