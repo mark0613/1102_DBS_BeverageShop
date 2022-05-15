@@ -1,20 +1,3 @@
-loveshop = 
-[
-    {
-        "shopname":"shop1",
-        "shopherf":"../home/"
-    },
-    {
-        "shopname":"shop2",
-        "shopherf":"../home/"
-    },
-    {
-        "shopname":"shop3",
-        "shopherf":"../home/"
-    }
-]
-
-
 function sortdate(a, b){
     return new Date(a.comtime).getTime() - new Date(b.comtime).getTime();
 }
@@ -32,6 +15,30 @@ function showUserInfo() {
                     ($("#email")).val(`${userinfo["email"]}`);
                     ($("#name")).val(`${userinfo["name"]}`);
                     ($("#phone")).val(`${userinfo["phone"]}`);
+                }
+            }
+        }
+    )
+}
+
+function showLoveShop() {
+    $.post(
+        "../php/getLoveShop.php",
+        "",
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    let loveshop = response["data"];
+                    var shoplen = loveshop.length
+                    if (shoplen == 0){
+                        $('.list-group').html(`<a href="../home/" class="list-group-item list-group-item-action">前往首頁添加最愛商家</a>`);
+                    }
+                    else{
+                        $('.list-group').html("");
+                        for (let i = 0 ; i < shoplen; i++){
+                            $('.list-group').append(`<a href="#" class="list-group-item list-group-item-action">${loveshop[i]["shopname"]}</a>`); 
+                        }
+                    }
                 }
             }
         }
@@ -95,19 +102,10 @@ $(document).ready(function(){
     //show user information
     showUserInfo();
 
-    //here to start show love shop
-    var shoplen = loveshop.length
-    if (shoplen == 0){
-        $('.list-group').html(`<a href="../home/" class="list-group-item list-group-item-action">前往首頁添加最愛商家</a>`);
-    }
-    else{
-        $('.list-group').html("");
-        for (let i = 0 ; i < shoplen; i++){
-            $('.list-group').append(`<a href="${loveshop[i]["shopherf"]}" class="list-group-item list-group-item-action">${loveshop[i]["shopname"]}</a>`); 
-        }
-    }
+    //show love shop
+    showLoveShop()
 
-    //here to show comment record
+    //show my comment record
     showComment();
 })
 

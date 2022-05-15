@@ -108,7 +108,7 @@ CREATE TABLE announcement(
     FOREIGN KEY(m_id) REFERENCES merchant(u_id)
 );
 
-CREATE TABLE loveshop(
+CREATE TABLE love_shop(
     l_id INT AUTO_INCREMENT,
     c_id INT,
     m_id INT,

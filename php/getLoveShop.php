@@ -14,13 +14,11 @@ if (!empty($_SESSION["type"]) && $_SESSION["type"]==="customer") {
     $response["status"] = "success";
     $data = [];
     $u_id = $_SESSION["id"];
-    $getInfo = "SELECT u_name, email, c_name, c_phone FROM users, customer WHERE users.u_id=customer.u_id AND users.u_id='$u_id'";
+    $getInfo = "SELECT m_name FROM merchant, love_shop WHERE u_id=m_id AND c_id='$u_id'";
     $result = Database::$connect->query($getInfo);
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-        $data["username"] = $row["u_name"];
-        $data["email"] = $row["email"];
-        $data['name'] = $row["c_name"];
-        $data["phone"] = $row["c_phone"];
+        $tmp = ["shopname" => $row["m_name"]];
+        array_push($data, $tmp);
     }
     $response["data"] = $data;
 }
