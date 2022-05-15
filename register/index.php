@@ -66,7 +66,7 @@ if (User::check()) {
                     </li>
                     <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="../register">Register</a>
+                        <a class="nav-link" href="../login">Login</a>
                     </li>
                     <?php endif; ?>
                 </ul>
