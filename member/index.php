@@ -144,7 +144,7 @@ require("../php/User.php");
                         <div>
                             <label class="title">📋訂單紀錄</label>
                             <div>
-                                <form class="title ">
+                                <form method="GET" action="../php/date_order.php"class="title ">
                                     <label>🔎透過日期搜尋訂單</label>
                                     <div class="row">
                                         <div class="col-5">
@@ -153,8 +153,8 @@ require("../php/User.php");
                                                     <label>起</label>
                                                 </div>
                                                 <div class="col-11">
-                                                    <div class="input-group date" id='datepicker'>
-                                                        <input type="date" class="form-control" />
+                                                    <div class="input-group date" id='s_datepicker'>
+                                                        <input type="date" name='s_datepicker' class="form-control" />
                                                         <span class="input-group-addon">
                                                             <i class="glyphicon glyphicon-calendar"></i>
                                                         </span>
@@ -168,8 +168,8 @@ require("../php/User.php");
                                                     <label>迄</label>
                                                 </div>
                                                 <div class="col-11">
-                                                    <div class="input-group date" id='datepicker'>
-                                                        <input type="date" class="form-control" />
+                                                    <div class="input-group date" id='e_datepicker'>
+                                                        <input type="date" name='e_datepicker' class="form-control" />
                                                         <span class="input-group-addon">
                                                             <i class="glyphicon glyphicon-calendar"></i>
                                                         </span>
@@ -186,7 +186,7 @@ require("../php/User.php");
                             </div>
                         </div>
                         <div>
-                            <form class="top title">
+                            <form method="GET" action="../php/o_id_order.php" class="top title">
                                 <label>🔎透過編號搜尋訂單</label>
                                 <div class="row">
                                     <div class="col">
