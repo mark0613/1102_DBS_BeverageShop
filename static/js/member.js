@@ -98,6 +98,31 @@ function showComment() {
     )
 }
 
+function saveProfile() {
+    let data = {
+        "email" : $("#email").val(),
+        "username" : $("#username").val(),
+        "name" : $("#name").val(),
+        "phone" : $("#phone").val(),
+    }
+    $.post(
+        "../php/updateMemberProfile.php",
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    alert("儲存成功");
+                    window.location.reload();
+                }
+                else {
+                    console.log(response["error"]);
+                }
+            }
+
+        }
+    )
+}
+
 $(document).ready(function(){
     //show user information
     showUserInfo();
@@ -107,5 +132,9 @@ $(document).ready(function(){
 
     //show my comment record
     showComment();
+
+    $("#save").on('click', function() {
+        saveProfile();
+    })
 })
 

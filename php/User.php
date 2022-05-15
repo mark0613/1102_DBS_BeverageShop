@@ -80,10 +80,10 @@ class User {
             $u_id = $row["u_id"];
         }
         if ($type === "customer") {
-            $insert = "INSERT INTO customer(u_id) VALUES($u_id)";
+            $insert = "INSERT INTO customer(u_id, c_phone) VALUES($u_id)";
         }
         else{
-            $insert = "INSERT INTO merchant(u_id) VALUES($u_id)";
+            $insert = "INSERT INTO merchant(u_id, m_phone) VALUES($u_id)";
         }
 
         if (Database::$connect->query($insert)) {

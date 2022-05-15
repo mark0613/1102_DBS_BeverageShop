@@ -2,6 +2,9 @@
 
 session_start(); 
 require("../php/User.php");
+if (!User::check()) {
+    header("Location: ../");
+}
 
 ?>
 
@@ -111,31 +114,33 @@ require("../php/User.php");
                     <!--個人資料-->
                     <div class="form-group tab-pane fade show active" id="v-pills-profile" role="tabpanel"
                         aria-labelledby="v-pills-profile-tab">
-                        <label class="title">😀個人資料</label>
-                        <br>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input class="form-control" name="username" id="username">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input class="form-control" name="email" id="email">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" name="name" id="name">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input class="form-control" name="phone" id="phone">
-                        </div>
-                        <br>
-                        <div class="center">
-                            <button type="submit" class="btn btn-primary">儲存變更</button>
-                        </div>
+                        <form action="" method="post">
+                            <label class="title">😀個人資料</label>
+                            <br>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input class="form-control" name="username" id="username">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input class="form-control" name="email" id="email">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" name="name" id="name">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input class="form-control" name="phone" id="phone">
+                            </div>
+                            <br>
+                            <div class="center">
+                                <button type="button" class="btn btn-primary" id="save">儲存變更</button>
+                            </div>
+                        </form>
                     </div>
 
                     <!--訂單記錄-->
@@ -186,7 +191,7 @@ require("../php/User.php");
                             </div>
                         </div>
                         <div>
-                            <form method="GET" action="../php/o_id_order.php" class="top title">
+                            <form method="GET" action="../php/getOrderById.php" class="top title">
                                 <label>🔎透過編號搜尋訂單</label>
                                 <div class="row">
                                     <div class="col">
