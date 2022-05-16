@@ -80,9 +80,22 @@ function showComment() {
                                         <div class="card h-100 shadow border-0">
                                             <div class="card-body p-4">
                                                 <h3><a href="#">${comment[i]["m_name"]}</a></h3>
-                                                <label>${comment[i]["content"]}</label>
+                                                <p class="comment-content">${comment[i]["content"]}</p class="comment-content">
                                                 <br>
-                                                <label>stars : ${comment[i]["stars"]}(待改)</label>
+                                                <div class="stars">
+                                                    <form action="">
+                                                        <input class="star star-5" id="star-5-${i}" type="radio" name="star" value="5">
+                                                        <label class="star star-5" for="star-5-${i}"></label>
+                                                        <input class="star star-4" id="star-4-${i}" type="radio" name="star" value="4">
+                                                        <label class="star star-4" for="star-4-${i}"></label>
+                                                        <input class="star star-3" id="star-3-${i}" type="radio" name="star" value="3">
+                                                        <label class="star star-3" for="star-3-${i}"></label>
+                                                        <input class="star star-2" id="star-2-${i}" type="radio" name="star" value="2">
+                                                        <label class="star star-2" for="star-2-${i}"></label>
+                                                        <input class="star star-1" id="star-1-${i}" type="radio" name="star" value="1">
+                                                        <label class="star star-1" for="star-1-${i}"></label>
+                                                    </form>
+                                                </div>
                                                 <small class="form-text text-muted">${comment[i]["time"]}</small>
                                             </div>
                                         </div>
@@ -90,6 +103,7 @@ function showComment() {
                                     <div class="col-sm-2"></div>
                                 </div>
                             `)
+                            $(`input[name="star"][id=star-${comment[i]["stars"]}-${i}]`).prop("checked", true)
                         }
                     }
                 }
@@ -133,6 +147,7 @@ $(document).ready(function(){
     //show my comment record
     showComment();
 
+    // save user profile change
     $("#save").on('click', function() {
         saveProfile();
     })
