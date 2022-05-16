@@ -77,21 +77,6 @@ require("../php/User.php");
         </div>
     </nav>
 
-
-    <!--
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    -->
-
-
-
-
-
     <header class="bg-dark py-5">
         <div class="container px-5">
             <div class="row gx-5 align-items-center justify-content-center">

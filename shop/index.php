@@ -1,3 +1,10 @@
+<?php
+
+session_start(); 
+require("../php/User.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,34 +23,48 @@
     <!-- 飲料店頁面 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
-        <a class="navbar-brand" href="#">everageShop</a>
+        <a class="navbar-brand" href="../">everageShop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form action="" method="get" class="form-inline navbar-nav pl-0 mr-auto">
+            
+
+            <form action="../search" method="get" class="form-inline navbar-nav pl-0 mr-auto">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
+
             <ul class="navbar-nav ml-auto">
+
+                <?php if(!empty($_COOKIE) && !empty($_COOKIE["type"])): ?>
                 <ul class="navbar-nav mr-auto">
+                    <?php if($_COOKIE["type"] == "customer"): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="../member">會員專區</a>
                     </li>
+                    <?php elseif($_COOKIE["type"] == "merchant"): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="../merchant">商家後臺</a>
                     </li>
+                    <?php endif; ?>
                 </ul>
+                <?php endif; ?>
+
+                <?php if(User::check()): ?>
                 <li class="nav-item">
                     <a class="nav-link" href="../php/logout.php">Logout</a>
                 </li>
+                <?php else: ?>
                 <li class="nav-item">
                     <a class="nav-link" href="../register">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../login">Login</a>
                 </li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
