@@ -16,7 +16,7 @@ input.star {
 
 label.star {
     float: right;
-    padding: 10px;
+    padding: 0 10px 0 0;
     font-size: 20px;
     color: #4A148C;
     transition: all .2s;
