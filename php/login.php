@@ -16,4 +16,6 @@ if (!empty($_REQUEST["account"]) && !empty($_REQUEST["password"])) {
 else {
     $response["error"] = "帳號或密碼為空";
 }
-echo json_encode($response);
+
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode($response, JSON_UNESCAPED_UNICODE);

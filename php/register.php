@@ -25,4 +25,6 @@ if (!empty($_REQUEST["email"]) && !empty($_REQUEST["username"])
 else {
     $response["error"] = "不能有任何資料為空";
 }
-echo json_encode($response);
+
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode($response, JSON_UNESCAPED_UNICODE);

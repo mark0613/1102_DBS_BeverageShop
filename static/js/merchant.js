@@ -68,89 +68,180 @@ mmenu = [
     }
 ]
 
-mcomment = [
-    {
-        "comname": "shop1",
-        "comherf": "../home/",
-        "comcom": "good1",
-        "comtime": "2001/12/21 00:00:00"
-    },
-    {
-        "comname": "shop2",
-        "comherf": "../home/",
-        "comcom": "good2",
-        "comtime": "2001/12/22 00:00:00"
-    },
-    {
-        "comname": "shop3",
-        "comherf": "../home/",
-        "comcom": "good3",
-        "comtime": "2001/12/24 00:00:00"
-    },
-    {
-        "comname": "shop4",
-        "comherf": "../home/",
-        "comcom": "good4",
-        "comtime": "2001/12/23 00:00:00"
-    },
-    {
-        "comname": "shop5",
-        "comherf": "../home/",
-        "comcom": "good5",
-        "comtime": "2001/12/26 00:00:00"
-    },
-    {
-        "comname": "shop6",
-        "comherf": "../home/",
-        "comcom": "good6",
-        "comtime": "2001/12/25 00:00:00"
-    },
-    {
-        "comname": "shop7",
-        "comherf": "../home/",
-        "comcom": "good7",
-        "comtime": "2001/12/27 01:20:00"
-    },
-    {
-        "comname": "shop8",
-        "comherf": "../home/",
-        "comcom": "good8",
-        "comtime": "2001/12/27 01:00:00"
-    },
-    {
-        "comname": "shop9",
-        "comherf": "../home/",
-        "comcom": "good9",
-        "comtime": "2001/12/1 00:00:00"
-    },
-    {
-        "comname": "shop10",
-        "comherf": "../home/",
-        "comcom": "good10",
-        "comtime": "2001/12/2 00:00:00"
-    },
-    {
-        "comname": "shop11",
-        "comherf": "../home/",
-        "comcom": "good11",
-        "comtime": "2001/12/5 00:00:00"
-    },
-    {
-        "comname": "shop12",
-        "comherf": "../home/",
-        "comcom": "good12",
-        "comtime": "2001/12/4 00:00:00"
-    }
-]
+// comment = [
+//     {
+//         "comname": "shop1",
+//         "comherf": "../home/",
+//         "comcom": "good1",
+//         "comtime": "2001/12/21 00:00:00"
+//     },
+//     {
+//         "comname": "shop2",
+//         "comherf": "../home/",
+//         "comcom": "good2",
+//         "comtime": "2001/12/22 00:00:00"
+//     },
+//     {
+//         "comname": "shop3",
+//         "comherf": "../home/",
+//         "comcom": "good3",
+//         "comtime": "2001/12/24 00:00:00"
+//     },
+//     {
+//         "comname": "shop4",
+//         "comherf": "../home/",
+//         "comcom": "good4",
+//         "comtime": "2001/12/23 00:00:00"
+//     },
+//     {
+//         "comname": "shop5",
+//         "comherf": "../home/",
+//         "comcom": "good5",
+//         "comtime": "2001/12/26 00:00:00"
+//     },
+//     {
+//         "comname": "shop6",
+//         "comherf": "../home/",
+//         "comcom": "good6",
+//         "comtime": "2001/12/25 00:00:00"
+//     },
+//     {
+//         "comname": "shop7",
+//         "comherf": "../home/",
+//         "comcom": "good7",
+//         "comtime": "2001/12/27 01:20:00"
+//     },
+//     {
+//         "comname": "shop8",
+//         "comherf": "../home/",
+//         "comcom": "good8",
+//         "comtime": "2001/12/27 01:00:00"
+//     },
+//     {
+//         "comname": "shop9",
+//         "comherf": "../home/",
+//         "comcom": "good9",
+//         "comtime": "2001/12/1 00:00:00"
+//     },
+//     {
+//         "comname": "shop10",
+//         "comherf": "../home/",
+//         "comcom": "good10",
+//         "comtime": "2001/12/2 00:00:00"
+//     },
+//     {
+//         "comname": "shop11",
+//         "comherf": "../home/",
+//         "comcom": "good11",
+//         "comtime": "2001/12/5 00:00:00"
+//     },
+//     {
+//         "comname": "shop12",
+//         "comherf": "../home/",
+//         "comcom": "good12",
+//         "comtime": "2001/12/4 00:00:00"
+//     }
+// ]
 
 
 function sortdate(a, b) {
     return new Date(a.comtime).getTime() - new Date(b.comtime).getTime();
 }
 
+function showComment() {
+    $.post(
+        "../php/getComment.php",
+        "",
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    let comment = response["data"];
+                    if (comment.length == 0) {
+                        $('#v-pills-rate > div.container-fluid').append(`
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-8">
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-title p-4">
+                                            還沒有評價喔!
+                                        </div>
+                                        <div class="card-body p-4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                        `)
+                    }
+                    else {
+                        comment.sort(sortdate).reverse()    //sort by datetime
+                        for (let i = 0; i < 10; i++) {
+                            $('#v-pills-rate > div.container-fluid').append(`
+                                <div class="row">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-8">
+                                        <div class="card h-100 shadow border-0">
+                                            <div class="card-title p-4">
+                                                ${comment[i]["u_name"]}
+                                            </div>
+                                            <div class="card-body p-4">
+                                                <p class="comment-content">${comment[i]["content"]}</p>
+                                                <br>
+                                                <div class="stars">
+                                                    <form action="">
+                                                        <input class="star star-5" id="star-5-${i}" type="radio" name="star" value="5">
+                                                        <label class="star star-5" for="star-5-${i}"></label>
+                                                        <input class="star star-4" id="star-4-${i}" type="radio" name="star" value="4">
+                                                        <label class="star star-4" for="star-4-${i}"></label>
+                                                        <input class="star star-3" id="star-3-${i}" type="radio" name="star" value="3">
+                                                        <label class="star star-3" for="star-3-${i}"></label>
+                                                        <input class="star star-2" id="star-2-${i}" type="radio" name="star" value="2">
+                                                        <label class="star star-2" for="star-2-${i}"></label>
+                                                        <input class="star star-1" id="star-1-${i}" type="radio" name="star" value="1">
+                                                        <label class="star star-1" for="star-1-${i}"></label>
+                                                    </form>
+                                                </div>
+                                                <small class="form-text text-muted">${comment[i]["time"]}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2"></div>
+                                </div>
+                            `)
+                            if (i == 9){
+                                $('#v-pills-rate > div.container-fluid').append(`
+                                    <div>
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                `)
+                            }
+                            $(`input[name="star"][id=star-${comment[i]["stars"]}-${i}]`).prop("checked", true)
+                        }
+                    }
+                }
+            }
+        }
+    )
+}
+
 
 $(document).ready(function () {
-
     //change merchant discount
     for (let i=0;i<mdiscount.length;i++){
         // ($('#v-pills-rate').find('label')[0]).textContent = "尚無評價喔~";
@@ -199,53 +290,9 @@ $(document).ready(function () {
         }
     }
 
-    //here to show mcomment record
-    mcomment.sort(sortdate).reverse()    //comment sort by datetime
-
-    if (mcomment.length == 0) {
-        ($('#v-pills-rate').find('label')[0]).textContent = "尚無評價喔~";
-    }
-    else {
-        ($('#v-pills-rate').find('label')[0]).textContent = mcomment[0]["comcom"];
-        for (let i = 1; i < 10; i++) {
-            $('#v-pills-rate > div.container-fluid').append(`
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8">
-                        <div class="card h-100 shadow border-0">
-                            <div class="card-body p-4">
-                                <label>${mcomment[i]["comcom"]}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2"></div>
-                </div>
-            `)
-            if (i == 9){
-                $('#v-pills-rate > div.container-fluid').append(`
-                    <div>
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                `)
-            }
-        }
-    }
+    //here to show comment record
+    showComment();
+    
 
 });
 

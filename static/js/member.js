@@ -60,9 +60,8 @@ function showComment() {
                                 <div class="col-sm-2"></div>
                                     <div class="col-sm-8">
                                         <div class="card h-100 shadow border-0">
-                                            <div class="card-body p-4">                       
+                                            <div class="card-body p-4">                      
                                                 <h3>尚無任何評價紀錄</h3>
-                                                <label></label>
                                             </div>  
                                         </div>  
                                     </div>

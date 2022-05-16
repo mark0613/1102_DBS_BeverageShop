@@ -13,7 +13,7 @@ class User {
             }
             break;
         }
-        return false;
+        return False;
     }
     static function createSession($data) {
         session_start();
@@ -23,7 +23,7 @@ class User {
     }
     static function createCookie($data) {
         foreach ($data as $key => $val) {
-            setcookie($key, $val, time()+60*5, "/", "", 0);
+            setcookie($key, $val, time()+60*60, "/", "", 0);
         }
     }
     static function login($account, $password) {
@@ -41,7 +41,7 @@ class User {
                 return true;
             }
         }
-        return false;
+        return False;
     }
     static function logout() {
         if (isset($_SERVER['HTTP_REFERER'])) {
@@ -64,14 +64,16 @@ class User {
                 return true;
             }
         }
-        return false;
+        return False;
     }
 
     static function register($email, $username, $password, $phone, $type) {
         $hashPassword = hash("sha256", $password);
+        Database::$connect->autocommit(False);
         $insert = "INSERT INTO users(email, u_name, password, type) VALUES('$email', '$username', '$hashPassword', '$type')";
         if (!Database::$connect->query($insert)) {
             self::$error = Database::$connect->error;
+            Database::$connect->rollback();
             return False;
         }
         $getId = "SELECT u_id FROM users WHERE email='$email'";
@@ -80,16 +82,19 @@ class User {
             $u_id = $row["u_id"];
         }
         if ($type === "customer") {
-            $insert = "INSERT INTO customer(u_id, c_phone) VALUES($u_id)";
+            $insert = "INSERT INTO customer(u_id, c_phone) VALUES($u_id, $phone)";
         }
         else{
-            $insert = "INSERT INTO merchant(u_id, m_phone) VALUES($u_id)";
+            $insert = "INSERT INTO merchant(u_id, m_phone) VALUES($u_id, $phone)";
         }
 
         if (Database::$connect->query($insert)) {
+            Database::$connect->autocommit(True);
+            Database::$connect->query($insert);
             return True;
         }
         self::$error = Database::$connect->error;
+        Database::$connect->rollback();
         return False;
     }
 }

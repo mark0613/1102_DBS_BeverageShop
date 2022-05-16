@@ -10,8 +10,6 @@ function login() {
         data,
         (response, status) => {
             if (status == "success") {
-                console.log(response);
-                response = JSON.parse(response);
                 if (response["status"] == "success") {
                     window.location.href = "../home/";
                 }
