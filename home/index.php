@@ -31,7 +31,7 @@ require("../php/User.php");
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
-        <a class="navbar-brand" href="#">everageShop</a>
+        <a class="navbar-brand" href="../">everageShop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@ require("../php/User.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
 
-            <form action="" method="get" class="form-inline navbar-nav pl-0 mr-auto">
+            <form action="../search" method="get" class="form-inline navbar-nav pl-0 mr-auto">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
