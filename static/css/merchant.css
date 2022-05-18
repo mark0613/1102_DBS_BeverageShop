@@ -22,10 +22,14 @@
     padding-right: 20px;
     padding-top: 0px;
     padding-bottom: 0px;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .high{
-    min-height: 100vh;
+    min-height: 100vh;  
+}
+
+.over{
+    overflow-y:hidden
 }
 

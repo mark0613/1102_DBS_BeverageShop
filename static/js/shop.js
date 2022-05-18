@@ -198,7 +198,7 @@ $(document).ready(function () {
                 `;
             }
             
-            html += `</div>`;
+            html += `</div><br>`;
 
             ($('.container-fluid:first > div.row.top > .col-sm-8:first')).append(`${html}`);
 

@@ -179,7 +179,13 @@ require("../php/User.php");
         <div class="row top">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <div class="card h-100 shadow border-0">  
+                <div class="card shadow border-0">  
+                    <div class="card-body">                         
+                        good
+                    </div>   
+                </div>
+                <br>
+                <div class="card shadow border-0">  
                     <div class="card-body p-4">                         
                         <div class="container-fluid " >
                             <div class="row top">

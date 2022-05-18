@@ -13,3 +13,7 @@
 .high{
     min-height: 100vh;
 }
+
+.over{
+    overflow-y:hidden
+}

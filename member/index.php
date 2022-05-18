@@ -45,7 +45,7 @@ if (!User::check()) {
     <script src="../static/js/app.js"></script>
 </head>
 
-<body>
+<body class="over">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
         <a class="navbar-brand" href="../">everageShop</a>

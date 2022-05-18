@@ -45,7 +45,7 @@ if (!User::check()) {
     <script src="../static/js/app.js"></script>
 </head>
 
-<body>
+<body class="over">
     <!-- 商家後臺 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="../static/img/bootstrap-solid.svg" width="auto" height="30" alt="">
@@ -103,6 +103,7 @@ if (!User::check()) {
                     <a class="nav-link sidebar_font center" id="v-pills-rate-tab" data-toggle="pill" href="#v-pills-rate" role="tab" aria-controls="v-pills-rate" aria-selected="false">評價</a>
                     <a class="nav-link sidebar_font center" href="#v-pills-page">頁面</a>
                 </div>
+                
             </div>
 
             <div class="col-sm-10 pre-scrollable high">
@@ -417,7 +418,7 @@ if (!User::check()) {
                             </div> -->
 
 
-                            <!-- <div>
+                             <div>
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item">
@@ -435,7 +436,7 @@ if (!User::check()) {
                                         </li>
                                     </ul>
                                 </nav>
-                            </div> -->
+                            </div> 
 
                         </div>
                     </div>
