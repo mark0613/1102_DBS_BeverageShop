@@ -214,15 +214,14 @@ $(document).ready(function () {
     scomment.sort(sortdate).reverse()    //comment sort by datetime
 
     for (let i=0; i<scomment.length && i<10 ; i++){
-        ($('.container-fluid:first > div.center.top:nth(1)')).after(`
-            <div>
-                <label>${scomment[i]["comcom"]}</label>
+        (($('#com-show')).before(`
+            <div class="card shadow border-0">  
+                <div class="card-body">                         
+                    ${scomment[i]["comcom"]}
+                </div>   
             </div>
             <br>
-        `)
+        `))
     }
-    
-
-
 
 });
