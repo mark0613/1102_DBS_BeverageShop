@@ -269,24 +269,36 @@ $(document).ready(function () {
 
     //change merchant menu
     var menuarr = $(".center > label");
-    $('.card-deck').html("");
+    $('#showmenu').html("");
     if (mmenu.length == 0) {
         $('.card-deck').html("<div><p>尚無菜單</p></div>");
     }
     else {
-        for (let i = 0; i < mmenu.length; i++) {
-            $('.card-deck').append(`
-                <div class="card h-100 shadow border-0">
-                    <div class="card-body p-4">
-                        <div class="center">
-                            <label>${mmenu[i]["menuname"]}</label>
-                            <label>${mmenu[i]["menuprice"]}</label>
-                            <button type="submit" class="btn btn-primary">編輯</button>
-                            <button type="submit" class="btn btn-danger">刪除</button>
+        var html = "";
+        if (mmenu.length%3 == 0)    var menulen = mmenu.length/3;
+        else                        var menulen = mmenu.length/3+1;
+        for (let i = 0; i<menulen; i++){
+
+            html += `<div class="card-deck">`;
+
+            for (let j = i*3 ; j < i*3+3 && j < mmenu.length; j++) {
+                html += (`
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body p-4">
+                            <div class="center">
+                                <label>${mmenu[j]["menuname"]}</label>
+                                <label>${mmenu[j]["menuprice"]}</label>
+                                <button type="submit" class="btn btn-primary">編輯</button>
+                                <button type="submit" class="btn btn-danger">刪除</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `)
+                `)
+            }
+            html += `</div><br>`;
+            ($('#showmenu')).append(`${html}`);
+            
+            html = "";
         }
     }
 

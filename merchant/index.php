@@ -383,10 +383,75 @@ if (!User::check()) {
 
                         <div class="row top">
                             <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
-                                <div class="card-deck">
-                                    <!-- Insert menu -->
+                            <div class="col-sm-10" id = "showmenu">
+
+                                <!-- <div class="card-deck">
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                                <label>奶茶</label>
+                                                <label>100</label>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                            <label>奶茶</label>
+                                                <label>100</label>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                                <label>奶茶</label>
+                                                <label>100</label>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <br>
+                                <div class="card-deck">
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                                <label>奶茶</label>
+                                                <label>100</label>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                            <label>奶茶</label>
+                                                <label>100</label>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                                <label>奶茶</label>
+                                                <label>100</label>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br> -->
+                                
                             </div>
                             <div class="col-sm-1"></div>
                         </div>
