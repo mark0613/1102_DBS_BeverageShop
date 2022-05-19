@@ -465,8 +465,7 @@ if (!User::check()) {
 
                     <div class="tab-pane fade" id="v-pills-rate" aria-controls="v-pills-rate" role="tabpanel">
                         <div class="container-fluid">
-                            <p class="title center">📝被給予的評價</p>
-
+                            <p class="title center" id = "show-mer-com">📝被給予的評價</p>
                             
 
 
@@ -481,6 +480,7 @@ if (!User::check()) {
                                 </div>
                                 <div class="col-sm-2"></div>
                             </div> -->
+                            
 
 
                              <div>

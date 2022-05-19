@@ -68,80 +68,80 @@ mmenu = [
     }
 ]
 
-// comment = [
-//     {
-//         "comname": "shop1",
-//         "comherf": "../home/",
-//         "comcom": "good1",
-//         "comtime": "2001/12/21 00:00:00"
-//     },
-//     {
-//         "comname": "shop2",
-//         "comherf": "../home/",
-//         "comcom": "good2",
-//         "comtime": "2001/12/22 00:00:00"
-//     },
-//     {
-//         "comname": "shop3",
-//         "comherf": "../home/",
-//         "comcom": "good3",
-//         "comtime": "2001/12/24 00:00:00"
-//     },
-//     {
-//         "comname": "shop4",
-//         "comherf": "../home/",
-//         "comcom": "good4",
-//         "comtime": "2001/12/23 00:00:00"
-//     },
-//     {
-//         "comname": "shop5",
-//         "comherf": "../home/",
-//         "comcom": "good5",
-//         "comtime": "2001/12/26 00:00:00"
-//     },
-//     {
-//         "comname": "shop6",
-//         "comherf": "../home/",
-//         "comcom": "good6",
-//         "comtime": "2001/12/25 00:00:00"
-//     },
-//     {
-//         "comname": "shop7",
-//         "comherf": "../home/",
-//         "comcom": "good7",
-//         "comtime": "2001/12/27 01:20:00"
-//     },
-//     {
-//         "comname": "shop8",
-//         "comherf": "../home/",
-//         "comcom": "good8",
-//         "comtime": "2001/12/27 01:00:00"
-//     },
-//     {
-//         "comname": "shop9",
-//         "comherf": "../home/",
-//         "comcom": "good9",
-//         "comtime": "2001/12/1 00:00:00"
-//     },
-//     {
-//         "comname": "shop10",
-//         "comherf": "../home/",
-//         "comcom": "good10",
-//         "comtime": "2001/12/2 00:00:00"
-//     },
-//     {
-//         "comname": "shop11",
-//         "comherf": "../home/",
-//         "comcom": "good11",
-//         "comtime": "2001/12/5 00:00:00"
-//     },
-//     {
-//         "comname": "shop12",
-//         "comherf": "../home/",
-//         "comcom": "good12",
-//         "comtime": "2001/12/4 00:00:00"
-//     }
-// ]
+comment = [
+    {
+        "comname": "shop1",
+        "comherf": "../home/",
+        "comcom": "good1",
+        "comtime": "2001/12/21 00:00:00"
+    },
+    {
+        "comname": "shop2",
+        "comherf": "../home/",
+        "comcom": "good2",
+        "comtime": "2001/12/22 00:00:00"
+    },
+    {
+        "comname": "shop3",
+        "comherf": "../home/",
+        "comcom": "good3",
+        "comtime": "2001/12/24 00:00:00"
+    },
+    {
+        "comname": "shop4",
+        "comherf": "../home/",
+        "comcom": "good4",
+        "comtime": "2001/12/23 00:00:00"
+    },
+    {
+        "comname": "shop5",
+        "comherf": "../home/",
+        "comcom": "good5",
+        "comtime": "2001/12/26 00:00:00"
+    },
+    {
+        "comname": "shop6",
+        "comherf": "../home/",
+        "comcom": "good6",
+        "comtime": "2001/12/25 00:00:00"
+    },
+    {
+        "comname": "shop7",
+        "comherf": "../home/",
+        "comcom": "good7",
+        "comtime": "2001/12/27 01:20:00"
+    },
+    {
+        "comname": "shop8",
+        "comherf": "../home/",
+        "comcom": "good8",
+        "comtime": "2001/12/27 01:00:00"
+    },
+    {
+        "comname": "shop9",
+        "comherf": "../home/",
+        "comcom": "good9",
+        "comtime": "2001/12/1 00:00:00"
+    },
+    {
+        "comname": "shop10",
+        "comherf": "../home/",
+        "comcom": "good10",
+        "comtime": "2001/12/2 00:00:00"
+    },
+    {
+        "comname": "shop11",
+        "comherf": "../home/",
+        "comcom": "good11",
+        "comtime": "2001/12/5 00:00:00"
+    },
+    {
+        "comname": "shop12",
+        "comherf": "../home/",
+        "comcom": "good12",
+        "comtime": "2001/12/4 00:00:00"
+    }
+]
 
 
 function sortdate(a, b) {
@@ -157,7 +157,7 @@ function showComment() {
                 if (response["status"] == "success") {
                     let comment = response["data"];
                     if (comment.length == 0) {
-                        $('#v-pills-rate > div.container-fluid').append(`
+                        $('#show-mer-com').after(`
                             <div class="row">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-8">
@@ -175,8 +175,16 @@ function showComment() {
                     }
                     else {
                         comment.sort(sortdate).reverse()    //sort by datetime
-                        for (let i = 0; i < 10; i++) {
-                            $('#v-pills-rate > div.container-fluid').append(`
+                        
+                        // var page = 0;       //count the current page
+                        var comlen;         //count the length of comment length
+                        if (comment.length%10 != 0) comlen = comment.length/10+1;
+                        else                        comlen = comment.length/10;
+                
+                        // html = "";       //to show html on merchant comment
+                
+                        for (let i = 0; i < 10 && i < comment.length; i++) {
+                            $('#show-mer-com').after(`
                                 <div class="row">
                                     <div class="col-sm-2"></div>
                                     <div class="col-sm-8">
@@ -303,7 +311,75 @@ $(document).ready(function () {
     }
 
     //here to show comment record
-    showComment();
+    // showComment();
+
+    //start
+    if (comment.length == 0) {
+        $('#show-mer-com').after(`
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-title p-4">
+                            還沒有評價喔!
+                        </div>
+                        <div class="card-body p-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        `)
+    }
+    else {
+        comment.sort(sortdate).reverse()    //sort by datetime
+        
+        // var page = 0;       //count the current page
+        var comlen;         //count the length of comment length
+        if (comment.length%10 != 0) comlen = comment.length/10+1;
+        else                        comlen = comment.length/10;
+
+        html = "";       //to show html on merchant comment
+
+        for (let i = 0; i < 3 && i < comment.length; i++) {
+            $('#show-mer-com').after(`
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-title p-4">
+                                ${comment[i]["u_name"]}
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="comment-content">${comment[i]["content"]}</p>
+                                <br>
+                                <div class="stars">
+                                    <form action="">
+                                        <input class="star star-5" id="star-5-${i}" type="radio" name="star" value="5">
+                                        <label class="star star-5" for="star-5-${i}"></label>
+                                        <input class="star star-4" id="star-4-${i}" type="radio" name="star" value="4">
+                                        <label class="star star-4" for="star-4-${i}"></label>
+                                        <input class="star star-3" id="star-3-${i}" type="radio" name="star" value="3">
+                                        <label class="star star-3" for="star-3-${i}"></label>
+                                        <input class="star star-2" id="star-2-${i}" type="radio" name="star" value="2">
+                                        <label class="star star-2" for="star-2-${i}"></label>
+                                        <input class="star star-1" id="star-1-${i}" type="radio" name="star" value="1">
+                                        <label class="star star-1" for="star-1-${i}"></label>
+                                    </form>
+                                </div>
+                                <small class="form-text text-muted">${comment[i]["time"]}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div><br>
+            `)
+
+
+            $(`input[name="star"][id=star-${comment[i]["stars"]}-${i}]`).prop("checked", true)
+        }
+    }
+    //end
     
 
 });
