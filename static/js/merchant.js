@@ -65,6 +65,10 @@ mmenu = [
     {
         "menuname": "看似好喝的茶",
         "menuprice": "50元"
+    },
+    {
+        "menuname": "真的好喝的茶",
+        "menuprice": "60元"
     }
 ]
 
@@ -283,25 +287,48 @@ $(document).ready(function () {
     }
     else {
         var html = "";
-        if (mmenu.length%3 == 0)    var menulen = mmenu.length/3;
-        else                        var menulen = mmenu.length/3+1;
+        if (mmenu.length%4 == 0)    var menulen = mmenu.length/4;
+        else                        var menulen = ( mmenu.length - mmenu.length%4 ) / 4 + 1;
         for (let i = 0; i<menulen; i++){
 
             html += `<div class="card-deck">`;
 
-            for (let j = i*3 ; j < i*3+3 && j < mmenu.length; j++) {
-                html += (`
-                    <div class="card h-100 shadow border-0">
-                        <div class="card-body p-4">
-                            <div class="center">
-                                <label>${mmenu[j]["menuname"]}</label>
-                                <label>${mmenu[j]["menuprice"]}</label>
-                                <button type="submit" class="btn btn-primary">編輯</button>
-                                <button type="submit" class="btn btn-danger">刪除</button>
+            for (let j = i*4 ; j < i*4+4 ; j++) {
+
+                if (j < mmenu.length){
+                    html += (`
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-header">
+                                <h4>${mmenu[j]["menuname"]}</h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="center">
+                                    <label>${mmenu[j]["menuprice"]}</label>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">編輯</button>
+                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `)
+                    `);
+                }
+                else{
+                    html += (`
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-header">
+                                <h4></h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="center">
+                                    <label></label>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">編輯</button>
+                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                }
             }
             html += `</div><br>`;
             ($('#showmenu')).append(`${html}`);

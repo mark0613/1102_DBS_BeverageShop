@@ -459,7 +459,7 @@ if (!User::check()) {
                             <button type="submit" class="btn btn-primary">新增</button>
                         </div>
                         <!--菜單。改-->
-                                <div class="card-deck">
+                                <!-- <div class="card-deck">
                                     <div class="card h-100 shadow border-0">
                                         <div class="card-header">
                                             <h4>奶茶</h4>
@@ -512,7 +512,7 @@ if (!User::check()) {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <!--小視窗-->
                                 <div>
