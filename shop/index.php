@@ -185,7 +185,7 @@ require("../php/User.php");
             </div>
             <div class="col-sm-2"></div>
             <!--菜單。改-->
-            <div class="card-deck">
+            <!-- <div class="card-deck">
                 <div class="card h-100 shadow border-0">
                     <div class="card-header center">
                         <h4>奶茶</h4>
@@ -310,7 +310,7 @@ require("../php/User.php");
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!--小視窗-->
         </div>
         <div>

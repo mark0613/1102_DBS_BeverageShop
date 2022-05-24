@@ -53,6 +53,10 @@ smenu = [
     {
         "menuname": "看似好喝的茶",
         "menuprice": "50元"
+    },
+    {
+        "menuname": "真的好喝的茶",
+        "menuprice": "60元"
     }
 ]
 
@@ -173,29 +177,86 @@ $(document).ready(function () {
     }
 
     else{
-
         var html = "";
-        if (smenu.length%3 == 0)    var slen = smenu.length/3;
-        else                        var slen = smenu.length/3+1;
+        if (smenu.length%4 == 0)    var slen = smenu.length/4;
+        else                        var slen = ( smenu.length - smenu.length%4 ) / 4 + 1 ;
 
         for (let i = 0; i<slen; i++){
 
             html += `<div class="card-deck">`;
 
-            for (let j = i*3 ; j < i*3+3 && j < smenu.length ; j++){
-                html +=  `
-                    <div class="card h-100 shadow border-0">
-                        <div class="card-body p-4">
-                            <div class="center">
-                                <label>${smenu[j]["menuname"]}</label>
-                                <label>${smenu[j]["menuprice"]}</label>
-                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
-                                <input type='text' name='quantity' value='0' class="in">
-                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+            for (let j = i*4 ; j < i*4+4 ; j++){
+                if (j < smenu.length){
+                    html +=  `
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-header center">
+                                <h4>${smenu[j]["menuname"]}</h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="center">
+                                    <label>${smenu[j]["menuprice"]}</label>
+                                    <br>
+                                    <div class="input-group mb-3 justify-content-center">
+                                        <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                        <input type='text' name='quantity' value='0' class="in">
+                                        <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                                    </div>
+                                    <div class="input-group">
+                                        <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                            <option value="">全糖</option>
+                                            <option value="">半糖</option>
+                                            <option value="">無糖</option>
+                                        </select>
+                                        <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                            <option value="">全冰</option>
+                                            <option value="">半冰</option>
+                                            <option value="">少冰</option>
+                                            <option value="">微冰</option>
+                                            <option value="">去冰（碎冰）</option>
+                                            <option value="">完全去冰</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                }
+                else{
+                    html +=  `
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-header center">
+                                <h4></h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="center">
+                                    <label></label>
+                                    <br>
+                                    <div class="input-group mb-3 justify-content-center">
+                                        <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                        <input type='text' name='quantity' value='0' class="in">
+                                        <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                                    </div>
+                                    <div class="input-group">
+                                        <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                            <option value="">全糖</option>
+                                            <option value="">半糖</option>
+                                            <option value="">無糖</option>
+                                        </select>
+                                        <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                            <option value="">全冰</option>
+                                            <option value="">半冰</option>
+                                            <option value="">少冰</option>
+                                            <option value="">微冰</option>
+                                            <option value="">去冰（碎冰）</option>
+                                            <option value="">完全去冰</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                
             }
             
             html += `</div><br>`;
