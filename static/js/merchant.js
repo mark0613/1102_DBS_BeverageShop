@@ -423,7 +423,7 @@ $(document).ready(function () {
 
 
     if (comment.length == 0) {
-        $('#show-mer-com').after(`
+        $('#show-mer-com').append(`
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
