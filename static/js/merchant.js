@@ -214,6 +214,8 @@ comment = [
 ]
 
 
+
+
 function sortdate(a, b) {
     return new Date(a.time).getTime() - new Date(b.time).getTime();
 }
@@ -319,6 +321,34 @@ function showComment() {
 }
 
 
+function bar(ctx, labels, data, color) {
+    let barChart = new Chart(ctx, {
+        type : "bar",
+        data : {
+            labels : labels,
+            datasets : [{
+                label : "vote",
+                data: data,
+                backgroundColor : color,
+                borderWidth: 1
+            }]
+        }
+    });
+}
+
+function pie(ctx, labels, data, color) {
+    let pieChart = new Chart(ctx, {
+        type : 'pie',
+        data : {
+        labels : labels,
+        datasets : [{
+            data : data,
+            backgroundColor : color,
+        }],
+        }
+    });
+}
+
 
 
 
@@ -406,22 +436,12 @@ $(document).ready(function () {
         }
     }
 
-
-
-
-
-
-
-
     
     //here to show comment record
     // showComment();
 
-    
 
     //start
-
-
     if (comment.length == 0) {
         $('#show-mer-com').append(`
             <div class="row">
