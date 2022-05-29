@@ -4,9 +4,8 @@ order = [
         'c_id':'3',
         'm_id':'6',
         'order_time':'2022-04-02 07:46:23',
-        'is_accepted':'N',	
+        'is_accepted': false ,
         'accepted_time':'0000-00-00',	
-        'is_canceled'	:'Y',
         'canceled_time'	:'2022-04-02 07:46:53',
         'price': '100'
     },
@@ -15,9 +14,8 @@ order = [
         'c_id':'3',
         'm_id':'6',
         'order_time':'2022-04-02 15:05:13',
-        'is_accepted':'Y',	
+        'is_accepted': false,	
         'accepted_time':'2022-04-02 15:05:43',	
-        'is_canceled'	:'N',
         'canceled_time'	:'0000-00-00',
         'price': '120'
     },
@@ -26,9 +24,8 @@ order = [
         'c_id':'2',
         'm_id':'4',
         'order_time':'2022-04-03 13:33:49',
-        'is_accepted':'Y',	
+        'is_accepted': true,	
         'accepted_time':'2022-05-03 13:34:19',	
-        'is_canceled'	:'N',
         'canceled_time'	:'0000-00-00',
         'price': '200'
     },
@@ -37,9 +34,8 @@ order = [
         'c_id':'2',
         'm_id':'6',
         'order_time':'2022-05-04 09:37:13',
-        'is_accepted':'Y',	
+        'is_accepted': true,	
         'accepted_time':'2022-05-04 09:37:43',	
-        'is_canceled'	:'N',
         'canceled_time'	:'0000-00-00',
         'price': '50'
     },
@@ -48,9 +44,8 @@ order = [
         'c_id':'2',
         'm_id':'5',
         'order_time':'2022-05-06 10:17:18',
-        'is_accepted':'Y',	
+        'is_accepted': true,	
         'accepted_time':'2022-05-06 10:17:48',	
-        'is_canceled'	:'N',
         'canceled_time'	:'0000-00-00',
         'price': '105'
     },
@@ -59,9 +54,8 @@ order = [
         'c_id':'1',
         'm_id':'5',
         'order_time':'2022-05-06 10:17:18',
-        'is_accepted':'Y',	
+        'is_accepted': true,	
         'accepted_time':'2022-05-06 10:17:48',	
-        'is_canceled'	:'N',
         'canceled_time'	:'0000-00-00',
         'price': '120'
     },
@@ -70,9 +64,8 @@ order = [
         'c_id':'3',
         'm_id':'5',
         'order_time':'2022-05-13 06:37:15',
-        'is_accepted':'Y',	
-        'accepted_time':'2022-05-13 06:37:45',	
-        'is_canceled'	:'N',
+        'is_accepted': true,	
+        'accepted_time':'2022-05-13 06:37:45',
         'canceled_time'	:'0000-00-00',
         'price': '305'
     },
@@ -81,9 +74,8 @@ order = [
         'c_id':'3',
         'm_id':'4',
         'order_time':'2022-05-14 19:18:24',
-        'is_accepted':'Y',	
-        'accepted_time':'2022-05-14 19:18:54',	
-        'is_canceled'	:'N',
+        'is_accepted': true,	
+        'accepted_time':'2022-05-14 19:18:54',
         'canceled_time'	:'0000-00-00',
         'price': '550'
     },
@@ -92,9 +84,8 @@ order = [
         'c_id':'2',
         'm_id':'6',
         'order_time':'2022-05-16 17:52:39',
-        'is_accepted':'Y',	
-        'accepted_time':'2022-05-16 17:53:09 ',	
-        'is_canceled'	:'N',
+        'is_accepted': true,	
+        'accepted_time':'2022-05-16 17:53:09 ',
         'canceled_time'	:'0000-00-00',
         'price': '360'
     },
@@ -103,9 +94,8 @@ order = [
         'c_id':'3',
         'm_id':'4',
         'order_time':'2022-05-17 10:39:34',
-        'is_accepted':'Y',	
+        'is_accepted': null,	
         'accepted_time':'2022-05-17 10:40:04 ',	
-        'is_canceled'	:'N',
         'canceled_time'	:'0000-00-00',
         'price': '953'
     },
@@ -114,9 +104,8 @@ order = [
         'c_id':'2',
         'm_id':'6',
         'order_time':'2022-05-18 23:12:26',
-        'is_accepted':'N',	
-        'accepted_time':'0000-00-00 ',	
-        'is_canceled'	:'Y',
+        'is_accepted': false,
+        'accepted_time':'0000-00-00 ',
         'canceled_time'	:'2022-05-18 23:12:56',
         'price': '150'
     }
@@ -165,8 +154,9 @@ $(document).ready(function () {
     var o_price  = new Array();  //訂單總額
 
     //全部時間的累積畫圓餅圖
-    var o_accept = new Array();  //接受訂單數量
-    var o_cancel = new Array();  //拒絕訂單數量
+    var o_accept  = new Array();  //接受訂單數量
+    var o_cancel  = new Array();  //拒絕訂單數量
+    var o_pending = new Array();  //等待訂單數量
 
     //initialize
     for (let i = 0 ; i < month ; i ++ ){
@@ -174,6 +164,7 @@ $(document).ready(function () {
         o_price [i] = 0;
         o_accept[i] = 0;
         o_cancel[i] = 0;
+        o_pending[i]= 0;
     }
 
     
@@ -182,7 +173,10 @@ $(document).ready(function () {
 
         o_amount[times] = o_amount[times] + 1;
         o_price [times] = o_price [times] + parseInt(order[i]['price']);
-        if ( order[i]['is_accepted'] == 'Y' && order[i]['is_canceled'] == 'N' ){
+        if ( order[i]['is_accepted'] === null ){
+            o_pending[times]= parseInt(o_pending[times]) + 1;
+        }
+        else if ( order[i]['is_accepted'] == true ){
             o_accept[times] = parseInt(o_accept[times]) + 1;
         }
         else{
@@ -234,5 +228,8 @@ $(document).ready(function () {
 
     let ctxPieCancel = document.getElementById('canvas-pie-cancel').getContext('2d');
     pie(ctxPieCancel, labels, o_cancel, color)
+
+    let ctxPiePending= document.getElementById('canvas-pie-pending').getContext('2d');
+    pie(ctxPiePending, labels, o_pending, color)
 
 });

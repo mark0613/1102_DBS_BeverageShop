@@ -54,7 +54,7 @@
         <canvas id="canvas-bar-price"  width="50px" height="50px"></canvas>
         <canvas id="canvas-pie-accept" width="50px" height="50px"></canvas>
         <canvas id="canvas-pie-cancel" width="50px" height="50px"></canvas>
-    
+        <canvas id="canvas-pie-pending"width="50px" height="50px"></canvas>
 
 </body>
 </html>
