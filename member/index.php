@@ -223,19 +223,24 @@ if (!User::check()) {
                         aria-labelledby="v-pills-comment-tab">
                         <label class="title">📝評價紀錄</label>
                         <div class="container-fluid ">
+
+                            <div id = "show-mem-com">
+                                <!-- show comment -->
+                            </div>
+
                             <div>
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
+                                            <a class="page-link" href="#" aria-label="Previous" id="prebtn">
                                                 <span aria-hidden="true">&laquo;</span>
                                             </a>
                                         </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item" id="btn1"><a class="page-link" href="#">1</a></li>
+                                        <!-- <li class="page-item"><a class="page-link" href="#">2</a></li> -->
+                                        <!-- <li class="page-item"><a class="page-link" href="#">3</a></li> -->
                                         <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
+                                            <a class="page-link" href="#" aria-label="Next" id="nextbtn">
                                                 <span aria-hidden="true">&raquo;</span>
                                             </a>
                                         </li>
@@ -246,6 +251,7 @@ if (!User::check()) {
                         </div>
                     </div>
                 </div>
+                <br><br><br><br><br>
             </div>
         </div>
     </div>

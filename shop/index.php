@@ -7,18 +7,25 @@ require("../php/User.php");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeverageShop</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+    </script>
     <script src="../static/js/shop.js"></script>
     <link href="../static/css/base.css" rel="stylesheet">
     <link href="../static/css/shop.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- 飲料店頁面 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,7 +37,7 @@ require("../php/User.php");
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
+
 
             <form action="../search" method="get" class="form-inline navbar-nav pl-0 mr-auto">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -93,7 +100,9 @@ require("../php/User.php");
     </header>
 
 
-    <div class="center top"><h1>💥現正優惠中</h1></div>
+    <div class="center top">
+        <h1>💥現正優惠中</h1>
+    </div>
 
     <div class="container-fluid">
 
@@ -122,11 +131,13 @@ require("../php/User.php");
             <div class="col-sm-3"></div>
         </div> -->
 
-        <div class="center top"><h1>🧋菜單</h1></div>
+        <div class="center top">
+            <h1>🧋菜單</h1>
+        </div>
         <div class="row top">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                
+
 
                 <!-- <div class="card-deck">
                     <div class="card h-100 shadow border-0">
@@ -173,9 +184,188 @@ require("../php/User.php");
 
             </div>
             <div class="col-sm-2"></div>
+            <!--菜單。改-->
+            <!-- <div class="card-deck">
+                <div class="card h-100 shadow border-0">
+                    <div class="card-header center">
+                        <h4>奶茶</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="center">
+                            <label>100元</label>
+                            <br>
+                            <div class="input-group mb-3 justify-content-center">
+                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                <input type='text' name='quantity' value='0' class="in">
+                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                            </div>
+                            <div class="input-group">
+                                <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                    <option value="">全糖</option>
+                                    <option value="">半糖</option>
+                                    <option value="">無糖</option>
+                                </select>
+                                <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                    <option value="">全冰</option>
+                                    <option value="">半冰</option>
+                                    <option value="">少冰</option>
+                                    <option value="">微冰</option>
+                                    <option value="">去冰（碎冰）</option>
+                                    <option value="">完全去冰</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card h-100 shadow border-0">
+                    <div class="card-header center">
+                        <h4>奶茶</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="center">
+                            <label>100元</label>
+                            <br>
+                            <div class="input-group mb-3 justify-content-center">
+                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                <input type='text' name='quantity' value='0' class="in">
+                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                            </div>
+                            <div class="input-group">
+                                <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                    <option value="">全糖</option>
+                                    <option value="">半糖</option>
+                                    <option value="">無糖</option>
+                                </select>
+                                <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                    <option value="">全冰</option>
+                                    <option value="">半冰</option>
+                                    <option value="">少冰</option>
+                                    <option value="">微冰</option>
+                                    <option value="">去冰（碎冰）</option>
+                                    <option value="">完全去冰</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card h-100 shadow border-0">
+                    <div class="card-header center">
+                        <h4>奶茶</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="center">
+                            <label>100元</label>
+                            <br>
+                            <div class="input-group mb-3 justify-content-center">
+                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                <input type='text' name='quantity' value='0' class="in">
+                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                            </div>
+                            <div class="input-group">
+                                <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                    <option value="">全糖</option>
+                                    <option value="">半糖</option>
+                                    <option value="">無糖</option>
+                                </select>
+                                <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                    <option value="">全冰</option>
+                                    <option value="">半冰</option>
+                                    <option value="">少冰</option>
+                                    <option value="">微冰</option>
+                                    <option value="">去冰（碎冰）</option>
+                                    <option value="">完全去冰</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card h-100 shadow border-0">
+                    <div class="card-header center">
+                        <h4>奶茶</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="center">
+                            <label>100元</label>
+                            <br>
+                            <div class="input-group mb-3 justify-content-center">
+                                <input type='button' value='-' class="btn btn-outline-danger btn-sm">
+                                <input type='text' name='quantity' value='0' class="in">
+                                <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                            </div>
+                            <div class="input-group">
+                                <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                    <option value="">全糖</option>
+                                    <option value="">半糖</option>
+                                    <option value="">無糖</option>
+                                </select>
+                                <select class="custom-select my-1 mr-sm-2" id="" name="">
+                                    <option value="">全冰</option>
+                                    <option value="">半冰</option>
+                                    <option value="">少冰</option>
+                                    <option value="">微冰</option>
+                                    <option value="">去冰（碎冰）</option>
+                                    <option value="">完全去冰</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!--小視窗-->
+        </div>
+        <div>
+            <div class="card h-100 shadow border-0">
+                <div class="card-body p-4">
+                    <h5 class="center bold">購物車</h5>
+                    <div class="card">
+                        <div class="card-header">
+                            訂單編號:gg123
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+
+                                    <label>奶茶</label>
+                                    *
+                                    <label>10</label>
+                                    <label>$500</label>
+                                    <br>
+                                    <label>紅茶</label>
+                                    *
+                                    <label>10</label>
+                                    <label>$200</label>
+                                    <br>
+                                    <label>紅茶</label>
+                                    *
+                                    <label>10</label>
+                                    <label>$200</label>
+                                    <br>
+                                    <label>紅茶</label>
+                                    *
+                                    <label>10</label>
+                                    <label>$200</label>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="down">
+                                        <label>總花費</label>
+                                        <label>$700</label>
+                                        <button type="submit" class="btn btn-primary">接受</button>
+                                        <button type="submit" class="btn btn-danger">拒絕</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="center top"><h1>📝填寫評價</h1></div>
+
+
+        <div class="center top">
+            <h1>📝填寫評價</h1>
+        </div>
         <div class="row top">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
@@ -185,28 +375,30 @@ require("../php/User.php");
                     </div>   
                 </div>
                 <br> -->
-                <div class="card shadow border-0"  id = "com-show">
-                    <div class="card-body p-4">                       
-                        <div class="container-fluid " >
+                <div class="card shadow border-0" id="com-show">
+                    <div class="card-body p-4">
+                        <div class="container-fluid ">
                             <div class="row top">
                                 <div class="col-sm-10">
                                     <input type="text" id="" name="" class="form-control" placeholder="填寫評價" required>
                                 </div>
-                                <div class="col-sm-2"> 
-                                    <button id="submit" class="btn btn-md btn-primary btn-block" type="button">提交</button>
+                                <div class="col-sm-2">
+                                    <button id="submit" class="btn btn-md btn-primary btn-block"
+                                        type="button">提交</button>
                                 </div>
                             </div>
-                        </div>  
-                    </div>   
-                </div>  
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="col-sm-2"></div>
-            
+
         </div>
         <br>
     </div>
 
 
 </body>
+
 </html>

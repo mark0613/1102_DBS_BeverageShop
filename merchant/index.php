@@ -273,7 +273,6 @@ if (!User::check()) {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="col-sm-2"></div>
                             </div>
@@ -459,14 +458,80 @@ if (!User::check()) {
                         <div class="center">
                             <button type="submit" class="btn btn-primary">新增</button>
                         </div>
+                        <!--菜單。改-->
+                                <!-- <div class="card-deck">
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-header">
+                                            <h4>奶茶</h4>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                                <label>100元</label>
+                                                <br>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-header">
+                                            <h4>奶茶</h4>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                                <label>100元</label>
+                                                <br>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-header">
+                                            <h4>奶茶</h4>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                                <label>100元</label>
+                                                <br>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card-header">
+                                            <h4>奶茶</h4>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="center">
+                                                <label>100元</label>
+                                                <br>
+                                                <button type="submit" class="btn btn-primary">編輯</button>
+                                                <button type="submit" class="btn btn-danger">刪除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <!--小視窗-->
+                                <div>
+                                    <input type="text" id="" name="" class="form-control" placeholder="商品名稱">
+                                    <br>
+                                    <input type="text" id="" name="" class="form-control" placeholder="價格(元)">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary ">新增</button>
+                                </div>
                     </div>
 
                     <!--評價-->
 
                     <div class="tab-pane fade" id="v-pills-rate" aria-controls="v-pills-rate" role="tabpanel">
                         <div class="container-fluid">
-                            <p class="title center" id = "show-mer-com">📝被給予的評價</p>
+                            <p class="title center">📝被給予的評價</p>
                             
+                            
+                            <div id = "show-mer-com">
 
 
                             <!-- <div class="row">
@@ -481,21 +546,23 @@ if (!User::check()) {
                                 <div class="col-sm-2"></div>
                             </div> -->
                             
+                            
+                            </div>
 
 
-                             <div>
+                            <div>
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
+                                            <a class="page-link" href="#" aria-label="Previous" id="prebtn">
                                                 <span aria-hidden="true">&laquo;</span>
                                             </a>
                                         </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item" id="btn1"><a class="page-link" href="#">1</a></li>
+                                        <!-- <li class="page-item" id="btn2"><a class="page-link" href="#">2</a></li> -->
+                                        <!-- <li class="page-item" id="btn3"><a class="page-link" href="#">3</a></li> -->
                                         <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
+                                            <a class="page-link" href="#" aria-label="Next" id="nextbtn">
                                                 <span aria-hidden="true">&raquo;</span>
                                             </a>
                                         </li>
@@ -506,9 +573,12 @@ if (!User::check()) {
                         </div>
                     </div>
                 </div>
+
+                <br><br><br><br><br>
             </div>
         </div>
     </div>
+    
 </body>
 
 </html>

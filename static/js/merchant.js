@@ -65,87 +65,159 @@ mmenu = [
     {
         "menuname": "看似好喝的茶",
         "menuprice": "50元"
+    },
+    {
+        "menuname": "真的好喝的茶",
+        "menuprice": "60元"
     }
 ]
 
 comment = [
     {
-        "comname": "shop1",
+        "u_name": "shop1",
         "comherf": "../home/",
-        "comcom": "good1",
-        "comtime": "2001/12/21 00:00:00"
+        "content": "good1",
+        "time": "2001/12/21 00:00:00"
     },
     {
-        "comname": "shop2",
+        "u_name": "shop2",
         "comherf": "../home/",
-        "comcom": "good2",
-        "comtime": "2001/12/22 00:00:00"
+        "content": "good2",
+        "time": "2001/12/22 00:00:00"
     },
     {
-        "comname": "shop3",
+        "u_name": "shop3",
         "comherf": "../home/",
-        "comcom": "good3",
-        "comtime": "2001/12/24 00:00:00"
+        "content": "good3",
+        "time": "2001/12/24 00:00:00"
     },
     {
-        "comname": "shop4",
+        "u_name": "shop4",
         "comherf": "../home/",
-        "comcom": "good4",
-        "comtime": "2001/12/23 00:00:00"
+        "content": "good4",
+        "time": "2001/12/23 00:00:00"
     },
     {
-        "comname": "shop5",
+        "u_name": "shop5",
         "comherf": "../home/",
-        "comcom": "good5",
-        "comtime": "2001/12/26 00:00:00"
+        "content": "good5",
+        "time": "2001/12/26 00:00:00"
     },
     {
-        "comname": "shop6",
+        "u_name": "shop6",
         "comherf": "../home/",
-        "comcom": "good6",
-        "comtime": "2001/12/25 00:00:00"
+        "content": "good6",
+        "time": "2001/12/25 00:00:00"
     },
     {
-        "comname": "shop7",
+        "u_name": "shop7",
         "comherf": "../home/",
-        "comcom": "good7",
-        "comtime": "2001/12/27 01:20:00"
+        "content": "good7",
+        "time": "2001/12/27 01:20:00"
     },
     {
-        "comname": "shop8",
+        "u_name": "shop8",
         "comherf": "../home/",
-        "comcom": "good8",
-        "comtime": "2001/12/27 01:00:00"
+        "content": "good8",
+        "time": "2001/12/27 01:00:00"
     },
     {
-        "comname": "shop9",
+        "u_name": "shop9",
         "comherf": "../home/",
-        "comcom": "good9",
-        "comtime": "2001/12/1 00:00:00"
+        "content": "good9",
+        "time": "2001/12/1 00:00:00"
     },
     {
-        "comname": "shop10",
+        "u_name": "shop10",
         "comherf": "../home/",
-        "comcom": "good10",
-        "comtime": "2001/12/2 00:00:00"
+        "content": "good10",
+        "time": "2001/12/2 00:00:00"
     },
     {
-        "comname": "shop11",
+        "u_name": "shop11",
         "comherf": "../home/",
-        "comcom": "good11",
-        "comtime": "2001/12/5 00:00:00"
+        "content": "good11",
+        "time": "2001/12/5 00:00:00"
     },
     {
-        "comname": "shop12",
+        "u_name": "shop12",
         "comherf": "../home/",
-        "comcom": "good12",
-        "comtime": "2001/12/4 00:00:00"
+        "content": "good12",
+        "time": "2001/12/4 00:00:00"
+    },
+    {
+        "u_name": "shop2",
+        "comherf": "../home/",
+        "content": "good2",
+        "time": "2001/12/22 00:00:00"
+    },
+    {
+        "u_name": "shop3",
+        "comherf": "../home/",
+        "content": "good3",
+        "time": "2001/12/24 00:00:00"
+    },
+    {
+        "u_name": "shop4",
+        "comherf": "../home/",
+        "content": "good4",
+        "time": "2001/12/23 00:00:00"
+    },
+    {
+        "u_name": "shop5",
+        "comherf": "../home/",
+        "content": "good5",
+        "time": "2001/12/26 00:00:00"
+    },
+    {
+        "u_name": "shop6",
+        "comherf": "../home/",
+        "content": "good6",
+        "time": "2001/12/25 00:00:00"
+    },
+    {
+        "u_name": "shop7",
+        "comherf": "../home/",
+        "content": "good7",
+        "time": "2001/12/27 01:20:00"
+    },
+    {
+        "u_name": "shop8",
+        "comherf": "../home/",
+        "content": "good8",
+        "time": "2001/12/27 01:00:00"
+    },
+    {
+        "u_name": "shop9",
+        "comherf": "../home/",
+        "content": "good9",
+        "time": "2001/12/1 00:00:00"
+    },
+    {
+        "u_name": "shop10",
+        "comherf": "../home/",
+        "content": "good10",
+        "time": "2001/12/2 00:00:00"
+    },
+    {
+        "u_name": "shop11",
+        "comherf": "../home/",
+        "content": "good11",
+        "time": "2001/12/5 00:00:00"
+    },
+    {
+        "u_name": "shop12",
+        "comherf": "../home/",
+        "content": "good12",
+        "time": "2001/12/4 00:00:00"
     }
 ]
 
 
+
+
 function sortdate(a, b) {
-    return new Date(a.comtime).getTime() - new Date(b.comtime).getTime();
+    return new Date(a.time).getTime() - new Date(b.time).getTime();
 }
 
 function showComment() {
@@ -249,6 +321,37 @@ function showComment() {
 }
 
 
+function bar(ctx, labels, data, color) {
+    let barChart = new Chart(ctx, {
+        type : "bar",
+        data : {
+            labels : labels,
+            datasets : [{
+                label : "vote",
+                data: data,
+                backgroundColor : color,
+                borderWidth: 1
+            }]
+        }
+    });
+}
+
+function pie(ctx, labels, data, color) {
+    let pieChart = new Chart(ctx, {
+        type : 'pie',
+        data : {
+        labels : labels,
+        datasets : [{
+            data : data,
+            backgroundColor : color,
+        }],
+        }
+    });
+}
+
+
+
+
 $(document).ready(function () {
     //change merchant discount
     for (let i=0;i<mdiscount.length;i++){
@@ -283,25 +386,48 @@ $(document).ready(function () {
     }
     else {
         var html = "";
-        if (mmenu.length%3 == 0)    var menulen = mmenu.length/3;
-        else                        var menulen = mmenu.length/3+1;
+        if (mmenu.length%4 == 0)    var menulen = mmenu.length/4;
+        else                        var menulen = ( mmenu.length - mmenu.length%4 ) / 4 + 1;
         for (let i = 0; i<menulen; i++){
 
             html += `<div class="card-deck">`;
 
-            for (let j = i*3 ; j < i*3+3 && j < mmenu.length; j++) {
-                html += (`
-                    <div class="card h-100 shadow border-0">
-                        <div class="card-body p-4">
-                            <div class="center">
-                                <label>${mmenu[j]["menuname"]}</label>
-                                <label>${mmenu[j]["menuprice"]}</label>
-                                <button type="submit" class="btn btn-primary">編輯</button>
-                                <button type="submit" class="btn btn-danger">刪除</button>
+            for (let j = i*4 ; j < i*4+4 ; j++) {
+
+                if (j < mmenu.length){
+                    html += (`
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-header">
+                                <h4>${mmenu[j]["menuname"]}</h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="center">
+                                    <label>${mmenu[j]["menuprice"]}</label>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">編輯</button>
+                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `)
+                    `);
+                }
+                else{
+                    html += (`
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-header">
+                                <h4></h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="center">
+                                    <label></label>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">編輯</button>
+                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                }
             }
             html += `</div><br>`;
             ($('#showmenu')).append(`${html}`);
@@ -310,12 +436,14 @@ $(document).ready(function () {
         }
     }
 
+    
     //here to show comment record
     // showComment();
 
+
     //start
     if (comment.length == 0) {
-        $('#show-mer-com').after(`
+        $('#show-mer-com').append(`
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
@@ -334,15 +462,46 @@ $(document).ready(function () {
     else {
         comment.sort(sortdate).reverse()    //sort by datetime
         
-        // var page = 0;       //count the current page
-        var comlen;         //count the length of comment length
-        if (comment.length%10 != 0) comlen = comment.length/10+1;
-        else                        comlen = comment.length/10;
+        var largepage;              //count the length of comment length
+        var large = comment.length; //the length of comment
+
+        if (comment.length%10 != 0) largepage = (comment.length - comment.length%10)/10+1;
+        else                        largepage = comment.length/10;
+        changeComment(1,comment.length);
+        
+    }
+    
+    
+    var prebtn  = document.querySelector('#prebtn');
+    var nextbtn = document.querySelector('#nextbtn');
+
+    prebtn.addEventListener("click", function () {
+        var nowpage =  parseInt($('#btn1 > a').text(), 10);
+        if (nowpage > 1){
+            console.log("prebtn in");
+            nowpage = nowpage - 1;
+            changeComment(nowpage,large);
+        }
+    })
+    nextbtn.addEventListener("click", function () {
+        var nowpage =  parseInt($('#btn1 > a').text(), 10);
+        if (nowpage < largepage){
+            console.log("nextbtn in",nowpage,largepage);
+            nowpage = nowpage + 1;
+            changeComment(nowpage,large);
+        }
+    })
+
+    function changeComment(now , large){
+
+        console.log(now,large);
+        $('#btn1 > a').text(now);
+        $('#show-mer-com').html(``);
 
         html = "";       //to show html on merchant comment
 
-        for (let i = 0; i < 3 && i < comment.length; i++) {
-            $('#show-mer-com').after(`
+        for (let i = (now-1)*10 ; i < now*10 && i < large ; i++) {
+            $('#show-mer-com').append(`
                 <div class="row">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
@@ -375,13 +534,8 @@ $(document).ready(function () {
                 </div><br>
             `)
 
-
             $(`input[name="star"][id=star-${comment[i]["stars"]}-${i}]`).prop("checked", true)
         }
     }
     //end
-    
-
 });
-
-                    
