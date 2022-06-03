@@ -21,7 +21,8 @@ CREATE TABLE merchant(
     u_id INT,
     m_name VARCHAR(50),
     m_phone VARCHAR(10) UNIQUE,
-    opening_hours DATETIME,
+    opening_hours_start TIME,
+    opening_hours_end TIME,
     delivery CHAR(1),
     manager_name VARCHAR(50),
     manager_phone VARCHAR(10),
@@ -74,6 +75,7 @@ CREATE TABLE menu_beverage(
     u_id INT,
     b_id INT UNIQUE AUTO_INCREMENT,
     b_name VARCHAR(50) NOT NULL,
+    price INT DEFAULT 0,
 
     PRIMARY KEY(u_id, b_id),
     FOREIGN KEY(u_id) REFERENCES merchant(u_id)

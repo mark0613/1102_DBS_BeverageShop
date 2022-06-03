@@ -24,8 +24,8 @@ else {
         $m_id = $_SESSION["id"];
     }
     else {
-        if (!empty($_REQUEST["id"])) {
-            $m_id = $_SESSION["id"];
+        if (!empty($_REQUEST["m_id"])) {
+            $m_id = $_REQUEST["m_id"];
         }
         else {
             $response["status"] = "fail";

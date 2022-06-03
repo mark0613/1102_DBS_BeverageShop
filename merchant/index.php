@@ -38,10 +38,10 @@ if (!User::check()) {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="../static/js/merchant.js"></script>
     <link href="../static/css/merchant.css" rel="stylesheet">
     <link href="../static/css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/app.css">
+    <link href="../static/css/app.css" rel="stylesheet" >
+    <script src="../static/js/merchant.js"></script>
     <script src="../static/js/app.js"></script>
 </head>
 

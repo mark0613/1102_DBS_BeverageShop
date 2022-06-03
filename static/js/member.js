@@ -67,50 +67,6 @@ function bindChangePage() {
     })
 }
 
-function changeComment(now , large){
-                
-    console.log(now,large);
-    $('#btn1 > a').text(now);
-    $('#show-mem-com').html(``);
-
-    html = "";       //to show html on merchant comment
-
-    for (let i = (now-1)*10 ; i < now*10 && i < large ; i++) {
-
-        $('#show-mem-com').append(`
-            <div class="row top">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <div class="card h-100 shadow border-0">
-                        <div class="card-body p-4">
-                            <h3><a href="#">${comment[i]["m_name"]}</a></h3>
-                            <p class="comment-content">${comment[i]["content"]}</p class="comment-content">
-                            <br>
-                            <div class="stars">
-                                <form action="">
-                                    <input class="star star-5" id="star-5-${i}" type="radio" name="star" value="5">
-                                    <label class="star star-5" for="star-5-${i}"></label>
-                                    <input class="star star-4" id="star-4-${i}" type="radio" name="star" value="4">
-                                    <label class="star star-4" for="star-4-${i}"></label>
-                                    <input class="star star-3" id="star-3-${i}" type="radio" name="star" value="3">
-                                    <label class="star star-3" for="star-3-${i}"></label>
-                                    <input class="star star-2" id="star-2-${i}" type="radio" name="star" value="2">
-                                    <label class="star star-2" for="star-2-${i}"></label>
-                                    <input class="star star-1" id="star-1-${i}" type="radio" name="star" value="1">
-                                    <label class="star star-1" for="star-1-${i}"></label>
-                                </form>
-                            </div>
-                            <small class="form-text text-muted">${comment[i]["time"]}</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2"></div>
-            </div>
-        `)
-        $(`input[name="star"][id=star-${comment[i]["stars"]}-${i}]`).prop("checked", true)
-    }
-}
-
 function showComment() {
     $.post(
         "../php/getComment.php",
@@ -147,7 +103,51 @@ function showComment() {
                             else                        largepage = comment.length/10;
                             changeComment(1,comment.length);
                         }
-                    }   
+                    } 
+                    bindChangePage();
+                    function changeComment(now , large){
+                
+                        console.log(now,large);
+                        $('#btn1 > a').text(now);
+                        $('#show-mem-com').html(``);
+                    
+                        html = "";       //to show html on merchant comment
+                    
+                        for (let i = (now-1)*10 ; i < now*10 && i < large ; i++) {
+                    
+                            $('#show-mem-com').append(`
+                                <div class="row top">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-8">
+                                        <div class="card h-100 shadow border-0">
+                                            <div class="card-body p-4">
+                                                <h3><a href="#">${comment[i]["m_name"]}</a></h3>
+                                                <p class="comment-content">${comment[i]["content"]}</p class="comment-content">
+                                                <br>
+                                                <div class="stars">
+                                                    <form action="">
+                                                        <input class="star star-5" id="star-5-${i}" type="radio" name="star" value="5">
+                                                        <label class="star star-5" for="star-5-${i}"></label>
+                                                        <input class="star star-4" id="star-4-${i}" type="radio" name="star" value="4">
+                                                        <label class="star star-4" for="star-4-${i}"></label>
+                                                        <input class="star star-3" id="star-3-${i}" type="radio" name="star" value="3">
+                                                        <label class="star star-3" for="star-3-${i}"></label>
+                                                        <input class="star star-2" id="star-2-${i}" type="radio" name="star" value="2">
+                                                        <label class="star star-2" for="star-2-${i}"></label>
+                                                        <input class="star star-1" id="star-1-${i}" type="radio" name="star" value="1">
+                                                        <label class="star star-1" for="star-1-${i}"></label>
+                                                    </form>
+                                                </div>
+                                                <small class="form-text text-muted">${comment[i]["time"]}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2"></div>
+                                </div>
+                            `)
+                            $(`input[name="star"][id=star-${comment[i]["stars"]}-${i}]`).prop("checked", true)
+                        }
+                    }
                 }
             }
         }
@@ -189,7 +189,6 @@ $(document).ready(function(){
 
     //show my comment record
     showComment();
-    bindChangePage();
     
     // save user profile change
     $("#save").on('click', function() {

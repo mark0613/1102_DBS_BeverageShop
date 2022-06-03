@@ -49,12 +49,42 @@
     </div>
 
 
-    
-        <canvas id="canvas-bar-amount" width="50px" height="50px"></canvas>
-        <canvas id="canvas-bar-price"  width="50px" height="50px"></canvas>
-        <canvas id="canvas-pie-accept" width="50px" height="50px"></canvas>
-        <canvas id="canvas-pie-cancel" width="50px" height="50px"></canvas>
-        <canvas id="canvas-pie-pending"width="50px" height="50px"></canvas>
-
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <canvas id="canvas-bar-amount" width="50px" height="50px"></canvas>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <canvas id="canvas-bar-price"  width="50px" height="50px"></canvas>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <canvas id="canvas-pie-accept" width="50px" height="50px"></canvas>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <canvas id="canvas-pie-cancel" width="50px" height="50px"></canvas>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <canvas id="canvas-pie-pending"width="50px" height="50px"></canvas>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div> -->
 </body>
 </html>
