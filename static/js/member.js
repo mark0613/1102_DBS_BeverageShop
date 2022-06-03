@@ -102,7 +102,7 @@ function showComment() {
                                     <div class="col-sm-2"></div>
                                 </div>
                             `)
-                            $(`input[name="star"][id=star-${comment[i]["stars"]}-${i}]`).prop("checked", true)
+                            $(`#star-${comment[i]["stars"]}-${i}`).prop("checked", true);
                         }
                     }
                 }
