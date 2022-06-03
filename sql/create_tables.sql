@@ -34,14 +34,12 @@ CREATE TABLE merchant(
 );
 
 CREATE TABLE orders(
-    o_id CHAR(6),
+    o_id INT AUTO_INCREMENT,
     c_id INT,
     m_id INT,
     order_time DATETIME NOT NULL,
     is_accepted CHAR(1) NOT NULL,
     accepted_time DATETIME,
-    is_canceled CHAR(1) NOT NULL,
-    canceled_time DATETIME,
     
     PRIMARY KEY(o_id, c_id, m_id),
     FOREIGN KEY(c_id) REFERENCES customer(u_id),
@@ -49,15 +47,15 @@ CREATE TABLE orders(
 );
 
 CREATE TABLE order_beverage(
-    o_id CHAR(6) UNIQUE,
-    b_id INT AUTO_INCREMENT,
-    b_name VARCHAR(50) NOT NULL,
+    o_id INT,
+    b_id INT,
     sugar INT NOT NULL,
     ice INT NOT NULL,
     quantity INT NOT NULL,
     
     PRIMARY KEY(b_id, o_id),
-    FOREIGN KEY(o_id) REFERENCES orders(o_id)
+    FOREIGN KEY(o_id) REFERENCES orders(o_id),
+    FOREIGN KEY(b_id) REFERENCES menu_beverage(b_id)
 );
 
 CREATE TABLE comments(
