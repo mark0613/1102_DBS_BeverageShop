@@ -40,7 +40,7 @@ CREATE TABLE orders(
     c_id INT,
     m_id INT,
     order_time DATETIME NOT NULL,
-    is_accepted CHAR(1) NOT NULL,
+    is_accepted CHAR(1),
     accepted_time DATETIME,
     
     PRIMARY KEY(o_id, c_id, m_id),

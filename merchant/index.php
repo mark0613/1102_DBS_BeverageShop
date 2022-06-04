@@ -115,51 +115,8 @@ if (!User::check()) {
                             <div class="row">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <h5 class="center bold">❗待確認的訂單</h5>
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    訂單編號:gg123
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-
-                                                            <label>奶茶</label>
-                                                            *
-                                                            <label>10</label>
-                                                            <label>$500</label>
-                                                            <br>
-                                                            <label>紅茶</label>
-                                                            *
-                                                            <label>10</label>
-                                                            <label>$200</label>
-                                                            <br>
-                                                            <label>紅茶</label>
-                                                            *
-                                                            <label>10</label>
-                                                            <label>$200</label>
-                                                            <br>
-                                                            <label>紅茶</label>
-                                                            *
-                                                            <label>10</label>
-                                                            <label>$200</label>
-
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <p class="right">2022/05/05 16:50</p>
-                                                            <div class="down">
-                                                                <label>總花費</label>
-                                                                <label>$700</label>
-                                                                <button type="submit" class="btn btn-primary">接受</button>
-                                                                <button type="submit" class="btn btn-danger">拒絕</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="card h-100 shadow border-0" id="not-accepted-orders">
+                                        
                                     </div>
 
                                 </div>
@@ -238,8 +195,6 @@ if (!User::check()) {
                             </div>
                         </div>
                     </div>
-
-
 
                     <!--優惠-->
                     <div class="tab-pane fade" id="v-pills-discount" aria-labelledby="v-pills-discount" role="tabpanel">
