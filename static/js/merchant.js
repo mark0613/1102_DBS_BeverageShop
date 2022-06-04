@@ -215,6 +215,12 @@ function showComment() {
 }
 
 
+function linkPage() {
+    let cookies = getCookies();
+    let m_id = cookies["id"];
+    $("#link-shop-page").prop("href", `../shop?m_id=${m_id}`)
+}
+
 function bar(ctx, labels, data, color) {
     let barChart = new Chart(ctx, {
         type : "bar",
@@ -270,4 +276,7 @@ $(document).ready(function () {
 
     // show comment record
     showComment();
+
+    // link of shop page
+    linkPage();
 });

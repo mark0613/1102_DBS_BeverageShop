@@ -20,12 +20,12 @@ if (!empty($_SESSION["type"]) && $_SESSION["type"]=='customer') {
     }
 }
 else {
-    if (!empty($_SESSION["type"])) {
-        $m_id = $_SESSION["id"];
+    if (!empty($_REQUEST["m_id"])) {
+        $m_id = $_REQUEST["m_id"];
     }
     else {
-        if (!empty($_REQUEST["m_id"])) {
-            $m_id = $_REQUEST["m_id"];
+        if (!empty($_SESSION["type"])) {
+            $m_id = $_SESSION["id"];
         }
         else {
             $response["status"] = "fail";

@@ -11,6 +11,16 @@ function showAlertOnPage(text) {
     $("#warning").addClass("alert alert-danger")
 }
 
+function getCookies() {
+    let cookies = {};
+    let cookiesString = document.cookie.split("; ")
+    for (let cookieString of cookiesString){
+        let tmp = cookieString.split("=");
+        cookies[tmp[0]] = tmp[1]
+    }
+    return cookies;
+}
+
 $(document).ready(() => {
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',
