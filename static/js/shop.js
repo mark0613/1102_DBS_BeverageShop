@@ -53,6 +53,7 @@ function showInfo() {
                 if (response["status"] == "success") {
                     let info = response["data"];
                     $("#m_name").text(info["m_name"]);
+                    $("#shop-photo").attr("src", `../static/img/${info["photo"]}`);
                     $("#address").text(`${info["address_city"]} ${info["address_district"]} ${info["address_detail"]}`);
                     $("#m_phone").text(info["m_phone"]);
                     $("#time").text(`${info["opening_hours_start"]} ~ ${info["opening_hours_end"]}`);

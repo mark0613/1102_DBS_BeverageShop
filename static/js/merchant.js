@@ -23,6 +23,80 @@ mdiscount = [
     }
 ]
 
+function handleOrder(accept, o_id) {
+    let data = {
+        "o_id" : o_id,
+        "accept" : accept,
+    };
+    $.post(
+        "../php/handleOrder.php",
+        data,
+        (response, status) => {
+            console.log(response);
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    showNotAcceptedOrders()
+                }
+            }
+        }
+    )
+}
+
+function showNotAcceptedOrders() {
+    let data = {}
+    $.post(
+        "../php/getNotAcceptedOrders.php",
+        data,
+        (response, status) => {
+            console.log(response);
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    let orders = response["data"];
+                    $("#not-accepted-orders").empty();
+                    for (let o_id in orders) {
+                        $("#not-accepted-orders").append(`
+                            <div class="card-body p-4">
+                                <h5 class="center bold">❗待確認的訂單</h5>
+                                <div class="card">
+                                    <div class="card-header">
+                                        訂單編號:${o_id}
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6" id="beverage-${o_id}">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="right">${orders[o_id]["time"]}</p>
+                                                <br>
+                                                <div class="down">
+                                                    <label>總花費</label>
+                                                    <label class="text-danger">$${orders[o_id]["cost"]}</label>
+                                                    <button type="button" class="btn btn-primary" onclick="handleOrder('y', ${o_id})">接受</button>
+                                                    <button type="button" class="btn btn-danger"  onclick="handleOrder('n', ${o_id})">拒絕</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            `)
+                        for (let order of orders[o_id]["orders"]) {
+                            $(`#beverage-${o_id}`).append(`
+                                <label>${order['b_name']}</label>
+                                <label>(甜度:${order['sugar']} 冰塊:${order['ice']})</label>
+                                <label> ($${order["price"]})</label>
+                                *
+                                <label><strong>${order['quantity']}</strong></label>
+                                <br>
+                            `)
+                        }
+                    }
+                }
+            }
+        }
+    )
+}
+
 function showInfo() {
     let data = {}
     $.post(
@@ -32,17 +106,44 @@ function showInfo() {
             if (status == "success") {
                 if (response["status"] == "success") {
                     let minfor = response["data"];
-                    $("input[id][name$='shop']").val(`${minfor["m_name"]}`);
-                    $("input[id][name$='address']").val(`${minfor["address_city"]} ${minfor["address_district"]} ${minfor["address_detail"]}`);
-                    $("input[id][name$='tel']").val(`${minfor["m_phone"]}`);
-                    $("input[id][name$='manager']").val(`${minfor["manager_name"]}`);
-                    $("input[id][name$='phone']").val(`${minfor["manager_phone"]}`);
-                    $("input[id][name$='time']").val(`${minfor["opening_hours_start"]} ~ ${minfor["opening_hours_end"]}`);
-                    $("input[id][name$='waimai']").val(`${minfor["delivery"]}`);
+                    $("#m_name").val(`${minfor["m_name"]}`);
+                    $("#shop-photo").attr("src", `../static/img/${minfor["photo"]}`);
+                    $("#address_city").val(minfor["address_city"]);
+                    $("#address_district").val(minfor["address_district"]);
+                    $("#address_detail").val(minfor["address_detail"]);
+                    $("#m_phone").val(`${minfor["m_phone"]}`);
+                    $("#manager_name").val(`${minfor["manager_name"]}`);
+                    $("#manager_phone").val(`${minfor["manager_phone"]}`);
+                    $("#opening_hours_start").val(convertTime(minfor["opening_hours_start"]));
+                    $("#opening_hours_end").val(convertTime(minfor["opening_hours_end"]));
+                    $("#delivery").val(`${minfor["delivery"]}`);
                 }
             }
         }
     )
+}
+function updateMerchantInfo() {
+    $.ajax({
+        url : "../php/updateMerchantInfo.php",
+        type : "POST",
+        data : new FormData(document.getElementById("form-merchant-info")),
+        contentType : false,
+        cache : false,
+        processData :false,
+        beforeSend : function() {
+            
+        },
+        success: function(data) {
+            if (data["status"] == "success") {
+                alert("修改成功");
+                showInfo();
+                document.getElementsByClassName("pre-scrollable")[0].scrollTop = 0
+            }
+        },
+        error: function(e) {
+            console.log(e);
+        }          
+    });
 }
 
 function showMenu() {
@@ -51,7 +152,6 @@ function showMenu() {
         "../php/getMenu.php",
         data,
         (response, status) => {
-            console.log(response);
             if (status == "success") {
                 if (response["status"] == "success") {
                     let mmenu = response["data"];
@@ -209,7 +309,6 @@ function showComment() {
     )
 }
 
-
 function linkPage() {
     let cookies = getCookies();
     let m_id = cookies["id"];
@@ -248,6 +347,9 @@ function pie(ctx, labels, data, color) {
 
 
 $(document).ready(function () {
+    // show not accrpted orders
+    showNotAcceptedOrders();
+
     // change merchant discount
     for (let i=0;i<mdiscount.length;i++){
         ($('#v-pills-discount > div.container-fluid > div.row > div.col-sm-8 > form > div.h-100 > div.card-body')).append(`
@@ -265,6 +367,11 @@ $(document).ready(function () {
 
     //change merchant information
     showInfo();
+
+    // save merchant information
+    $("#save").on("click", function() {
+        updateMerchantInfo();
+    })
 
     //change merchant menu
     showMenu();

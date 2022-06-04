@@ -110,7 +110,7 @@ require("../php/User.php");
                     </div>
                 </div>
                 <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                    <img class="img-fluid rounded-3 my-5 cover" src="../static/img/default.jpg" alt="..." />
+                    <img class="img-fluid rounded-3 my-5 cover" src="../static/img/default.jpg" alt="shop photo" id="shop-photo">
                 </div>
             </div>
         </div>
