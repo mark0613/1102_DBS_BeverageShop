@@ -21,6 +21,7 @@ CREATE TABLE merchant(
     u_id INT,
     m_name VARCHAR(50),
     m_phone VARCHAR(10) UNIQUE,
+    photo TEXT DEFAULT 'default.jpg',
     opening_hours_start TIME,
     opening_hours_end TIME,
     delivery CHAR(1),
