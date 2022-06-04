@@ -78,6 +78,7 @@ function changeQuantity(b_id, dq) {
     if (ans === 0) {
         delete cart[b_id];
     }
+    showCart();
 }
 function showMenu() {
     let data = {
@@ -87,7 +88,6 @@ function showMenu() {
         "../php/getMenu.php",
         data,
         (response, status) => {
-            console.log(response["data"]);
             if (status == "success") {
                 if (response["status"] == "success") {
                     let smenu = response["data"];
@@ -119,22 +119,22 @@ function showMenu() {
                                             <div class="card-body p-4">
                                                 <div class="center">
                                                     <label>$</label>
-                                                    <label>${smenu[j]["menuprice"]}</label>
+                                                    <label id="price-${smenu[j]['b_id']}">${smenu[j]["menuprice"]}</label>
                                                     <br>
                                                     <div class="input-group mb-3 justify-content-center">
                                                         <input type='button' value='-' class="btn btn-outline-danger btn-sm" onclick="changeQuantity(${smenu[j]['b_id']}, -1)">
-                                                        <input type='text' name='quantity' id="quantity-${smenu[j]['b_id']}" value='0' class="in">
+                                                        <input type='text' name='quantity' id="quantity-${smenu[j]['b_id']}" value='0' class="in quantity">
                                                         <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm" onclick="changeQuantity(${smenu[j]['b_id']}, 1)">
                                                     </div>
                                                     <div class="input-group">
-                                                        <select class="custom-select my-1 mr-sm-2" id="sugar-${smenu[j]['b_id']}" name="sugar-${smenu[j]['b_id']}">
+                                                        <select class="custom-select my-1 mr-sm-2 sugar" id="sugar-${smenu[j]['b_id']}" name="sugar-${smenu[j]['b_id']}">
                                                             <option value="10">全糖</option>
                                                             <option value="7">少糖</option>
                                                             <option value="5">半糖</option>
                                                             <option value="3">微糖</option>
                                                             <option value="0">無糖</option>
                                                         </select>
-                                                        <select class="custom-select my-1 mr-sm-2" id="ice-${smenu[j]['b_id']}" name="ice-${smenu[j]['b_id']}">
+                                                        <select class="custom-select my-1 mr-sm-2 ice" id="ice-${smenu[j]['b_id']}" name="ice-${smenu[j]['b_id']}">
                                                             <option value="10">全冰</option>
                                                             <option value="7">少冰</option>
                                                             <option value="5">半冰</option>
@@ -166,7 +166,27 @@ function showMenu() {
     )
 }
 
-
+function showCart() {
+    $("#cart").empty();
+    let cost = 0;
+    for (let b_id in cart) {
+        let b_name = $(`#b_name-${b_id}`).text();
+        let price = parseInt($(`#price-${b_id}`).text());
+        let quantity = parseInt($(`#quantity-${b_id}`).val());
+        let sugar = $(`#sugar-${b_id}`).children(`option[value='${$(`#sugar-${b_id}`).val()}']`).text();
+        let ice = $(`#ice-${b_id}`).children(`option[value='${$(`#ice-${b_id}`).val()}']`).text();
+        cost += price * quantity;
+        $("#cart").append(`
+            <label>${b_name}</label>
+            <label>(${sugar}, ${ice})</label>
+            <label>($${price})</label>
+            *
+            <label>${quantity}</label>
+            <br>
+        `)
+        $(`#totalCost`).text(cost);
+    }
+}
 
 function showComment() {
     let data = {
@@ -245,7 +265,19 @@ $(document).ready(function () {
 
     // show shop menu
     showMenu()
+    setTimeout(function() {
+        $(".quantity").change(function() {
+            changeQuantity($(this).prop("id").split("-")[1], 0);
+            showCart();
+        })
+        $(".sugar, .ice").change(function() {
+            showCart();
+        })
+    }, 100)
     
+    // show cart
+    showCart();
+
     // show scomment record
     showComment();
 

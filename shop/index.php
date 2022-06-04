@@ -142,39 +142,19 @@ require("../php/User.php");
                                 <h5 class="center bold">購物車</h5>
                                 <div class="card">
                                     <div class="card-header">
-                                        訂單編號:gg123
+                                        訂單
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-sm-6">
-            
-                                                <label>奶茶</label>
-                                                *
-                                                <label>10</label>
-                                                <label>$500</label>
-                                                <br>
-                                                <label>紅茶</label>
-                                                *
-                                                <label>10</label>
-                                                <label>$200</label>
-                                                <br>
-                                                <label>紅茶</label>
-                                                *
-                                                <label>10</label>
-                                                <label>$200</label>
-                                                <br>
-                                                <label>紅茶</label>
-                                                *
-                                                <label>10</label>
-                                                <label>$200</label>
-            
+                                            <div class="col-sm-6" id="cart">
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="down">
                                                     <label>總花費</label>
-                                                    <label>$700</label>
-                                                    <button type="submit" class="btn btn-primary">接受</button>
-                                                    <button type="submit" class="btn btn-danger">拒絕</button>
+                                                    <label>$</label>
+                                                    <label id="totalCost" class="text-danger h4"></label>
+                                                    <br>
+                                                    <button type="submit" class="btn btn-primary">提交訂單</button>
                                                 </div>
                                             </div>
                                         </div>
