@@ -1,7 +1,3 @@
-function sortdate(a, b){
-    return new Date(a.time).getTime() - new Date(b.time).getTime();
-}
-
 function showUserInfo() {
     $.post(
         "../php/getUserInfo.php",

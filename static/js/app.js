@@ -1,3 +1,7 @@
+function sortdate(a, b) {
+    return new Date(a.time).getTime() - new Date(b.time).getTime();
+}
+
 function nullFilter(object) {
     for (let key in object) {
         if (object[key] === null) {

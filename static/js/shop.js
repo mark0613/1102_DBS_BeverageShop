@@ -21,9 +21,24 @@ sdiscount = [
     }
 ]
 
-
-function sortdate(a, b) {
-    return new Date(a.comtime).getTime() - new Date(b.comtime).getTime();
+function checkMerchantExists() {
+    let data = {
+        "m_id" : window.location.href.split("m_id=")[1],
+    }
+    $.post(
+        "../php/checkMerchantExists.php",
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    if (response["data"]["isEmpty"]) {
+                        alert("該商家不存在!");
+                        window.location.href = "../";
+                    }
+                }
+            }
+        }
+    )
 }
 
 function showInfo() {
@@ -149,6 +164,7 @@ function showComment() {
             if (status == "success") {
                 if (response["status"] == "success") {
                     let scomment = response["data"];
+                    scomment.sort(sortdate).reverse()
                     for (let i=0; i<scomment.length && i<10 ; i++){
                         (($('#com-show')).before(`
                             <div class="card shadow border-0">  
@@ -188,6 +204,9 @@ function showComment() {
 
 
 $(document).ready(function () {
+    // check merchant exists
+    checkMerchantExists()
+
     // show shop infomation
     showInfo();
 

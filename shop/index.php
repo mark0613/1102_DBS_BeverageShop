@@ -35,10 +35,11 @@ require("../php/User.php");
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    <script src="../static/js/app.js"></script>
     <script src="../static/js/shop.js"></script>
     <link href="../static/css/base.css" rel="stylesheet">
     <link href="../static/css/shop.css" rel="stylesheet">
-    <link href="../static/css/app.css" rel="stylesheet" >
+    <link href="../static/css/app.css" rel="stylesheet">
 </head>
 
 <body>

@@ -41,8 +41,8 @@ if (!User::check()) {
     <link href="../static/css/merchant.css" rel="stylesheet">
     <link href="../static/css/base.css" rel="stylesheet">
     <link href="../static/css/app.css" rel="stylesheet" >
-    <script src="../static/js/merchant.js"></script>
     <script src="../static/js/app.js"></script>
+    <script src="../static/js/merchant.js"></script>
 </head>
 
 <body class="over">
