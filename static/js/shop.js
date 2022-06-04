@@ -26,9 +26,31 @@ function sortdate(a, b) {
     return new Date(a.comtime).getTime() - new Date(b.comtime).getTime();
 }
 
+function showInfo() {
+    let data = {
+        "m_id" : window.location.href.split("m_id=")[1],
+    }
+    $.post(
+        "../php/getShopInfo.php",
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    let info = response["data"];
+                    $("#m_name").text(info["m_name"]);
+                    $("#address").text(`${info["address_city"]} ${info["address_district"]} ${info["address_detail"]}`);
+                    $("#m_phone").text(info["m_phone"]);
+                    $("#time").text(`${info["opening_hours_start"]} ~ ${info["opening_hours_end"]}`);
+                    $("#deilvery").text(info["delivery"]);
+                }
+            }
+        }
+    )
+}
+
 function showMenu() {
     let data = {
-        "m_id" : window.location.href.split("m_id")[1],
+        "m_id" : window.location.href.split("m_id=")[1],
     };
     $.post(
         "../php/getMenu.php",
@@ -118,7 +140,7 @@ function showMenu() {
 
 function showComment() {
     let data = {
-        "m_id" : window.location.href.split("m_id")[1],
+        "m_id" : window.location.href.split("m_id=")[1],
     };
     $.post(
         "../php/getComment.php",
@@ -166,6 +188,9 @@ function showComment() {
 
 
 $(document).ready(function () {
+    // show shop infomation
+    showInfo();
+
     // show shop discount
     for (let i = 0; i < sdiscount.length; i++) {
         ($('.container-fluid:first')).prepend(`

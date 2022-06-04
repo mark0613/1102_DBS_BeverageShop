@@ -23,29 +23,31 @@ mdiscount = [
     }
 ]
 
-minfor = {
-    "msname": "好喝飲料店",
-    "msadd": "西屯區100號",
-    "msphone": "0412345678",
-    "mmname": "pingleo",
-    "mmphone": "0912345678",
-    "mstime": "8am-8pm",
-    "mdeliver": "是"
-}
-
 
 function sortdate(a, b) {
     return new Date(a.time).getTime() - new Date(b.time).getTime();
 }
 
 function showInfo() {
-    ($("input[id][name$='shop']")).val(`${minfor["msname"]}`);
-    ($("input[id][name$='address']")).val(`${minfor["msadd"]}`);
-    ($("input[id][name$='tel']")).val(`${minfor["msphone"]}`);
-    ($("input[id][name$='manager']")).val(`${minfor["mmname"]}`);
-    ($("input[id][name$='phone']")).val(`${minfor["mmphone"]}`);
-    ($("input[id][name$='time']")).val(`${minfor["mstime"]}`);
-    ($("input[id][name$='waimai']")).val(`${minfor["mdeliver"]}`);
+    let data = {}
+    $.post(
+        "../php/getUserInfo.php",
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    let minfor = response["data"];
+                    $("input[id][name$='shop']").val(`${minfor["m_name"]}`);
+                    $("input[id][name$='address']").val(`${minfor["address_city"]} ${minfor["address_district"]} ${minfor["address_detail"]}`);
+                    $("input[id][name$='tel']").val(`${minfor["m_phone"]}`);
+                    $("input[id][name$='manager']").val(`${minfor["manager_name"]}`);
+                    $("input[id][name$='phone']").val(`${minfor["manager_phone"]}`);
+                    $("input[id][name$='time']").val(`${minfor["opening_hours_start"]} ~ ${minfor["opening_hours_end"]}`);
+                    $("input[id][name$='waimai']").val(`${minfor["delivery"]}`);
+                }
+            }
+        }
+    )
 }
 
 function showMenu() {

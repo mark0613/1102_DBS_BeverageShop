@@ -23,13 +23,13 @@ $response = [
 if(!isset($_SESSION)) { 
     session_start(); 
 } 
-if (!empty($_SESSION["type"]) && $_SESSION["type"]==="merchant") {
-    $response["status"] = "success";
-    $response["data"] = getMenu($_SESSION["id"]);
-}
-elseif (!empty($_REQUEST["m_id"])) {
+if (!empty($_REQUEST["m_id"])) {
     $response["status"] = "success";
     $response["data"] = getMenu($_REQUEST["m_id"]);
+}
+elseif (!empty($_SESSION["type"]) && $_SESSION["type"]==="merchant") {
+    $response["status"] = "success";
+    $response["data"] = getMenu($_SESSION["id"]);
 }
 
 header('Content-Type: application/json; charset=utf-8');

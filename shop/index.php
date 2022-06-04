@@ -96,15 +96,16 @@ require("../php/User.php");
             <div class="row gx-5 align-items-center justify-content-center">
                 <div class="col-lg-8 col-xl-7 col-xxl-6">
                     <div class="my-5 text-center text-xl-start">
-                        <h1 class="display-5 fw-bolder text-white mb-2">IGEN飲料店</h1>
-                        <label class="lead fw-normal text-white">台中市西屯區福星北路98號</label>
+                        <h1 class="display-5 fw-bolder text-white mb-2" id="m_name"></h1>
+                        <label class="lead fw-normal text-white" id="address"></label>
                         <br>
-                        <label class="lead fw-normal text-white">(04)2222-7777</label>
+                        <label class="lead fw-normal text-white" id="m_phone"></label>
                         <br>
                         <label class="lead fw-normal text-white">🕙營業時間:</label>
-                        <label class="lead fw-normal text-white">24hr</label>
+                        <label class="lead fw-normal text-white" id="time"></label>
                         <br>
-                        <label class="lead fw-normal text-white">🛵可外送</label>
+                        <label class="lead fw-normal text-white">🛵外送:</label>
+                        <label class="lead fw-normal text-white" id="deilvery"></label>
                     </div>
                 </div>
                 <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
