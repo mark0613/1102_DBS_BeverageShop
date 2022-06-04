@@ -32,17 +32,44 @@ function showInfo() {
             if (status == "success") {
                 if (response["status"] == "success") {
                     let minfor = response["data"];
-                    $("input[id][name$='shop']").val(`${minfor["m_name"]}`);
-                    $("input[id][name$='address']").val(`${minfor["address_city"]} ${minfor["address_district"]} ${minfor["address_detail"]}`);
-                    $("input[id][name$='tel']").val(`${minfor["m_phone"]}`);
-                    $("input[id][name$='manager']").val(`${minfor["manager_name"]}`);
-                    $("input[id][name$='phone']").val(`${minfor["manager_phone"]}`);
-                    $("input[id][name$='time']").val(`${minfor["opening_hours_start"]} ~ ${minfor["opening_hours_end"]}`);
-                    $("input[id][name$='waimai']").val(`${minfor["delivery"]}`);
+                    $("#m_name").val(`${minfor["m_name"]}`);
+                    $("#shop-photo").attr("src", `../static/img/${minfor["photo"]}`);
+                    $("#address_city").val(minfor["address_city"]);
+                    $("#address_district").val(minfor["address_district"]);
+                    $("#address_detail").val(minfor["address_detail"]);
+                    $("#m_phone").val(`${minfor["m_phone"]}`);
+                    $("#manager_name").val(`${minfor["manager_name"]}`);
+                    $("#manager_phone").val(`${minfor["manager_phone"]}`);
+                    $("#opening_hours_start").val(convertTime(minfor["opening_hours_start"]));
+                    $("#opening_hours_end").val(convertTime(minfor["opening_hours_end"]));
+                    $("#delivery").val(`${minfor["delivery"]}`);
                 }
             }
         }
     )
+}
+function updateMerchantInfo() {
+    $.ajax({
+        url : "../php/updateMerchantInfo.php",
+        type : "POST",
+        data : new FormData(document.getElementById("form-merchant-info")),
+        contentType : false,
+        cache : false,
+        processData :false,
+        beforeSend : function() {
+            
+        },
+        success: function(data) {
+            if (data["status"] == "success") {
+                alert("修改成功");
+                showInfo();
+                document.getElementsByClassName("pre-scrollable")[0].scrollTop = 0
+            }
+        },
+        error: function(e) {
+            console.log(e);
+        }          
+    });
 }
 
 function showMenu() {
@@ -51,7 +78,6 @@ function showMenu() {
         "../php/getMenu.php",
         data,
         (response, status) => {
-            console.log(response);
             if (status == "success") {
                 if (response["status"] == "success") {
                     let mmenu = response["data"];
@@ -209,7 +235,6 @@ function showComment() {
     )
 }
 
-
 function linkPage() {
     let cookies = getCookies();
     let m_id = cookies["id"];
@@ -265,6 +290,11 @@ $(document).ready(function () {
 
     //change merchant information
     showInfo();
+
+    // save merchant information
+    $("#save").on("click", function() {
+        updateMerchantInfo();
+    })
 
     //change merchant menu
     showMenu();

@@ -25,6 +25,10 @@ function getCookies() {
     return cookies;
 }
 
+function convertTime(timeString) {
+    return timeString.split(":").slice(0, 2).join(":");
+}
+
 $(document).ready(() => {
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',

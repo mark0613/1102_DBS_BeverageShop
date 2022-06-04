@@ -166,6 +166,7 @@ if (!User::check()) {
                                 <div class="col-sm-2"></div>
                             </div>
                             <br>
+                            <!-- 搜尋訂單 -->
                             <div class="row">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-8">
@@ -215,40 +216,6 @@ if (!User::check()) {
                                                     </form>
                                                 </div>
 
-                                                <!--<div>
-                                                    <form class="form-inline">
-                                                        <label>🔎透過日期搜尋訂單:</label>
-                                                        <div class="form-group">
-                                                            <select class="custom-select mx-sm-2">
-                                                                <option selected>2022</option>
-                                                                <option value="1">2023</option>
-                                                                <option value="2">2024</option>
-                                                                <option value="3">2025</option>
-                                                            </select>
-                                                            年
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <select class="custom-select mx-sm-2">
-                                                                <option selected>1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="2">3</option>
-                                                                <option value="3">4</option>
-                                                            </select>
-                                                            月
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <select class="custom-select mx-sm-2">
-                                                                <option selected>1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="2">3</option>
-                                                                <option value="3">4</option>
-                                                            </select>
-                                                            日
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary">搜尋</button>
-                                                    </form>
-                                                </div>-->
-
                                                 <div>
                                                     <form class="top title">
                                                         <label>🔎透過編號搜尋訂單</label>
@@ -263,13 +230,6 @@ if (!User::check()) {
                                                         </div>
                                                     </form>
                                                 </div>
-                                                <!--<div>
-                                                    <form class="form-inline top">
-                                                        <label>🔎透過編號搜尋訂單:</label>
-                                                        <input name="token" id="token" type="text" placeholder="請輸入編號" class="form-control mx-sm-2">
-                                                        <button type="submit" class="btn btn-primary">搜尋</button>
-                                                    </form>
-                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -327,47 +287,79 @@ if (!User::check()) {
 
                                 <div class="col-sm-8">
                                     <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
+                                        <form method="post" class="card-body p-4" id="form-merchant-info" enctype="multipart/form-data">
+                                            <div class="form-group center">
+                                                <img src="../static/img/default.jpg"  id="shop-photo" width="500px">
+                                                <input type="file" class="form-control-file" id="photo" name="photo">
+                                            </div>
                                             <br>
                                             <div class="form-group">
                                                 <label>店名</label>
-                                                <input class="form-control" name="shop" id="shop" value="秉霖鮮果屋">
+                                                <input class="form-control" name="m_name" id="m_name" value="">
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <label>住址</label>
-                                                <input class="form-control" name="address" id="address" value="台中市">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label>縣市</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input class="form-control" name="address_city" id="address_city" value="">
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <label>區域</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input class="form-control" name="address_district" id="address_district" value="">
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <label>詳細</label>
+                                                        </div>
+                                                        <div class="col-5">
+                                                            <input class="form-control" name="address_detail" id="address_detail" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <label>電話</label>
-                                                <input class="form-control" name="tel" id="tel" value="0412341234">
+                                                <input class="form-control" name="m_phone" id="m_phone" value="">
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <label>管理人</label>
-                                                <input class="form-control" name="manager" id="manager" value="pingleo桑">
+                                                <input class="form-control" name="manager_name" id="manager_name" value="">
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <label>管理人手機</label>
-                                                <input class="form-control" name="phone" id="phone" value="0912123123">
+                                                <input class="form-control" name="manager_phone" id="manager_phone" value="">
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <label>營業時間</label>
-                                                <input class="form-control" name="time" id="time" value="24hr">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <input class="form-control col-5" name="opening_hours_start" id="opening_hours_start" value="">
+                                                        <span class="col-2 center">~</span>
+                                                        <input class="form-control col-5" name="opening_hours_end" id="opening_hours_end" value="">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <label>外送與否</label>
-                                                <input class="form-control" name="waimai" id="waimai" value="是">
+                                                <input class="form-control" name="delivery" id="delivery" value="">
                                             </div>
                                             <br>
                                             <div class="center">
-                                                <button type="submit" class="btn btn-primary">變更</button>
+                                                <button type="button" class="btn btn-primary" id="save">儲存</button>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="col-sm-2"></div>
@@ -383,74 +375,6 @@ if (!User::check()) {
                         <div class="row top">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10" id = "showmenu">
-
-                                <!-- <div class="card-deck">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                                <label>奶茶</label>
-                                                <label>100</label>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                            <label>奶茶</label>
-                                                <label>100</label>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                                <label>奶茶</label>
-                                                <label>100</label>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="card-deck">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                                <label>奶茶</label>
-                                                <label>100</label>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                            <label>奶茶</label>
-                                                <label>100</label>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                                <label>奶茶</label>
-                                                <label>100</label>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br> -->
-                                
                             </div>
                             <div class="col-sm-1"></div>
                         </div>
@@ -458,98 +382,14 @@ if (!User::check()) {
                         <div class="center">
                             <button type="submit" class="btn btn-primary">新增</button>
                         </div>
-                        <!--菜單。改-->
-                                <!-- <div class="card-deck">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-header">
-                                            <h4>奶茶</h4>
-                                        </div>
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                                <label>100元</label>
-                                                <br>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-header">
-                                            <h4>奶茶</h4>
-                                        </div>
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                                <label>100元</label>
-                                                <br>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-header">
-                                            <h4>奶茶</h4>
-                                        </div>
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                                <label>100元</label>
-                                                <br>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-header">
-                                            <h4>奶茶</h4>
-                                        </div>
-                                        <div class="card-body p-4">
-                                            <div class="center">
-                                                <label>100元</label>
-                                                <br>
-                                                <button type="submit" class="btn btn-primary">編輯</button>
-                                                <button type="submit" class="btn btn-danger">刪除</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                                <!--小視窗-->
-                                <div>
-                                    <input type="text" id="" name="" class="form-control" placeholder="商品名稱">
-                                    <br>
-                                    <input type="text" id="" name="" class="form-control" placeholder="價格(元)">
-                                    <br>
-                                    <button type="submit" class="btn btn-primary ">新增</button>
-                                </div>
                     </div>
 
                     <!--評價-->
-
                     <div class="tab-pane fade" id="v-pills-rate" aria-controls="v-pills-rate" role="tabpanel">
                         <div class="container-fluid">
                             <p class="title center">📝被給予的評價</p>
-                            
-                            
                             <div id = "show-mer-com">
-
-
-                            <!-- <div class="row">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
-                                    <div class="card h-100 shadow border-0">
-                                        <div class="card-body p-4">
-                                            <label>超讚的啦</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div> -->
-                            
-                            
                             </div>
-
-
                             <div>
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-center">
@@ -559,8 +399,6 @@ if (!User::check()) {
                                             </a>
                                         </li>
                                         <li class="page-item" id="btn1"><a class="page-link" href="#">1</a></li>
-                                        <!-- <li class="page-item" id="btn2"><a class="page-link" href="#">2</a></li> -->
-                                        <!-- <li class="page-item" id="btn3"><a class="page-link" href="#">3</a></li> -->
                                         <li class="page-item">
                                             <a class="page-link" href="#" aria-label="Next" id="nextbtn">
                                                 <span aria-hidden="true">&raquo;</span>
