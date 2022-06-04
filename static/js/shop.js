@@ -21,6 +21,8 @@ sdiscount = [
     }
 ]
 
+var cart = {};
+
 function checkMerchantExists() {
     let data = {
         "m_id" : window.location.href.split("m_id=")[1],
@@ -64,6 +66,19 @@ function showInfo() {
     )
 }
 
+function changeQuantity(b_id, dq) {
+    let quantity = parseInt($(`#quantity-${b_id}`).val());
+    let ans = quantity + dq;
+    if (ans < 0) {
+        alert("數量不能小於0!");
+    }
+    ans = Math.max(ans, 0);
+    $(`#quantity-${b_id}`).val(ans);
+    cart[b_id] = ans;
+    if (ans === 0) {
+        delete cart[b_id];
+    }
+}
 function showMenu() {
     let data = {
         "m_id" : window.location.href.split("m_id=")[1],
@@ -72,6 +87,7 @@ function showMenu() {
         "../php/getMenu.php",
         data,
         (response, status) => {
+            console.log(response["data"]);
             if (status == "success") {
                 if (response["status"] == "success") {
                     let smenu = response["data"];
@@ -92,38 +108,39 @@ function showMenu() {
                         else                        var slen = ( smenu.length - smenu.length%4 ) / 4 + 1 ;
                 
                         for (let i = 0; i<slen; i++){
-                
                             html += `<div class="card-deck">`;
-                
                             for (let j = i*4 ; j < i*4+4 ; j++){
                                 if (j < smenu.length){
                                     html +=  `
                                         <div class="card h-100 shadow border-0">
                                             <div class="card-header center">
-                                                <h4>${smenu[j]["menuname"]}</h4>
+                                                <h4 id="b_name-${smenu[j]['b_id']}">${smenu[j]["menuname"]}</h4>
                                             </div>
                                             <div class="card-body p-4">
                                                 <div class="center">
+                                                    <label>$</label>
                                                     <label>${smenu[j]["menuprice"]}</label>
                                                     <br>
                                                     <div class="input-group mb-3 justify-content-center">
-                                                        <input type='button' value='-' class="btn btn-outline-danger btn-sm">
-                                                        <input type='text' name='quantity' value='0' class="in">
-                                                        <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm">
+                                                        <input type='button' value='-' class="btn btn-outline-danger btn-sm" onclick="changeQuantity(${smenu[j]['b_id']}, -1)">
+                                                        <input type='text' name='quantity' id="quantity-${smenu[j]['b_id']}" value='0' class="in">
+                                                        <input type='button' value='+' field='quantity' class="btn btn-outline-primary btn-sm" onclick="changeQuantity(${smenu[j]['b_id']}, 1)">
                                                     </div>
                                                     <div class="input-group">
-                                                        <select class="custom-select my-1 mr-sm-2" id="" name="">
-                                                            <option value="">全糖</option>
-                                                            <option value="">半糖</option>
-                                                            <option value="">無糖</option>
+                                                        <select class="custom-select my-1 mr-sm-2" id="sugar-${smenu[j]['b_id']}" name="sugar-${smenu[j]['b_id']}">
+                                                            <option value="10">全糖</option>
+                                                            <option value="7">少糖</option>
+                                                            <option value="5">半糖</option>
+                                                            <option value="3">微糖</option>
+                                                            <option value="0">無糖</option>
                                                         </select>
-                                                        <select class="custom-select my-1 mr-sm-2" id="" name="">
-                                                            <option value="">全冰</option>
-                                                            <option value="">半冰</option>
-                                                            <option value="">少冰</option>
-                                                            <option value="">微冰</option>
-                                                            <option value="">去冰（碎冰）</option>
-                                                            <option value="">完全去冰</option>
+                                                        <select class="custom-select my-1 mr-sm-2" id="ice-${smenu[j]['b_id']}" name="ice-${smenu[j]['b_id']}">
+                                                            <option value="10">全冰</option>
+                                                            <option value="7">少冰</option>
+                                                            <option value="5">半冰</option>
+                                                            <option value="3">微冰</option>
+                                                            <option value="1">去冰（碎冰）</option>
+                                                            <option value="0">完全去冰</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -138,21 +155,18 @@ function showMenu() {
                                 }
                                 
                             }
-                            
                             html += `</div><br>`;
-                
                             ($('.container-fluid:first > div.row.top > .col-sm-8:first')).append(`${html}`);
-                
                             html = "";
                         }
-                
-                            
                     }
                 }
             }
         }
     )
 }
+
+
 
 function showComment() {
     let data = {
