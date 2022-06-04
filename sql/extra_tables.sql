@@ -1,23 +1,23 @@
 -- ALTER TABLE `menu_beverage` AUTO_INCREMENT = 0;
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (7, '普通紅茶', 25);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (7, '普通綠茶', 25);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (7, '普通麥茶', 25);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (7, '普通烏龍茶' 35);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (7, '普通奶茶' 35);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (7, '普通四季春茶', 55);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (7, '普通紅茶', 25);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (7, '普通綠茶', 25);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (7, '普通麥茶', 25);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (7, '普通烏龍茶', 35);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (7, '普通奶茶', 35);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (7, '普通四季春茶', 55);
 
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (8, '超淺紅茶', 35);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (8, '超淺綠茶', 35);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (8, '超淺麥茶', 35);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (8, '超淺烏龍茶', 45);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (8, '超淺奶茶', 45);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (8, '超淺紅茶', 35);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (8, '超淺綠茶', 35);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (8, '超淺麥茶', 35);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (8, '超淺烏龍茶', 45);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (8, '超淺奶茶', 45);
 
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (9, '超深紅茶', 5);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (9, '超深綠茶', 5);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (9, '超深麥茶', 5);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (9, '超深烏龍茶', 15);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (9, '超深奶茶', 15);
-INSERT INTO `menu_beverage`(`u_id`, `b_name`) VALUES (9, '超深四季春茶', 35);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (9, '超深紅茶', 5);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (9, '超深綠茶', 5);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (9, '超深麥茶', 5);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (9, '超深烏龍茶', 15);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (9, '超深奶茶', 15);
+INSERT INTO `menu_beverage`(`u_id`, `b_name`, `price`) VALUES (9, '超深四季春茶', 35);
 -- ALTER TABLE `ice_type`
 INSERT INTO `ice_type`(`b_id`, `ice_value`) VALUES ('18','0');
 INSERT INTO `ice_type`(`b_id`, `ice_value`) VALUES ('18','3');
@@ -191,19 +191,19 @@ INSERT INTO `sugar_value`(`b_id`, `sugar_value`) VALUES ('34','5');
 INSERT INTO `sugar_value`(`b_id`, `sugar_value`) VALUES ('34','7');
 INSERT INTO `sugar_value`(`b_id`, `sugar_value`) VALUES ('34','10');
 -- ALTER TABLE `order`
-INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (1, 7, '2022-06-19 24:20:25' , 'N' , NULL);
-INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (2, 8, '2022-06-03 07:53:32' , 'N' , NULL);
+INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (1, 7, '2022-06-19 24:20:25' , NULL , NULL);
+INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (2, 8, '2022-06-03 07:53:32' , NULL , NULL);
 INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (1, 7, '2022-06-05 20:36:00' , 'Y' , '2022-06-05 20:37:12');
 INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (1, 8, '2022-06-08 10:03:43' , 'Y' , '2022-06-08 10:04:51');
 INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (2, 8, '2022-06-08 18:43:23' , 'Y' , '2022-06-08 18:44:55');
 INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (2, 9, '2022-06-08 22:48:41' , 'Y' , '2022-06-08 22:49:00');
-INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (2, 7, '2022-06-10 24:41:32' , 'N' , NULL);
+INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (2, 7, '2022-06-10 24:41:32' , NULL , NULL);
 INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (1, 9, '2022-06-11 15:51:11' , 'Y' , '2022-06-11 15:53:54');
 INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (3, 8, '2022-06-11 18:38:52' , 'Y' , '2022-06-11 18:39:50');
-INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (3, 7, '2022-06-17 06:47:43' , 'N' , NULL);
+INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (3, 7, '2022-06-17 06:47:43' , NULL , NULL);
 INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (3, 9, '2022-06-19 18:09:50' , 'Y' , '2022-06-19 18:11:20');
-INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (3, 7, '2022-06-20 05:28:25' , 'N' , NULL);
-INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (3, 9, '2022-06-21 00:20:34' , 'N' , NULL);
+INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (3, 7, '2022-06-20 05:28:25' , NULL , NULL);
+INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (3, 9, '2022-06-21 00:20:34' , NULL , NULL);
 INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (2, 9, '2022-06-21 15:37:01' , 'Y' , '2022-05-21 15:40:02');
 INSERT INTO `orders`(`c_id`, `m_id`, `order_time`, `is_accepted`, `accepted_time`) VALUES (1, 9, '2022-06-26 20:13:11' , 'Y' , '2022-05-26 20:14:26');
 -- ALTER TABLE `order_beberage`
