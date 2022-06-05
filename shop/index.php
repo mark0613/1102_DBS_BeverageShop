@@ -152,9 +152,9 @@ require("../php/User.php");
                                                 <div class="down">
                                                     <label>總花費</label>
                                                     <label>$</label>
-                                                    <label id="totalCost" class="text-danger h4"></label>
+                                                    <label class="text-danger h4 total-cost">0</label>
                                                     <br>
-                                                    <button type="submit" class="btn btn-primary">提交訂單</button>
+                                                    <button type="button" class="btn btn-primary open-window">結帳</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -166,6 +166,35 @@ require("../php/User.php");
                 </div>
                 <div class="col-1"></div>
             </div>
+        </div>
+        <div class="black-cover"></div>
+        <div class="window bg-light top-50">
+            <form method="post">
+                <br>
+                <div class="container-fluid">
+                    <div class="form-group">
+                        <label for="my-name">姓名</label>
+                        <input type="text" class="form-control" id="my-name" name="my-name" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="my-phone">電話</label>
+                        <input type="text" class="form-control" id="my-phone" name="my-phone" value="">
+                    </div>
+                    <div class="form-inline right">
+                        <label class="price">$</label>
+                        <label class="text-danger h4 total-cost">0</label>
+                        <div class="pl-1">
+                            <button type="button" class="btn btn-secondary close-window">取消</button>
+                        </div>
+                        <div class="pl-1">
+                            <button type="button" class="btn btn-primary" onclick="submitOrder()">送出</button>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </form>
         </div>
 
         <!-- 評價 -->

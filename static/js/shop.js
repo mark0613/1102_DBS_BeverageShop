@@ -58,7 +58,7 @@ function showInfo() {
                     $("#shop-photo").attr("src", `../static/img/${info["photo"]}`);
                     $("#address").text(`${info["address_city"]} ${info["address_district"]} ${info["address_detail"]}`);
                     $("#m_phone").text(info["m_phone"]);
-                    $("#time").text(`${info["opening_hours_start"]} ~ ${info["opening_hours_end"]}`);
+                    $("#time").text(`${convertTime(info["opening_hours_start"])} ~ ${convertTime(info["opening_hours_end"])}`);
                     $("#deilvery").text(info["delivery"]);
                 }
             }
@@ -160,6 +160,15 @@ function showMenu() {
                             html = "";
                         }
                     }
+                    setTimeout(function() {
+                        $(".quantity").change(function() {
+                            changeQuantity($(this).prop("id").split("-")[1], 0);
+                            showCart();
+                        })
+                        $(".sugar, .ice").change(function() {
+                            showCart();
+                        })
+                    }, 10)
                 }
             }
         }
@@ -184,8 +193,76 @@ function showCart() {
             <label>${quantity}</label>
             <br>
         `)
-        $(`#totalCost`).text(cost);
+        $(`.total-cost`).text(cost);
     }
+}
+function checkUserLogin() {
+    let cookies = getCookies();
+    return cookies["id"] !== undefined;
+}
+function getUserInfo() {
+    if (!checkUserLogin()) {
+        return ;
+    }
+    let data = {}
+    $.post(
+        "../php/getUserInfo.php",
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    let info = response["data"];
+                    $("#my-name").val(info["name"]);
+                    $("#my-phone").val(info["phone"]);
+                }
+            }
+        }
+    )
+}
+function openWindow() {
+    if (!checkUserLogin) {
+        alert("請先登入!");
+        return ;
+    }
+    let pageHeight = Math.max($("body").outerHeight(), $("html").outerHeight());
+    let nowPosition = document.documentElement.scrollTop;
+    let windowPosition = nowPosition + 130;
+    $('.black-cover').css("display", "block");
+    $('.black-cover').outerHeight(pageHeight);
+    $('.window').css("display", "block");
+    $('.window').css("top", windowPosition);
+    $("body").css("overflow-y", "hidden");
+}
+function closeWindow() {
+    $(".black-cover").css("display", "none");
+    $(".window").css("display", "none");
+    $("body").css("overflow-y", "auto");
+}
+function submitOrder() {
+    let data = {
+        "m_id" : window.location.href.split("m_id=")[1],
+        "orders" : {},
+    };
+    for (let b_id in cart) {
+        data["orders"][b_id] = {
+            'price' : parseInt($(`#price-${b_id}`).text()),
+            'quantity' : parseInt($(`#quantity-${b_id}`).val()),
+            'sugar' : $(`#sugar-${b_id}`).val(),
+            'ice' : $(`#ice-${b_id}`).val(),
+        }
+    }
+    $.post(
+        "../php/submitOrder.php",
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    alert("送出成功!");
+                    window.location.reload();
+                }
+            }
+        }
+    )
 }
 
 function showComment() {
@@ -262,23 +339,25 @@ $(document).ready(function () {
         `);
     }
 
-
     // show shop menu
     showMenu()
-    setTimeout(function() {
-        $(".quantity").change(function() {
-            changeQuantity($(this).prop("id").split("-")[1], 0);
-            showCart();
-        })
-        $(".sugar, .ice").change(function() {
-            showCart();
-        })
-    }, 100)
     
     // show cart
     showCart();
 
+    // get user info
+    getUserInfo();
+
     // show scomment record
     showComment();
 
+    // open window when click button
+    $(".open-window").on('click', function() {
+        openWindow();
+    })
+
+    // close window when click button or cover
+    $(".close-window, .black-cover").on('click', function() {
+        closeWindow();
+    })
 });

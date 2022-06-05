@@ -82,14 +82,14 @@ require("../php/User.php");
             <div class="row gx-5 align-items-center justify-content-center">
                 <div class="col-lg-8 col-xl-7 col-xxl-6">
                     <div class="my-5 text-center text-xl-start">
-                        <h1 class="display-5 fw-bolder text-white mb-2">Welcome to IGEN</h1>
-                        <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive
-                            mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit!
+                        <h1 class="display-5 fw-bolder text-white mb-2">飲料店整合系統</h1>
+                        <p class="lead fw-normal text-white-50 mb-4">
+                            快速建構專屬網站，同時還保有自訂功能!
                         </p>
                     </div>
                 </div>
                 <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5"
-                        src="../static/img/default.jpg" alt="..." /></div>
+                        src="../static/img/cat.webp" alt="home photo" width="300px"></div>
             </div>
         </div>
     </header>
@@ -159,7 +159,7 @@ require("../php/User.php");
 
 
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -187,16 +187,10 @@ require("../php/User.php");
                         </div>
 
                     </div>
-
-
-
                     <div class="row top">
                         <div class="col-sm-4">
-
-
-
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -226,7 +220,7 @@ require("../php/User.php");
 
                         <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -252,7 +246,7 @@ require("../php/User.php");
 
                         <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -286,7 +280,7 @@ require("../php/User.php");
                     <div class="row top">
                         <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -312,7 +306,7 @@ require("../php/User.php");
 
                         <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -338,7 +332,7 @@ require("../php/User.php");
 
                         <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -366,7 +360,7 @@ require("../php/User.php");
                     <div class="row top">
                         <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -392,7 +386,7 @@ require("../php/User.php");
 
                         <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
@@ -418,7 +412,7 @@ require("../php/User.php");
 
                         <div class="col-sm-4">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top cover" src="../static/img/pingleo.jpg" alt="..." />
+                                <img class="card-img-top cover" src="../static/img/default.jpg" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
