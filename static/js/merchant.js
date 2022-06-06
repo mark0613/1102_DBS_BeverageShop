@@ -48,7 +48,6 @@ function showNotAcceptedOrders() {
         "../php/getNotAcceptedOrders.php",
         data,
         (response, status) => {
-            console.log(response);
             if (status == "success") {
                 if (response["status"] == "success") {
                     let orders = response["data"];
@@ -227,6 +226,7 @@ function showComment() {
         "../php/getComment.php",
         "",
         (response, status) => {
+            console.log(response);
             if (status == "success") {
                 if (response["status"] == "success") {
                     let comment = response["data"];

@@ -47,6 +47,15 @@ function convertTime(timeString) {
     return timeString.split(":").slice(0, 2).join(":");
 }
 
+function searchOrder(type) {
+    if (type == "date") {
+        window.location.href = `../order/?sd=${$('#startDate').val()}&ed=${$('#endDate').val()}`;
+    }
+    if (type == "id") {
+        window.location.href = `../order/?o_id=${$("#order-id").val()}`;
+    }
+}
+
 $(document).ready(() => {
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',

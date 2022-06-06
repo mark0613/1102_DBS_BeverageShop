@@ -288,7 +288,7 @@ function showOrders() {
                                         <label>時間：</label>
                                         <label>${order["order"]["order_time"]}</label> 
                                     </div>  
-                                </div>  
+                                </div>
                             </div>
                             <div class="col-sm-4"></div>
                         </div>

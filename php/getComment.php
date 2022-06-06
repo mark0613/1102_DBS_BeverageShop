@@ -30,6 +30,7 @@ else {
         }
     }
     else {
+        $m_id = $_SESSION["id"];
         $getComment = "SELECT u_name, stars, content, time FROM users, comments WHERE c_id=u_id AND m_id='$m_id'";
         $result = Database::$connect->query($getComment);
         $data = [];

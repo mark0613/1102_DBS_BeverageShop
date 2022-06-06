@@ -162,7 +162,7 @@ if (!User::check()) {
                                                 </div>
                                                 <div class="col-11">
                                                     <div class="input-group date" id='s_datepicker'>
-                                                        <input type="date" name='s_datepicker' class="form-control" />
+                                                        <input type="date" name='s_datepicker' class="form-control" id="startDate" />
                                                         <span class="input-group-addon">
                                                             <i class="glyphicon glyphicon-calendar"></i>
                                                         </span>
@@ -177,7 +177,7 @@ if (!User::check()) {
                                                 </div>
                                                 <div class="col-11">
                                                     <div class="input-group date" id='e_datepicker'>
-                                                        <input type="date" name='e_datepicker' class="form-control" />
+                                                        <input type="date" name='e_datepicker' class="form-control" id="endDate" />
                                                         <span class="input-group-addon">
                                                             <i class="glyphicon glyphicon-calendar"></i>
                                                         </span>
@@ -186,7 +186,7 @@ if (!User::check()) {
                                             </div>
                                         </div>
                                         <div class="col-2">
-                                            <button type="submit" class="btn btn-primary">搜尋</button>
+                                            <button type="button" class="btn btn-primary" onclick="searchOrder('date')">搜尋</button>
                                         </div>
                                     </div>
 
@@ -198,12 +198,11 @@ if (!User::check()) {
                                 <label>🔎透過編號搜尋訂單</label>
                                 <div class="row">
                                     <div class="col">
-                                        <input name="token" id="token" type="text" placeholder="請輸入編號"
-                                            class="form-control mx-sm-2">
+                                        <input name="order-id" id="order-id" type="text" placeholder="請輸入訂單編號" class="form-control mx-sm-2">
                                     </div>
 
                                     <div class="col">
-                                        <button type="submit" class="btn btn-primary">搜尋</button>
+                                        <button type="button" class="btn btn-primary" onclick="searchOrder('id')">搜尋</button>
                                     </div>
                                 </div>
                             </form>
@@ -223,11 +222,8 @@ if (!User::check()) {
                         aria-labelledby="v-pills-comment-tab">
                         <label class="title">📝評價紀錄</label>
                         <div class="container-fluid ">
-
                             <div id = "show-mem-com">
-                                <!-- show comment -->
                             </div>
-
                             <div>
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-center">
@@ -237,8 +233,6 @@ if (!User::check()) {
                                             </a>
                                         </li>
                                         <li class="page-item" id="btn1"><a class="page-link" href="#">1</a></li>
-                                        <!-- <li class="page-item"><a class="page-link" href="#">2</a></li> -->
-                                        <!-- <li class="page-item"><a class="page-link" href="#">3</a></li> -->
                                         <li class="page-item">
                                             <a class="page-link" href="#" aria-label="Next" id="nextbtn">
                                                 <span aria-hidden="true">&raquo;</span>

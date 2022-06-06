@@ -115,8 +115,8 @@ if (!User::check()) {
                             <div class="row">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-8">
+                                    
                                     <div class="card h-100 shadow border-0" id="not-accepted-orders">
-                                        
                                     </div>
 
                                 </div>
@@ -134,7 +134,6 @@ if (!User::check()) {
                                                 <div>
                                                     <form class="title ">
                                                         <label>🔎透過日期搜尋訂單</label>
-
                                                         <div class="row">
                                                             <div class="col-5">
                                                                 <div class="row">
@@ -143,7 +142,7 @@ if (!User::check()) {
                                                                     </div>
                                                                     <div class="col-11">
                                                                         <div class="input-group date" id='datepicker'>
-                                                                            <input type="date" class="form-control" />
+                                                                            <input type="date" class="form-control" id="startDate"/>
                                                                             <span class="input-group-addon">
                                                                                 <i class="glyphicon glyphicon-calendar"></i>
                                                                             </span>
@@ -158,7 +157,7 @@ if (!User::check()) {
                                                                     </div>
                                                                     <div class="col-11">
                                                                         <div class="input-group date" id='datepicker'>
-                                                                            <input type="date" class="form-control" />
+                                                                            <input type="date" class="form-control" id="endDate"/>
                                                                             <span class="input-group-addon">
                                                                                 <i class="glyphicon glyphicon-calendar"></i>
                                                                             </span>
@@ -167,7 +166,7 @@ if (!User::check()) {
                                                                 </div>
                                                             </div>
                                                             <div class="col-2">
-                                                                <button type="submit" class="btn btn-primary">搜尋</button>
+                                                                <button type="button" class="btn btn-primary" onclick="searchOrder('date')">搜尋</button>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -178,11 +177,11 @@ if (!User::check()) {
                                                         <label>🔎透過編號搜尋訂單</label>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <input name="token" id="token" type="text" placeholder="請輸入編號" class="form-control mx-sm-2">
+                                                                <input name="order-id" id="order-id" type="text" placeholder="請輸入編號" class="form-control mx-sm-2">
                                                             </div>
 
                                                             <div class="col">
-                                                                <button type="submit" class="btn btn-primary">搜尋</button>
+                                                                <button type="button" class="btn btn-primary" onclick="searchOrder('id')">搜尋</button>
                                                             </div>
                                                         </div>
                                                     </form>
