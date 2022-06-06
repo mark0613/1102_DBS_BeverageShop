@@ -1,3 +1,21 @@
+var SUGAR = {
+    "0" : "無糖",
+    "1" : "1分糖",
+    "3" : "微糖",
+    "5" : "半糖",
+    "7" : "少糖",
+    "10" : "全糖", 
+}
+
+var ICE = {
+    "0" : "完全去冰",
+    "1" : "小碎冰",
+    "3" : "微冰",
+    "5" : "半冰",
+    "7" : "少冰",
+    "10" : "全冰", 
+}
+
 function sortdate(a, b) {
     return new Date(a.time).getTime() - new Date(b.time).getTime();
 }
