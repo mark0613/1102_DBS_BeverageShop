@@ -24,6 +24,7 @@ function showLoveShop() {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
+                    console.log(response);
                     let loveshop = response["data"];
                     var shoplen = loveshop.length
                     if (shoplen == 0){
@@ -32,7 +33,7 @@ function showLoveShop() {
                     else{
                         $('.list-group').html("");
                         for (let i = 0 ; i < shoplen; i++){
-                            $('.list-group').append(`<a href="#" class="list-group-item list-group-item-action">${loveshop[i]["shopname"]}</a>`); 
+                            $('.list-group').append(`<a href="../shop?m_id=${loveshop[i]["m_id"]}" class="list-group-item list-group-item-action">${loveshop[i]["m_name"]}</a>`); 
                         }
                     }
                 }
@@ -70,7 +71,6 @@ function showComment() {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
-                    console.log(response);
                     comment = response["data"];
                     if (comment.length == 0){
                         $('#show-mem-com').append(`
