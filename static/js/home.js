@@ -1,109 +1,3 @@
-var namearr = document.getElementsByClassName("h3 card-title mb-3")
-var imgarr = document.getElementsByClassName("card-img-top cover")
-var bodyarr = document.getElementsByClassName("card-text mb-0")
-
-// hot = [
-//     {
-//       "name" : "IGEN00",
-//       "img" : "../static/img/default.jpg",
-//       "address" : "road0",
-//       "bestseller" : "Good0",
-//       "comment0" : "good0",
-//       "comment1" : "good1"
-//     },
-//     {
-//         "name" : "IGEN01",
-//         "img" : "../static/img/default.jpg",
-//         "address" : "road1",
-//         "bestseller" : "Good1",
-//         "comment0" : "good0",
-//         "comment1" : "good1"
-//     },
-//     {
-//         "name" : "IGEN02",
-//         "img" : "../static/img/default.jpg",
-//         "address" : "road2",
-//         "bestseller" : "Good2",
-//         "comment0" : "good0",
-//         "comment1" : "good1"
-//     },
-//     {
-//         "name" : "IGEN03",
-//         "img" : "../static/img/default.jpg",
-//         "address" : "road3",
-//         "bestseller" : "Good3",
-//         "comment0" : "good0",
-//         "comment1" : "good1"
-//     },
-//     {
-//         "name" : "IGEN04",
-//         "img" : "../static/img/default.jpg",
-//         "address" : "road4",
-//         "bestseller" : "Good4",
-//         "comment0" : "good0",
-//         "comment1" : "good1"
-//     },
-//     {
-//         "name" : "IGEN05",
-//         "img" : "../static/img/default.jpg",
-//         "address" : "road5",
-//         "bestseller" : "Good5",
-//         "comment0" : "good0",
-//         "comment1" : "good1"
-//     }
-// ]
-
-discount = [
-    {
-      "name" : "IGEN10",
-      "img" : "../static/img/default.jpg",
-      "address" : "road0",
-      "bestseller" : "Good0",
-      "comment0" : "good0",
-      "comment1" : "good1"
-    },
-    {
-        "name" : "IGEN11",
-        "img" : "../static/img/default.jpg",
-        "address" : "road1",
-        "bestseller" : "Good1",
-        "comment0" : "good0",
-        "comment1" : "good1"
-    },
-    {
-        "name" : "IGEN12",
-        "img" : "../static/img/default.jpg",
-        "address" : "road2",
-        "bestseller" : "Good2",
-        "comment0" : "good0",
-        "comment1" : "good1"
-    },
-    {
-        "name" : "IGEN13",
-        "img" : "../static/img/default.jpg",
-        "address" : "road3",
-        "bestseller" : "Good3",
-        "comment0" : "good0",
-        "comment1" : "good1"
-    },
-    {
-        "name" : "IGEN14",
-        "img" : "../static/img/default.jpg",
-        "address" : "road4",
-        "bestseller" : "Good4",
-        "comment0" : "good0",
-        "comment1" : "good1"
-    },
-    {
-        "name" : "IGEN15",
-        "img" : "../static/img/default.jpg",
-        "address" : "road5",
-        "bestseller" : "Good5",
-        "comment0" : "good0",
-        "comment1" : "good1"
-    }
-]
-
 function show6Shops() {
     let data = {}
     $.post(
@@ -113,13 +7,46 @@ function show6Shops() {
             if (status == "success") {
                 if (response["status"] == "success") {
                     let hot = response["data"];
-                    for (let i = 0 ; i < 6; i++){
-                        namearr[i].textContent = hot[i]["info"]["m_name"];
-                        imgarr[i].src = `../static/img/${hot[i]["info"]["photo"]}`;
-                        bodyarr[4*i].textContent = `${hot[i]["info"]["address_city"]} ${hot[i]["info"]["address_district"]} ${hot[i]["info"]["address_detail"]}`;
-                        bodyarr[4*i+1].textContent = "...";
-                        bodyarr[4*i+2].textContent = hot[i]["comments"][0]["content"];
-                        bodyarr[4*i+3].textContent = hot[i]["comments"][1]["content"];
+                    console.log(hot)
+                    for (let i=0 ; i<2; i++){
+                        $("#6-shops-info").append(`
+                        <div class="row top" id="row-${i}">
+                        </div>
+                        `);
+                        for (let j=0; j<3; j++) {
+                            let idx = i*3 + j;
+                            $(`#row-${i}`).append(`
+                            <div class="col-sm-4">
+                                <div class="card h-100 shadow border-0">
+                                    <img class="card-img-top cover" src="../static/img/${hot[idx]["info"]["photo"]}" alt="..." />
+                                    <div class="card-body p-4">
+                                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
+                                        <a class="text-decoration-none link-dark stretched-link" href="../shop?m_id=${hot[idx]["info"]["m_id"]}">
+                                            <div class="h3 card-title mb-3">${hot[idx]["info"]["m_name"]}</div>
+                                        </a>
+                                        <p class="card-text mb-0">${hot[idx]["info"]["address_city"]} ${hot[idx]["info"]["address_district"]} ${hot[i]["info"]["address_detail"]}</p>
+                                        <p class="card-text mb-0">
+                                        熱銷👉🏻一定是
+                                        <span class="text-danger h5">${hot[idx]["hot"]}</span>
+                                        啦
+                                        </p>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                        <div class="d-flex align-items-end justify-content-between">
+                                            <div class="d-flex align-items-center">
+                                                <p>評論：</p>
+                                                <br>
+                                                <div class="small">
+                                                    <p class="card-text mb-0">${hot[idx]["comments"][0]["content"]}</p>
+                                                    <p class="card-text mb-0">${hot[idx]["comments"][1]["content"]}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            `);
+                        }
                     }
                 }
             }
@@ -132,12 +59,4 @@ $(document).ready(function(){
     // show 6 shops
     show6Shops();
 
-    for (let i = 6 ; i < 12; i++){
-        namearr[i].textContent = discount[i-6]["name"]
-        imgarr[i].src = discount[i-6]["img"]
-        bodyarr[4*i].textContent = discount[i-6]["address"]
-        bodyarr[4*i+1].textContent = discount[i-6]["bestseller"]
-        bodyarr[4*i+2].textContent = discount[i-6]["comment0"]
-        bodyarr[4*i+3].textContent = discount[i-6]["comment1"]
-    }
 })
