@@ -275,10 +275,11 @@ function showComment() {
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
+                    console.log(response["data"]);
                     let scomment = response["data"];
                     scomment.sort(sortdate).reverse()
                     for (let i=0; i<scomment.length && i<10 ; i++){
-                        (($('#com-show')).before(`
+                        $('#com-show').append(`
                             <div class="card shadow border-0">  
                                 <div class="card-title p-4">
                                     ${scomment[i]["u_name"]}
@@ -305,9 +306,33 @@ function showComment() {
                                 </div>   
                             </div>
                             <br>
-                        `));
+                        `);
                         $(`input[name="star"][id=star-${scomment[i]["stars"]}-${i}]`).prop("checked", true);
                     }
+                }
+            }
+        }
+    )
+}
+
+function giveComment() {
+    let data = {
+        "stars" : $("input[name='star-give']:checked").val(),
+        "content" : $("#content").val(),
+        "m_id" : window.location.href.split("m_id=")[1],
+    }
+    if (data["stars"]===undefined || data["content"]==="") {
+        alert("必須要給予星星跟文字評論喔!");
+        return;
+    }
+    $.post(
+        "../php/giveComment.php",
+        data,
+        (response, status) => {
+            console.log(response);
+            if (status == "success") {
+                if (response["status"] == "success") {
+    
                 }
             }
         }
@@ -360,4 +385,10 @@ $(document).ready(function () {
     $(".close-window, .black-cover").on('click', function() {
         closeWindow();
     })
+
+    if (!checkUserLogin()) {
+        $("#content").prop("disabled", true);
+        $("#content").prop("placeholder", "登入才能給予評價!");
+        $("#comment-submit").prop("disabled", true);
+    }
 });

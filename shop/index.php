@@ -124,7 +124,7 @@ require("../php/User.php");
     <div class="container-fluid">
         <!-- 菜單 -->
         <div class="center top">
-            <h1>🧋菜單</h1>
+            <h1>🧃菜單</h1>
         </div>
         <div class="row top">
             <div class="col-sm-2"></div>
@@ -207,17 +207,35 @@ require("../php/User.php");
                 <div class="card shadow border-0" id="com-show">
                     <div class="card-body p-4">
                         <div class="container-fluid ">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="stars">
+                                        <form action="">
+                                            <input class="star star-5" id="star-5-give" type="radio" name="star-give" value="5">
+                                            <label class="star star-5" for="star-5-give"></label>
+                                            <input class="star star-4" id="star-4-give" type="radio" name="star-give" value="4">
+                                            <label class="star star-4" for="star-4-give"></label>
+                                            <input class="star star-3" id="star-3-give" type="radio" name="star-give" value="3">
+                                            <label class="star star-3" for="star-3-give"></label>
+                                            <input class="star star-2" id="star-2-give" type="radio" name="star-give" value="2">
+                                            <label class="star star-2" for="star-2-give"></label>
+                                            <input class="star star-1" id="star-1-give" type="radio" name="star-give" value="1">
+                                            <label class="star star-1" for="star-1-give"></label>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row top">
                                 <div class="col-sm-10">
-                                    <input type="text" id="" name="" class="form-control" placeholder="填寫評價" required>
+                                    <textarea type="text" id="content" name="content" class="form-control" placeholder="填寫評價" required></textarea>
                                 </div>
                                 <div class="col-sm-2">
-                                    <button id="submit" class="btn btn-md btn-primary btn-block"
-                                        type="button">提交</button>
+                                    <button id="comment-submit" class="btn btn-md btn-primary btn-block" type="button" onclick="giveComment()">提交</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="card"></div>
                 </div>
             </div>
             <div class="col-sm-2"></div>
