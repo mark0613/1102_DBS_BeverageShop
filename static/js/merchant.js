@@ -363,8 +363,6 @@ $(document).ready(function () {
         `)
     }
 
-
-
     //change merchant information
     showInfo();
 

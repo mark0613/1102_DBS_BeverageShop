@@ -36,11 +36,16 @@ if (!User::check()) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
     </script>
 
+    <!-- multiple select -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link href="../static/css/merchant.css" rel="stylesheet">
-    <link href="../static/css/base.css" rel="stylesheet">
     <link href="../static/css/app.css" rel="stylesheet" >
+    <link href="../static/css/base.css" rel="stylesheet">
+    <link href="../static/css/merchant.css" rel="stylesheet">
     <script src="../static/js/app.js"></script>
     <script src="../static/js/merchant.js"></script>
 </head>
@@ -321,11 +326,9 @@ if (!User::check()) {
                         </div>
                     </div>
 
-
                     <!--菜單-->
                     <div class="tab-pane fade center" id="v-pills-menu" aria-labelledby="v-pills-menu" role="tabpanel">
-                        <p class="title center">🧋菜單</p>
-
+                        <p class="title center">🧃菜單</p>
                         <div class="row top">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10" id = "showmenu">
@@ -334,7 +337,75 @@ if (!User::check()) {
                         </div>
                         <br>
                         <div class="center">
-                            <button type="submit" class="btn btn-primary">新增</button>
+                            <button type="submit" class="btn btn-primary open-window">新增</button>
+                        </div>
+                        <div class="black-cover"></div>
+                        <div class="window bg-light top-50">
+                            <form method="post">
+                                <br>
+                                <div class="container-fluid">
+                                    <div class="form-group row">
+                                        <div class="col-2"></div>
+                                        <div class="col-2">
+                                            <label for="b_name">飲料名稱</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="b_name" name="b_name" value="">
+                                        </div>
+                                        <div class="col-2"></div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-2"></div>
+                                        <div class="col-2">
+                                            <label for="price">價格</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="price" name="price" value="">
+                                        </div>
+                                        <div class="col-2"></div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-2"></div>
+                                            <div class="col-2">
+                                                <label for="sugar">甜度選項</label>
+                                            </div>
+                                            <div class="col-6">
+                                            <select class="selectpicker multi-select" name="sugar[]" id="sugar" multiple
+                                                data-live-search="true" placeholder="Class">
+                                                <option value="1">hi</option>
+                                            </select>
+                                            </div>
+                                            <div class="col-2"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-2"></div>
+                                            <div class="col-2">
+                                                <label for="ice">冰塊選項</label>
+                                            </div>
+                                            <div class="col-6">
+                                            <select class="selectpicker multi-select" name="ice[]" id="ice" multiple
+                                                data-live-search="true" placeholder="Class">
+                                                <option value="1">hi</option>
+                                            </select>
+                                            </div>
+                                            <div class="col-2"></div>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="form-inline right">
+                                        <div class="pl-1">
+                                            <button type="button" class="btn btn-secondary close-window">取消</button>
+                                        </div>
+                                        <div class="pl-1">
+                                            <button type="button" class="btn btn-primary" onclick="submitOrder()">送出</button>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
                         </div>
                     </div>
 

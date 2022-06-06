@@ -196,10 +196,6 @@ function showCart() {
         $(`.total-cost`).text(cost);
     }
 }
-function checkUserLogin() {
-    let cookies = getCookies();
-    return cookies["id"] !== undefined;
-}
 function getUserInfo() {
     if (!checkUserLogin()) {
         return ;
@@ -218,25 +214,6 @@ function getUserInfo() {
             }
         }
     )
-}
-function openWindow() {
-    if (!checkUserLogin) {
-        alert("請先登入!");
-        return ;
-    }
-    let pageHeight = Math.max($("body").outerHeight(), $("html").outerHeight());
-    let nowPosition = document.documentElement.scrollTop;
-    let windowPosition = nowPosition + 130;
-    $('.black-cover').css("display", "block");
-    $('.black-cover').outerHeight(pageHeight);
-    $('.window').css("display", "block");
-    $('.window').css("top", windowPosition);
-    $("body").css("overflow-y", "hidden");
-}
-function closeWindow() {
-    $(".black-cover").css("display", "none");
-    $(".window").css("display", "none");
-    $("body").css("overflow-y", "auto");
 }
 function submitOrder() {
     let data = {
@@ -375,16 +352,6 @@ $(document).ready(function () {
 
     // show scomment record
     showComment();
-
-    // open window when click button
-    $(".open-window").on('click', function() {
-        openWindow();
-    })
-
-    // close window when click button or cover
-    $(".close-window, .black-cover").on('click', function() {
-        closeWindow();
-    })
 
     if (!checkUserLogin()) {
         $("#content").prop("disabled", true);

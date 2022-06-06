@@ -54,7 +54,7 @@ label.star:before {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
-    z-index: 99;
+    z-index: 999;
 }
 .window {
     position: absolute;
@@ -62,7 +62,7 @@ label.star:before {
     left: 25%;
     width: 50%;
     display: none;
-    z-index: 100;
+    z-index: 1000;
 }
 .center{
     text-align: center;
