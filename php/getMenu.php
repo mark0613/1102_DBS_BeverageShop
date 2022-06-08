@@ -7,11 +7,25 @@ function getMenu($u_id) {
     $getMenu = "SELECT * FROM menu_beverage WHERE u_id='$u_id'";
     $result = Database::$connect->query($getMenu);
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-        array_push($data, [
-            "b_id" => $row["b_id"],
-            "menuname" => $row["b_name"],
-            "menuprice" => $row["price"],
-        ]);
+        $b_id = $row["b_id"];
+        $tmp = [
+            "b_id" => $b_id,
+            "b_name" => $row["b_name"],
+            "price" => $row["price"],
+            "sugar" => [],
+            "ice" => [],
+        ];
+        $getSugar = "SELECT * FROM sugar_type WHERE b_id='$b_id'";
+        $res = Database::$connect->query($getSugar);
+        while ($r = $res->fetch_array(MYSQLI_ASSOC)) {
+            array_push($tmp["sugar"], $r);
+        }
+        $getIce = "SELECT * FROM ice_type WHERE b_id='$b_id'";
+        $res = Database::$connect->query($getIce);
+        while ($r = $res->fetch_array(MYSQLI_ASSOC)) {
+            array_push($tmp["ice"], $r);
+        }
+        array_push($data, $tmp);
     }
     return $data;
 }

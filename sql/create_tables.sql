@@ -14,7 +14,7 @@ CREATE TABLE customer(
     c_phone VARCHAR(10) UNIQUE,
     
     PRIMARY KEY(u_id),
-    FOREIGN KEY(u_id) REFERENCES USERS(u_id)
+    FOREIGN KEY(u_id) REFERENCES users(u_id)
 );
 
 CREATE TABLE merchant(
@@ -60,6 +60,34 @@ CREATE TABLE order_beverage(
     FOREIGN KEY(b_id) REFERENCES menu_beverage(b_id)
 );
 
+CREATE TABLE menu_beverage(
+    u_id INT,
+    b_id INT UNIQUE AUTO_INCREMENT,
+    b_name VARCHAR(50) NOT NULL,
+    price INT DEFAULT 0,
+
+    PRIMARY KEY(u_id, b_id),
+    FOREIGN KEY(u_id) REFERENCES merchant(u_id)
+);
+
+CREATE TABLE sugar_type(
+    b_id INT,
+    sugar_value INT,
+
+    PRIMARY KEY(b_id, sugar_value),
+    FOREIGN KEY(b_id) REFERENCES menu_beverage(b_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE ice_type(
+    b_id INT,
+    ice_value INT,
+
+    PRIMARY KEY(b_id, ice_value),
+    FOREIGN KEY(b_id) REFERENCES menu_beverage(b_id)
+        ON DELETE CASCADE
+);
+
 CREATE TABLE comments(
     c_id INT NOT NULL,
     m_id INT NOT NULL,
@@ -71,50 +99,3 @@ CREATE TABLE comments(
     FOREIGN KEY(m_id) REFERENCES merchant(u_id),
     FOREIGN KEY(c_id) REFERENCES customer(u_id)
 );
-
-CREATE TABLE menu_beverage(
-    u_id INT,
-    b_id INT UNIQUE AUTO_INCREMENT,
-    b_name VARCHAR(50) NOT NULL,
-    price INT DEFAULT 0,
-
-    PRIMARY KEY(u_id, b_id),
-    FOREIGN KEY(u_id) REFERENCES merchant(u_id)
-);
-
-CREATE TABLE ice_type(
-    b_id INT,
-    ice_value INT,
-
-    PRIMARY KEY(b_id, ice_value),
-    FOREIGN KEY(b_id) REFERENCES menu_beverage(b_id)
-);
-
-CREATE TABLE sugar_value(
-    b_id INT,
-    sugar_value INT,
-
-    PRIMARY KEY(b_id, sugar_value),
-    FOREIGN KEY(b_id) REFERENCES menu_beverage(b_id)
-);
-
-CREATE TABLE announcement(
-    a_id INT,
-    m_id INT,
-    title VARCHAR(50),
-    content TEXT NOT NULL,
-    time DATETIME NOT NULL,
-    
-    PRIMARY KEY(a_id, m_id),
-    FOREIGN KEY(m_id) REFERENCES merchant(u_id)
-);
-
-CREATE TABLE love_shop(
-    l_id INT AUTO_INCREMENT,
-    c_id INT,
-    m_id INT,
-
-    PRIMARY KEY(l_id, c_id, m_id),
-    FOREIGN KEY(c_id) REFERENCES customer(u_id),
-    FOREIGN KEY(m_id) REFERENCES merchant(u_id)
-)

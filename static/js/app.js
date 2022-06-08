@@ -82,6 +82,15 @@ function checkUserLogin() {
     return cookies["id"] !== undefined;
 }
 
+function checkObjectData(object) {
+    for (let key in object) {
+        if (object[key].length === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
 $(document).ready(() => {
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',

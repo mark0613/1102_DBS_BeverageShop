@@ -6,14 +6,13 @@ function register() {
         phone : $("#phone").val(),
         type : $("#type").val(),
     };
-    let url = "../php/register.php";
-
     $.post(
-        url,
+        "../php/register.php",
         data,
         (response, status) => {
             if (status == "success") {
                 if (response["status"] == "success") {
+                    alert("註冊成功，跳轉到登入頁面");
                     window.location.href = "../login/";
                 }
                 else {

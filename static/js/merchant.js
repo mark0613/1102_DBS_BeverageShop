@@ -23,6 +23,8 @@ mdiscount = [
     }
 ]
 
+var beverage = {};
+
 function handleOrder(accept, o_id) {
     let data = {
         "o_id" : o_id,
@@ -145,6 +147,84 @@ function updateMerchantInfo() {
     });
 }
 
+function addMenu() {
+    let data = {
+        "b_name" : $("#b_name").val(),
+        "price" : $("#price").val(),
+        "sugar" : $("#sugar-select").val(),
+        "ice" : $("#ice-select").val(),
+    }
+    $.post(
+        "../php/addMenu.php",
+        data,
+        (response, status) => {
+            console.log(response);
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    alert("新增成功!");
+                    window.location.reload();
+                }
+            }
+        }
+    )
+}
+function updateMenu(b_id) {
+    let data = {
+        "b_id" : b_id,
+        "b_name" : $("#b_name").val(),
+        "price" : $("#price").val(),
+        "sugar" : $("#sugar-select").val(),
+        "ice" : $("#ice-select").val(),
+    };
+    $.post(
+        "../php/updateMenu.php",
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    alert("修改成功");
+                    window.location.reload();
+                }
+            }
+        }
+    )
+}
+
+function removeMenu(b_id) {
+    let data = {
+        "b_id" : b_id
+    };
+    $.post(
+        "../php/removeMenu.php",
+        data,
+        (response, status) => {
+            if (status == "success") {
+                if (response["status"] == "success") {
+                    alert("刪除成功");
+                    window.location.reload();
+                }
+            }
+        }
+    )
+}
+
+function loadBeverageInfo(b_id) {
+    $(".window button[onclick='addMenu()']").attr("onclick", `updateMenu(${b_id})`)
+    $("#b_name").val(beverage[b_id]["b_name"]);
+    $("#price").val(beverage[b_id]["price"]);
+    let st = [];
+    let it = [];
+    for (let s of beverage[b_id]["sugar"]) {
+        st.push(s["sugar_value"]);
+    }
+    for (let i of beverage[b_id]["ice"]) {
+        it.push(i["ice_value"]);
+    }
+    $("#sugar-select").selectpicker('val', st);
+    $("#ice-select").selectpicker('val', it);
+    openWindow();
+}
+
 function showMenu() {
     let data = "";
     $.post(
@@ -154,7 +234,7 @@ function showMenu() {
             if (status == "success") {
                 if (response["status"] == "success") {
                     let mmenu = response["data"];
-                    var menuarr = $(".center > label");
+                    console.log(mmenu);
                     $('#showmenu').html("");
                     if (mmenu.length == 0) {
                         $('.card-deck').html("<div><p>尚無菜單</p></div>");
@@ -167,33 +247,68 @@ function showMenu() {
                             html += `<div class="card-deck">`;
                             for (let j = i*4 ; j < i*4+4 ; j++) {
                                 if (j < mmenu.length){
+                                    beverage[mmenu[j]["b_id"]] = {
+                                        "b_name" : mmenu[j]["b_name"],
+                                        "price" : mmenu[j]["price"],
+                                        "sugar" : mmenu[j]["sugar"],
+                                        "ice" : mmenu[j]["ice"],
+                                    }
                                     html += (`
                                         <div class="card h-100 shadow border-0">
                                             <div class="card-header">
-                                                <h4>${mmenu[j]["menuname"]}</h4>
+                                                <h4>${mmenu[j]["b_name"]}</h4>
                                             </div>
                                             <div class="card-body p-4">
                                                 <div class="center">
-                                                    <label>${mmenu[j]["menuprice"]}</label>
+                                                    <label>$${mmenu[j]["price"]}</label>
                                                     <br>
-                                                    <button type="submit" class="btn btn-primary">編輯</button>
-                                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                                    <select id="sugar-${mmenu[j]["b_id"]}">
+                                                        <option value="999" selected>甜度選項</option>
+                                                    </select>
+                                                    <select id="ice-${mmenu[j]["b_id"]}">
+                                                    <option value="999" selected>冰塊選項</option>
+                                                    </select>
+                                                    <br>
+                                                    <br>
+                                                    <button type="button" class="btn btn-primary open-window load-menu" id="update-${mmenu[j]["b_id"]}">編輯</button>
+                                                    <button type="button" class="btn btn-danger" onclick="removeMenu(${mmenu[j]["b_id"]})">刪除</button>
                                                 </div>
                                             </div>
                                         </div>
                                     `);
+                                    let sugar = mmenu[j]["sugar"];
+                                    let ice = mmenu[j]["ice"];
+                                    setTimeout(
+                                        function() {
+                                            for (let k=0; k<sugar.length; k++) {
+                                                $(`#sugar-${mmenu[j]["b_id"]}`).append(`
+                                                    <option value="${sugar[k]["sugar_value"]}">${SUGAR[sugar[k]["sugar_value"]]}</option value="">
+                                                `)
+                                            }
+                                            for (let k=0; k<ice.length; k++) {
+                                                $(`#ice-${mmenu[j]["b_id"]}`).append(`
+                                                    <option value="${ice[k]["ice_value"]}">${ICE[ice[k]["ice_value"]]}</option value="">
+                                                `)
+                                            }
+                                        }, 10
+                                    )
                                 }
                                 else{
                                     html += (`
                                         <div class="card h-100 shadow border-0"></div>
                                     `);
                                 }
+                                
                             }
                             html += `</div><br>`;
                             ($('#showmenu')).append(`${html}`);
                             html = "";
                         }
                     }
+                    $(".load-menu").on('click', function() {
+                        let b_id = $(this).prop("id").split("-")[1];
+                        loadBeverageInfo(b_id);
+                    })
                 }
             }
         }
@@ -226,7 +341,6 @@ function showComment() {
         "../php/getComment.php",
         "",
         (response, status) => {
-            console.log(response);
             if (status == "success") {
                 if (response["status"] == "success") {
                     let comment = response["data"];
@@ -260,7 +374,7 @@ function showComment() {
                     }
                     bindChangePage();
                     function changeComment(now , large){
-                        console.log(now,large);
+                        // console.log(now,large);
                         $('#btn1 > a').text(now);
                         $('#show-mer-com').html(``);
                     
@@ -342,8 +456,6 @@ function pie(ctx, labels, data, color) {
         }
     });
 }
-
-
 
 
 $(document).ready(function () {

@@ -37,9 +37,11 @@ if (!User::check()) {
     </script>
 
     <!-- multiple select -->
-    <link rel="stylesheet"
+    <!-- <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -339,8 +341,11 @@ if (!User::check()) {
                         <div class="center">
                             <button type="submit" class="btn btn-primary open-window">新增</button>
                         </div>
-                        <div class="black-cover"></div>
+
+                        <!-- window -->
                         <div class="window bg-light top-50">
+                            <br>
+                            <br>
                             <form method="post">
                                 <br>
                                 <div class="container-fluid">
@@ -371,9 +376,14 @@ if (!User::check()) {
                                                 <label for="sugar">甜度選項</label>
                                             </div>
                                             <div class="col-6">
-                                            <select class="selectpicker multi-select" name="sugar[]" id="sugar" multiple
-                                                data-live-search="true" placeholder="Class">
-                                                <option value="1">hi</option>
+                                            <select class="selectpicker multi-select" name="sugar[]" id="sugar-select" multiple
+                                                data-live-search="true" placeholder="甜度" data-actions-box="true" data-select-all-text='全選' data-deselect-all-text='取消'>
+                                                <option value="0">無糖</option>
+                                                <option value="1">1分糖</option>
+                                                <option value="3">微糖</option>
+                                                <option value="5">半糖</option>
+                                                <option value="7">少糖</option>
+                                                <option value="10">全糖</option>
                                             </select>
                                             </div>
                                             <div class="col-2"></div>
@@ -384,22 +394,28 @@ if (!User::check()) {
                                                 <label for="ice">冰塊選項</label>
                                             </div>
                                             <div class="col-6">
-                                            <select class="selectpicker multi-select" name="ice[]" id="ice" multiple
-                                                data-live-search="true" placeholder="Class">
-                                                <option value="1">hi</option>
+                                            <select class="selectpicker multi-select" name="ice[]" id="ice-select" multiple
+                                                data-live-search="true" placeholder="冰塊" data-actions-box="true" data-select-all-text='全選' data-deselect-all-text='取消'>
+                                                <option value="0">完全去冰</option>
+                                                <option value="1">小碎冰</option>
+                                                <option value="3">微冰</option>
+                                                <option value="5">半冰</option>
+                                                <option value="7">少冰</option>
+                                                <option value="10">全冰</option>
                                             </select>
                                             </div>
                                             <div class="col-2"></div>
                                         </div>
-                                       
                                     </div>
-                                    <div class="form-inline right">
-                                        <div class="pl-1">
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-4"></div>
+                                        <div class="col-4 center">
                                             <button type="button" class="btn btn-secondary close-window">取消</button>
+                                            <button type="button" class="btn btn-primary" onclick="addMenu()">送出</button>
                                         </div>
-                                        <div class="pl-1">
-                                            <button type="button" class="btn btn-primary" onclick="submitOrder()">送出</button>
-                                        </div>
+                                        <div class="col-4"></div>
                                     </div>
                                     <br>
                                     <br>
@@ -441,7 +457,7 @@ if (!User::check()) {
             </div>
         </div>
     </div>
-    
+    <div class="black-cover"></div>
 </body>
 
 </html>
