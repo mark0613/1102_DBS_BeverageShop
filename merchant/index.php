@@ -105,7 +105,7 @@ if (!User::check()) {
                     <h3 class="nav_title">選單</h3>
                     <a class="nav-link sidebar_font center active" id="v-pills-record-tab" data-toggle="pill" href="#v-pills-record" role="tab" aria-controls="v-pills-record" aria-selected="True">訂單</a>
                     <a class="nav-link sidebar_font center" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">資料</a>
-                    <a class="nav-link sidebar_font center" id="v-pills-discount-tab" data-toggle="pill" href="#v-pills-discount" role="tab" aria-controls="v-pills-discount" aria-selected="false">優惠</a>
+                    <!-- <a class="nav-link sidebar_font center" id="v-pills-discount-tab" data-toggle="pill" href="#v-pills-discount" role="tab" aria-controls="v-pills-discount" aria-selected="false">優惠</a> -->
                     <a class="nav-link sidebar_font center" id="v-pills-menu-tab" data-toggle="pill" href="#v-pills-menu" role="tab" aria-controls="v-pills-menu" aria-selected="false">菜單</a>
                     <a class="nav-link sidebar_font center" id="v-pills-rate-tab" data-toggle="pill" href="#v-pills-rate" role="tab" aria-controls="v-pills-rate" aria-selected="false">評價</a>
                     <a class="nav-link sidebar_font center" href="#" id="link-shop-page">頁面</a>
@@ -203,7 +203,7 @@ if (!User::check()) {
                     </div>
 
                     <!--優惠-->
-                    <div class="tab-pane fade" id="v-pills-discount" aria-labelledby="v-pills-discount" role="tabpanel">
+                    <!-- <div class="tab-pane fade" id="v-pills-discount" aria-labelledby="v-pills-discount" role="tabpanel">
                         <h3 class="center title">💥優惠</h3>
                         <div class="container-fluid">
                             <div class="row">
@@ -237,7 +237,7 @@ if (!User::check()) {
 
 
                         </div>
-                    </div>
+                    </div> -->
 
                     <!--資料-->
                     <div class="form-group top tab-pane fade" id="v-pills-profile" aria-labelledby="v-pills-profile" role="tabpanel">

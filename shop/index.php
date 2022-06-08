@@ -117,9 +117,9 @@ require("../php/User.php");
     </header>
 
 
-    <div class="center top">
+    <!-- <div class="center top">
         <h1>💥現正優惠中</h1>
-    </div>
+    </div> -->
 
     <div class="container-fluid">
         <!-- 菜單 -->

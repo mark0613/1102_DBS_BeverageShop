@@ -1,29 +1,5 @@
-// merchant 優惠、商家資料、菜單、評價(前10筆)
-
-mdiscount = [
-    {
-        "disid"   : "001",
-        "disimg"  : "001.img",
-        "disname" : "買一送一"
-    },
-    {
-        "disid"   : "002",
-        "disimg"  : "001.img",
-        "disname" : "買十送十，打折到你骨折"
-    },
-    {
-        "disid"   : "003",
-        "disimg"  : "001.img",
-        "discount": "買一送一"
-    },
-    {
-        "disid"   : "004",
-        "disimg"  : "001.img",
-        "discount": "滿100打八折"
-    }
-]
-
 var beverage = {};
+
 
 function handleOrder(accept, o_id) {
     let data = {
@@ -463,17 +439,17 @@ $(document).ready(function () {
     showNotAcceptedOrders();
 
     // change merchant discount
-    for (let i=0;i<mdiscount.length;i++){
-        ($('#v-pills-discount > div.container-fluid > div.row > div.col-sm-8 > form > div.h-100 > div.card-body')).append(`
-            <div class="card border-dark">
-                <div class="card-body p-4">
-                    <input type="checkbox">
-                    <a class="text-decoration-none link-dark" href="#!" target="_blank"><label>${mdiscount[i]["disname"]}</label></a>
-                </div>
-            </div>
-            <br>
-        `)
-    }
+    // for (let i=0;i<mdiscount.length;i++){
+    //     ($('#v-pills-discount > div.container-fluid > div.row > div.col-sm-8 > form > div.h-100 > div.card-body')).append(`
+    //         <div class="card border-dark">
+    //             <div class="card-body p-4">
+    //                 <input type="checkbox">
+    //                 <a class="text-decoration-none link-dark" href="#!" target="_blank"><label>${mdiscount[i]["disname"]}</label></a>
+    //             </div>
+    //         </div>
+    //         <br>
+    //     `)
+    // }
 
     //change merchant information
     showInfo();

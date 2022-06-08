@@ -114,12 +114,12 @@ function showMenu() {
                                     html +=  `
                                         <div class="card h-100 shadow border-0">
                                             <div class="card-header center">
-                                                <h4 id="b_name-${smenu[j]['b_id']}">${smenu[j]["menuname"]}</h4>
+                                                <h4 id="b_name-${smenu[j]['b_id']}">${smenu[j]["b_name"]}</h4>
                                             </div>
                                             <div class="card-body p-4">
                                                 <div class="center">
                                                     <label>$</label>
-                                                    <label id="price-${smenu[j]['b_id']}">${smenu[j]["menuprice"]}</label>
+                                                    <label id="price-${smenu[j]['b_id']}">${smenu[j]["price"]}</label>
                                                     <br>
                                                     <div class="input-group mb-3 justify-content-center">
                                                         <input type='button' value='-' class="btn btn-outline-danger btn-sm" onclick="changeQuantity(${smenu[j]['b_id']}, -1)">
@@ -325,21 +325,21 @@ $(document).ready(function () {
     showInfo();
 
     // show shop discount
-    for (let i = 0; i < sdiscount.length; i++) {
-        ($('.container-fluid:first')).prepend(`
-            <div class="row top">
-                <div class="col-sm-3"></div>
-                    <div class="col-sm-6">
-                        <div class="card h-100 shadow border-0">
-                            <div class="card-body p-4">                       
-                                <a class="text-decoration-none link-dark stretched-link" href="#!"><label>${sdiscount[i]["disname"]}</label></a>
-                            </div>
-                        </div>  
-                    </div>
-                <div class="col-sm-3"></div>
-            </div>
-        `);
-    }
+    // for (let i = 0; i < sdiscount.length; i++) {
+    //     ($('.container-fluid:first')).prepend(`
+    //         <div class="row top">
+    //             <div class="col-sm-3"></div>
+    //                 <div class="col-sm-6">
+    //                     <div class="card h-100 shadow border-0">
+    //                         <div class="card-body p-4">                       
+    //                             <a class="text-decoration-none link-dark stretched-link" href="#!"><label>${sdiscount[i]["disname"]}</label></a>
+    //                         </div>
+    //                     </div>  
+    //                 </div>
+    //             <div class="col-sm-3"></div>
+    //         </div>
+    //     `);
+    // }
 
     // show shop menu
     showMenu()
