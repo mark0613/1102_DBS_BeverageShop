@@ -24,7 +24,7 @@ function show6Shops() {
                                         <a class="text-decoration-none link-dark stretched-link" href="../shop?m_id=${hot[idx]["info"]["m_id"]}">
                                             <div class="h3 card-title mb-3">${hot[idx]["info"]["m_name"]}</div>
                                         </a>
-                                        <p class="card-text mb-0">${hot[idx]["info"]["address_city"]} ${hot[idx]["info"]["address_district"]} ${hot[i]["info"]["address_detail"]}</p>
+                                        <p class="card-text mb-0">${hot[idx]["info"]["address_city"]} ${hot[idx]["info"]["address_district"]} ${hot[idx]["info"]["address_detail"]}</p>
                                         <p class="card-text mb-0">
                                         熱銷👉🏻一定是
                                         <span class="text-danger h5">${hot[idx]["hot"]}</span>

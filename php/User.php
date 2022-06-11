@@ -70,7 +70,11 @@ class User {
     static function register($email, $username, $password, $phone, $type) {
         $hashPassword = hash("sha256", $password);
         Database::$connect->autocommit(False);
-        $insert = "INSERT INTO users(email, u_name, password, type) VALUES('$email', '$username', '$hashPassword', '$type')";
+        $insert = "
+            INSERT INTO 
+            users(email, u_name, password, type) 
+            VALUES('$email', '$username', '$hashPassword', '$type')
+        ";
         if (!Database::$connect->query($insert)) {
             self::$error = Database::$connect->error;
             Database::$connect->rollback();
