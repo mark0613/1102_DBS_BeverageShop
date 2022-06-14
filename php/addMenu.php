@@ -16,6 +16,7 @@ $price = $_REQUEST["price"];
 $sugar = $_REQUEST["sugar"];
 $ice = $_REQUEST["ice"];
 
+// begin transaction
 Database::$connect->autocommit(False);
 $addMenu = "
     INSERT INTO menu_beverage
@@ -23,10 +24,10 @@ $addMenu = "
     VALUES
     ('$u_id', '$b_name', '$price')
 ";
-$res = Database::$connect->query($addMenu);
-if (!$res) {
+$isSuccessful = Database::$connect->query($addMenu);
+if (!$isSuccessful) {
+    $response["error"] = Database::$connect->error;
     Database::$connect->rollback();
-    $response["error"] = "新增失敗";
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
     exit;
 }
@@ -42,7 +43,13 @@ foreach($sugar as $s) {
         VALUES
         ('$b_id', '$s')
     ";
-    Database::$connect->query($addSugarOptions);
+    $isSuccessful = Database::$connect->query($addSugarOptions);
+    if (!$isSuccessful) {
+        $response["error"] = Database::$connect->error;
+        Database::$connect->rollback();
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        exit;
+    }
 }
 foreach($ice as $i) {
     $addIceOptions = "
@@ -51,11 +58,14 @@ foreach($ice as $i) {
         VALUES
         ('$b_id', '$i')
     ";
-    Database::$connect->query($addIceOptions);
-
+    $isSuccessful = Database::$connect->query($addIceOptions);
+    if (!$isSuccessful) {
+        $response["error"] = Database::$connect->error;
+        Database::$connect->rollback();
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        exit;
+    }
 }
 Database::$connect->autocommit(True);
-
 $response["status"] = "success";
-
 echo json_encode($response, JSON_UNESCAPED_UNICODE);

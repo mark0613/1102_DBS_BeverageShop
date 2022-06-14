@@ -69,6 +69,7 @@ class User {
 
     static function register($email, $username, $password, $phone, $type) {
         $hashPassword = hash("sha256", $password);
+        
         // begin transaction
         Database::$connect->autocommit(False);
         $insert = "

@@ -4,6 +4,7 @@ require("Database.php");
 if(!isset($_SESSION)) { 
     session_start(); 
 } 
+header('Content-Type: application/json; charset=utf-8');
 date_default_timezone_set('Asia/Taipei');
 
 $response = [
@@ -14,13 +15,22 @@ $response = [
 $c_id = $_SESSION["id"];
 $m_id = $_REQUEST["m_id"];
 $time = date('Y-m-d H:i:s');
+
+// begin transaction
+Database::$connect->autocommit(False);
 $generateOrder = "
-INSERT INTO orders
-(c_id, m_id, order_time)
-VALUES
-($c_id, $m_id, '$time');
+    INSERT INTO orders
+    (c_id, m_id, order_time)
+    VALUES
+    ($c_id, $m_id, '$time');
 ";
-Database::$connect->query($generateOrder);
+$isSuccessful = Database::$connect->query($generateOrder);
+if (!$isSuccessful) {
+    $response["data"] = Database::$connect->error;
+    Database::$connect->rollback();
+    echo json_encode($response, JSON_UNESCAPED_UNICODE);
+    exit;
+}
 $getOid = "SELECT o_id FROM orders WHERE c_id='$c_id' AND m_id='$m_id' AND order_time='$time'";
 $result = Database::$connect->query($getOid);
 while($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -37,9 +47,14 @@ foreach($_REQUEST["orders"] as $b_id => $order) {
         VALUES
         ($o_id, $b_id, $sugar, $ice, $quantity)
     ";
-    $result = Database::$connect->query($generateOrderDetail);
+    $isSuccessful = Database::$connect->query($generateOrderDetail);
+    if (!$isSuccessful) {
+        $response["data"] = Database::$connect->error;
+        Database::$connect->rollback();
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        exit;
+    }
 }
+Database::$connect->autocommit(True);
 $response["status"] = "success";
-
-header('Content-Type: application/json; charset=utf-8');
 echo json_encode($response, JSON_UNESCAPED_UNICODE);
