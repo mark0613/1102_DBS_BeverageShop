@@ -69,13 +69,15 @@ class User {
 
     static function register($email, $username, $password, $phone, $type) {
         $hashPassword = hash("sha256", $password);
+        // begin transaction
         Database::$connect->autocommit(False);
         $insert = "
             INSERT INTO 
             users(email, u_name, password, type) 
             VALUES('$email', '$username', '$hashPassword', '$type')
         ";
-        if (!Database::$connect->query($insert)) {
+        $isSuccessful = Database::$connect->query($insert);
+        if (!$isSuccessful) {
             self::$error = Database::$connect->error;
             Database::$connect->rollback();
             return False;
@@ -86,15 +88,14 @@ class User {
             $u_id = $row["u_id"];
         }
         if ($type === "customer") {
-            $insert = "INSERT INTO customer(u_id, c_phone) VALUES($u_id, $phone)";
+            $insert = "INSERT INTO customer(u_id, c_phone) VALUES($u_id, '$phone')";
         }
         else{
-            $insert = "INSERT INTO merchant(u_id, m_phone) VALUES($u_id, $phone)";
+            $insert = "INSERT INTO merchant(u_id, m_phone) VALUES($u_id, '$phone')";
         }
-
-        if (Database::$connect->query($insert)) {
+        $isSuccessful = Database::$connect->query($insert);
+        if ($isSuccessful) {
             Database::$connect->autocommit(True);
-            Database::$connect->query($insert);
             return True;
         }
         self::$error = Database::$connect->error;
